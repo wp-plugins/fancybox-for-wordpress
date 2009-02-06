@@ -6,26 +6,26 @@ Requires at least: 2.7
 Tested up to: 2.7
 Stable tag: trunk
 
-Seamlessly Integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
+Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
 
 == Description ==
 
-Seamlessly Integrates [FancyBox](http://fancy.klade.lv/) into your blog: upload, activate and you're done. No further configuration needed.
+Seamlessly integrates [FancyBox](http://fancy.klade.lv/) into your blog: Upload, activate and you're done. No further configuration needed.
 
-All images on the page will be cosidered as part of a gallery, allowing you and your visitors to navigate through them with the [FancyBox](http://fancy.klade.lv/) interface.
+All images on the page will be considered part of a gallery, allowing you and your visitors to navigate through them with the [FancyBox](http://fancy.klade.lv/) interface.
 
-The plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) ANY image links that open an image. This includes images on posts, the sidebar, etc.
+The plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY image links that open an image. This includes posts, the sidebar, etc.
 
-The requirements are that the link is on an image (i.e a thumbnail), and that it links to a JPG, PNG or GIF file.
+The requirements are that the link is an image (for example a thumbnail), and that it links to a JPG, PNG or GIF file (that will be the bigger image).
 
-[FancyBox](http://fancy.klade.lv/) will NOT be applied on text links, but i will to implement a configuration page to optionally customize that and much more in future versions.
+[FancyBox](http://fancy.klade.lv/) will NOT be applied on text links, but i will implement a configuration page in the admin panel to optionally customize that and much more stuff in future versions.
 
 Finally, i have only tested the plugin in WordPress 2.7, but it should work on recent previous versions. However, there's no reason why you shouldn't be already using WP2.7, is there? ;)
 
 
 == Installation ==
 
-1. Upload the `fancybox-moskis` folder to the `/wp-content/plugins/` directory
+1. Upload the `fancybox-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. See [FancyBox](http://fancy.klade.lv/) magically applied to all your image links and galleries.
 
@@ -34,7 +34,7 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 
 = About future releases =
 
-Future release will continue to work without having to make any configuration, but i will provide and options page to allow customization of the [FancyBox](http://fancy.klade.lv/) effect and changing where it is used.
+Future releases will continue to work without having to make any configuration, but i will provide an options page to allow customization of the [FancyBox](http://fancy.klade.lv/) effect, and being able to change where it is used in your blog.
 
 = No worky, what now? =
 
