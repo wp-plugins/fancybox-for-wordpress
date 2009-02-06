@@ -45,3 +45,14 @@ If activating the plugin somehow brakes your panel (cant imagine that happening 
 = Suggestions and feature requests? =
 
 Don't hesitate to email me at jose (at) moskis.net with any thoughts about this plugin, feature requests, issues, doubts suggestions, anything goes. :)
+
+= How does the plugin exactly work? =
+
+First the plugin checks if your blog uses jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript wait for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
+
+
+== Demo ==
+
+You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/) although there's nothing amazing to see, just a FancyBox simple implementation, that's the point ;)
+
+You can take a look at the code if you're curious, though. Most of it is in the Head section of the page.
