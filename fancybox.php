@@ -8,7 +8,7 @@ Author: Jose Pardilla (Th3 ProphetMan)
 Author URI: http://blog.moskis.net/
 */
 
-define( 'WPFANCYBOXHOME', get_option('siteurl') . '/wp-content/plugins/fancybox-moskis/' ); // Get full url to plugin path
+define( 'WPFANCYBOXHOME', get_option('siteurl') . '/wp-content/plugins/fancybox-for-wordpress/' ); // Get full url to plugin path
 
 function wp_fancybox_do() {
 	
