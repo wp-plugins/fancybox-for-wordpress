@@ -25,10 +25,6 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
 1. Upload the `fancybox-moskis` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. See [FancyBox](http://fancy.klade.lv/) magically applied to all your image links and galleries.
