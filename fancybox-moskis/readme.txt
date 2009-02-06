@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== FancyBox for WordPress ===
 Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
@@ -6,7 +6,7 @@ Requires at least: 2.7
 Tested up to: 2.7
 Stable tag: trunk
 
-Seamlessly Integrates [FancyBox](http://fancy.klade.lv/) into you blog, install, activate the plugin and you're done.
+Seamlessly Integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
 
 == Description ==
 
