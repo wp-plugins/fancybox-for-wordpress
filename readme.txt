@@ -50,6 +50,14 @@ Don't hesitate to email me at jose (at) moskis.net with any thoughts about this 
 
 First the plugin checks if your blog uses jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript wait for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
 
+= The plugin does not work with Mandingo theme =
+
+To fix this edit the file /themes/mandigo/header.php and remove the line 231:
+
+<code>&lt;script type="text/javascript" src="&lt;?php echo $dirs['www']['js']; ?&gt;jquery.js"&gt;&lt;/script&gt;</code>
+
+After applying this fix everything seems to work perfectly.
+
 
 == Demo ==
 
