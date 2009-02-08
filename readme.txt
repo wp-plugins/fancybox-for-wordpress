@@ -22,6 +22,12 @@ The requirements are that the link is an image (for example a thumbnail), and th
 
 Finally, i have only tested the plugin in WordPress 2.7, but it should work on recent previous versions. However, there's no reason why you shouldn't be already using WP2.7, is there? ;)
 
+1.1 Fixes:
+
+* Fixed FancyBox not being applied to .jpeg files
+* Fixed "Click to close" overlay text
+* Moved images to /img/ folder
+
 
 == Installation ==
 
