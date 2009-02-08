@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7
-Stable tag: trunk
+Stable tag: 1.1
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
 
