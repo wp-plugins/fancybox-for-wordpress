@@ -3,7 +3,7 @@ Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
-Tested up to: 2.7
+Tested up to: 2.7.1
 Stable tag: 1.1
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
@@ -21,6 +21,8 @@ The requirements are that the link is an image (for example a thumbnail), and th
 [FancyBox](http://fancy.klade.lv/) will NOT be applied on text links, but i will implement a configuration page in the admin panel to optionally customize that and much more stuff in future versions.
 
 Finally, i have only tested the plugin in WordPress 2.7, but it should work on recent previous versions. However, there's no reason why you shouldn't be already using WP2.7, is there? ;)
+
+= Changelog =
 
 1.1 Fixes:
 
