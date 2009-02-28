@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
 
@@ -24,7 +24,12 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 
 = Changelog =
 
-1.1 Fixes:
+1.2 Updates:
+
+* Upgraded to use FancyBox 1.2.0
+* Uses packed version of the JavaScript file (8kb instead of 14kb).
+
+1.1 Updates:
 
 * Fixed FancyBox not being applied to .jpeg files
 * Fixed "Click to close" overlay text
@@ -35,16 +40,22 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 
 1. Upload the `fancybox-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. See [FancyBox](http://fancy.klade.lv/) magically applied to all your image links and galleries.
+3. That's it, [FancyBox](http://fancy.klade.lv/) will be automatically applied to all your image links and galleries.
 
 
 == Frequently Asked Questions ==
+
+= Are you the author of FancyBox? =
+
+NO. I just ported it to WordPress. For more info on the FancyBox script itself [visit its website](http://fancy.klade.lv/home).
 
 = About future releases =
 
 Future releases will continue to work without having to make any configuration, but i will provide an options page to allow customization of the [FancyBox](http://fancy.klade.lv/) effect, and being able to change where it is used in your blog.
 
 = No worky, what now? =
+
+First, try other versions of this plugin, and see if any version works for you. Version 1.2 uses the latest FancyBox which might not work well without jQuery 1.3.x or later.
 
 If the plugin is not working or you find any bug/bad behaviour/conflict deactivate it and email me at jose (at) moskis.net with a description of the problem, and i'll take a look at it.
 
