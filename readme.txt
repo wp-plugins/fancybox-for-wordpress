@@ -35,6 +35,10 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 * Fixed "Click to close" overlay text
 * Moved images to /img/ folder
 
+= Known Bugs =
+
+* There seems to be problems with the shadows on several browsers
+* Caption box looks bad on IE
 
 == Installation ==
 
