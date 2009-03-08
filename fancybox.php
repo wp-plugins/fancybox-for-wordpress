@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress. All images on a page are treated as a gallery allowing to use Next and Previous buttons on the FancyBox frontend.
-Version: 1.2
+Version: 1.3
 Author: Jose Pardilla (Th3 ProphetMan)
 Author URI: http://blog.moskis.net/
 */
@@ -17,7 +17,7 @@ function wp_fancybox_do() {
 	div#fancy_overlay{position:absolute;top:0;left:0;z-index:90;width:100%;background-color:#333;}
 	div#fancy_loading{position:absolute;height:40px;width:40px;cursor:pointer;display:none;overflow:hidden;background:transparent;z-index:100;}
 	div#fancy_loading div{position:absolute;top:0;left:0;width:40px;height:480px;background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_progress.png) no-repeat;}
-	div#fancy_close{position:absolute;top:-12px;right:-12px;height:30px;width:30px;background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_closebox.png);cursor:pointer;z-index:100;display:none;}
+	div#fancy_close{position:absolute;top:-12px;right:-12px;height:30px;width:30px;background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_closebox.png);cursor:pointer;z-index:1000;display:none;}
 	div#fancy_content{position:absolute;top:0;left:0;width:100%;height:100%;z-index:96;margin:0;padding:0;}
 	#fancy_frame{position:relative;width:100%;height:100%;display:none;}
 	img#fancy_img{position:absolute;top:0;left:0;width:100%;height:100%;border:0;z-index:92;margin:0;padding:0;}
@@ -32,7 +32,7 @@ function wp_fancybox_do() {
 	a#fancy_left{left:0;}a#fancy_right{right:0;}a#fancy_left:hover{background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_left.gif) no-repeat 0 50%;}
 	a#fancy_right:hover{background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_right.gif) no-repeat 100% 50%;}
 	#fancy_bigIframe,#fancy_freeIframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;}
-	div#fancy_bg{display:none;} div.fancy_bg{position:absolute;display:block;z-index:70;}
+	div.fancy_bg{position:absolute;display:block;z-index:70;}
 	div.fancy_bg_n{top:-18px;width:100%;height:18px;background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_shadow_horizontal.png) repeat-x;}
 	div.fancy_bg_ne{top:-18px;right:-13px;width:13px;height:18px;background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_shadow_corners.png) no-repeat -13px 0;}
 	div.fancy_bg_e{right:-13px;height:100%;width:13px;background:transparent url(<?php echo WPFANCYBOXHOME; ?>img/fancy_shadow_vertical.png) repeat-y -13px 0;}

@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.2
+Stable tag: 1.3
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
 
@@ -24,10 +24,14 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 
 = Changelog =
 
+1.3 Updates:
+
+* Shadows and Close button should be fixed now
+
 1.2 Updates:
 
 * Upgraded to use FancyBox 1.2.0
-* Uses packed version of the JavaScript file (8kb instead of 14kb).
+* Uses packed version of the JavaScript file (8kb instead of 14kb)
 
 1.1 Updates:
 
@@ -37,8 +41,7 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 
 = Known Bugs =
 
-* There seems to be problems with the shadows on several browsers
-* Caption box looks bad on IE
+* Shadows and caption Box still a mess on IE, need to completely update CSS to match changes in FancyBox 1.2.0
 
 == Installation ==
 
