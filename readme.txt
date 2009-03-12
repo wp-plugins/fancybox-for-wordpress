@@ -4,13 +4,14 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 1.3
+Stable tag: 2.0
 
-Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed.
+Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
+
 
 == Description ==
 
-Seamlessly integrates [FancyBox](http://fancy.klade.lv/) into your blog: Upload, activate and you're done. No further configuration needed.
+Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
 All images on the page will be considered part of a gallery, allowing you and your visitors to navigate through them with the [FancyBox](http://fancy.klade.lv/) interface.
 
@@ -20,9 +21,16 @@ The requirements are that the link is an image (for example a thumbnail), and th
 
 [FancyBox](http://fancy.klade.lv/) will NOT be applied on text links, but i will implement a configuration page in the admin panel to optionally customize that and much more stuff in future versions.
 
-Finally, i have only tested the plugin in WordPress 2.7, but it should work on recent previous versions. However, there's no reason why you shouldn't be already using WP2.7, is there? ;)
+Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. However, there's no reason why you shouldn't be already using WP2.7, is there? ;)
+
 
 = Changelog =
+
+2.0 Updates:
+
+* Brand new Options Page in Admin Panel lets you easely customize many options: fancybox auto apply, image resize to fit, opacity fade while zooming, zoom speed, overlay on/off, overlay color, overlay opacity, close fancybox on image click, keep fancybox centered while scrolling.
+* CSS completely updated for FancyBox 1.2.0
+* Captions fixed in IE
 
 1.3 Updates:
 
@@ -39,15 +47,33 @@ Finally, i have only tested the plugin in WordPress 2.7, but it should work on r
 * Fixed "Click to close" overlay text
 * Moved images to /img/ folder
 
+
+= TODO List =
+
+* Add support for easing effects
+* Custom expression field in Options page to specify aditional elements where FancyBox should be applied (for example "#moskislink" or ""a.someclass:has(img)[href$='.gif']" )
+* Better support for inline content width adjustable window width and height.
+* Add alternative methods of loading the javascript so that the user can swuitch them in the option page if there are problems.
+
+
 = Known Bugs =
 
-* Shadows and caption Box still a mess on IE, need to completely update CSS to match changes in FancyBox 1.2.0
+* Shadows still a mess on IE6/7
+* Captions don't look right on Hybrid Theme and its child themes
+
 
 == Installation ==
 
 1. Upload the `fancybox-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. That's it, [FancyBox](http://fancy.klade.lv/) will be automatically applied to all your image links and galleries.
+4. If you want to customize a bit the look and feel of FancyBox, go to the Options Page under General Options in the WordPress Admin panel.
+
+
+== Screenshots ==
+
+1. Simple example of fancybox applied to a wordpress page gallery. [Live demo here](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/).
+2. Options Page in the Admin Panel makes it very easy to customize the plugin to your needs.
 
 
 == Frequently Asked Questions ==
