@@ -3,15 +3,39 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress. All images on a page are treated as a gallery allowing visitors to use Next and Previous buttons on the FancyBox frontend.
-Version: 2.0
-Author: Jose Pardilla (Th3 ProphetMan)
+Version: 2.1
+Author: Jose Pardilla
 Author URI: http://moskis.net/
 */
+
+// If no options set, load defaults
+if (get_option('mfbfw_active_version') !== '2.1') {
+  add_option('mfbfw_active_version', '2.1');
+  add_option('mfbfw_autoApply', 'on');
+  add_option('mfbfw_imageScale', 'on');
+  add_option('mfbfw_zoomOpacity', 'on');
+  add_option('mfbfw_zoomSpeedIn', '500');
+  add_option('mfbfw_zoomSpeedOut', '500');
+  add_option('mfbfw_overlayShow', 'on');
+  add_option('mfbfw_overlayColor', '#666666');
+  add_option('mfbfw_overlayOpacity', '0.3');
+  add_option('mfbfw_hideOnContentClick', '');
+  add_option('mfbfw_centerOnScroll', 'on');
+  add_option('mfbfw_jQnoConflict', 'on');
+}
 
 
 function mfbfw_init() {
 
-  wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.0.pack.js', array('jquery'), '1.3.2' ); // Load fancybox with jQuery
+  if (get_option('mfbfw_nojQuery') == 'on') {
+
+    wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.0.pack.js'); // Load fancybox without jQuery (for troubleshooting)
+
+  } else {
+
+    wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.0.pack.js', array('jquery'), '1.3.2'); // Load fancybox with jQuery
+
+  }
   
 }
 
@@ -28,7 +52,7 @@ function mfbfw_do() { ?>
 
   <script type="text/javascript">
 
-  jQuery.noConflict();
+  <?php if (get_option('mfbfw_jQnoConflict') == 'on') { ?> jQuery.noConflict(); <?php } ?>
 
   jQuery(function(){
 

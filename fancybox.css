@@ -294,6 +294,15 @@ div#fancy_title div {
 
 div#fancy_title table {
 	margin: 0 auto;
+  background:transparent;
+  border-collapse:separate;
+  border: 0;
+  width:auto;
+}
+
+div#fancy_title tr {
+  background:transparent;
+  border: 0;
 }
 
 div#fancy_title table td {
@@ -305,15 +314,18 @@ td#fancy_title_left {
 	height: 32px;
 	width: 15px;
 	background: transparent url(img/fancy_title_left.png) repeat-x;
+  border: 0;
 }
 
 td#fancy_title_main {
 	height: 32px;
 	background: transparent url(img/fancy_title_main.png) repeat-x;
+  border: 0;
 }
 
 td#fancy_title_right {
 	height: 32px;
 	width: 15px;
 	background: transparent url(img/fancy_title_right.png) repeat-x;
+  border: 0;
 }
