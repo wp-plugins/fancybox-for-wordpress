@@ -65,7 +65,6 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 = Known Bugs =
 
 * Shadows still a mess on IE6/7
-* Captions don't look right on Hybrid Theme and its child themes
 
 
 == Installation ==
