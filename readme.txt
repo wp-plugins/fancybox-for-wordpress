@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 2.1
+Stable tag: 2.1.1
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -25,6 +25,10 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 
 = Changelog =
+
+2.1.1 Updtades:
+
+* Fixed a new bug introduced in 2.1 that prevented options from being saved. Sorry about the mess :(
 
 2.1 Updtades:
 

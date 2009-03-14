@@ -3,14 +3,14 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress. All images on a page are treated as a gallery allowing visitors to use Next and Previous buttons on the FancyBox frontend.
-Version: 2.1
+Version: 2.1.1
 Author: Jose Pardilla
 Author URI: http://moskis.net/
 */
 
 // If no options set, load defaults
-if (get_option('mfbfw_active_version') !== '2.1') {
-  add_option('mfbfw_active_version', '2.1');
+if (get_option('mfbfw_active_version') !== '2.1.1') {
+  update_option('mfbfw_active_version', '2.1.1');
   add_option('mfbfw_autoApply', 'on');
   add_option('mfbfw_imageScale', 'on');
   add_option('mfbfw_zoomOpacity', 'on');

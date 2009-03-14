@@ -86,7 +86,7 @@ function mfbfw_options() {
 
     <form method="post" action="options.php" id="options">
 
-      <?php	echo wp_nonce_field('update-options', 'mfbfw'); ?>
+      <?php	echo wp_nonce_field('update-options'); ?>
 
       <table class="form-table" style="clear:none;">
         <tbody>
