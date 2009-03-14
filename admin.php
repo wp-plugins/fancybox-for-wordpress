@@ -6,12 +6,18 @@ function mfbfw_options() {
   $options=array(
     'autoApply' => get_option('mfbfw_autoApply'),
     'imageScale' => get_option('mfbfw_imageScale'),
+    'borderColor' => get_option('mfbfw_borderColor'),
+    'padding' => get_option('mfbfw_padding'),
     'zoomOpacity' => get_option('mfbfw_zoomOpacity'),
     'zoomSpeedIn' => get_option('mfbfw_zoomSpeedIn'),
     'zoomSpeedOut' => get_option('mfbfw_zoomSpeedOut'),
     'overlayShow' => get_option('mfbfw_overlayShow'),
     'overlayColor' => get_option('mfbfw_overlayColor'),
     'overlayOpacity' => get_option('mfbfw_overlayOpacity'),
+    'easing' => get_option('mfbfw_easing'),
+    'easingIn' => get_option('mfbfw_easingIn'),
+    'easingOut' => get_option('mfbfw_easingOut'),
+    'easingChange' => get_option('mfbfw_easingChange'),
     'hideOnContentClick' => get_option('mfbfw_hideOnContentClick'),
     'centerOnScroll' => get_option('mfbfw_centerOnScroll'),
     'nojQuery' => get_option('mfbfw_nojQuery'),
@@ -21,6 +27,10 @@ function mfbfw_options() {
   // Make selects data
 	$overlayArray = array(0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1);
 	$msArray = array(0,100,200,300,400,500,600,700,800,900,1000,1500);
+  $easingArray = array('easeInQuad','easeOutQuad','easeInOutQuad','easeInCubic','easeOutCubic','easeInOutCubic','easeInQuart','easeOutQuart',
+                       'easeInOutQuart','easeInQuint','easeOutQuint','easeInOutQuint','easeInSine','easeOutSine','easeInOutSine','easeInExpo',
+                       'easeOutExpo','easeInOutExpo','easeInCirc','easeOutCirc','easeInOutCirc','easeInElastic','easeOutElastic','easeInOutElastic',
+                       'easeInBack','easeOutBack','easeInOutBack','easeInBounce','easeOutBounce','easeInOutBounce');
 
   // Start the Options Page
   ?>
@@ -80,9 +90,12 @@ function mfbfw_options() {
 
     <p><?php _e('<a href="http://fancy.klade.lv/home">FancyBox</a> developed by <a href="http://kac.klade.lv/">Janis Skarnelis</a>, ported to WordPress by <a href="http://moskis.net/">Jos&eacute; Pardilla</a>. Licensed under the <a target="_blank" href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a>.', 'mfbfw'); ?></p><br />
 
-    <h3><?php _e('General Settings', 'mfbfw'); ?></h3>
+    <p><?php _e('<strong>Note:</strong> Having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options.', 'mfbfw'); ?></p><br />
 
-    <p><?php _e('Note: Having a cache plugin may prevent changes from taking effect inmidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options.', 'mfbfw'); ?></p><br />
+
+    <h3><?php _e('Appearance Settings', 'mfbfw'); ?></h3>
+
+    <p><?php _e('These are the main settings, which let you tweak color, borders and basic animation.', 'mfbfw'); ?></p><br />
 
     <form method="post" action="options.php" id="options">
 
@@ -92,28 +105,61 @@ function mfbfw_options() {
         <tbody>
 
           <tr valign="top">
-            <th scope="row"><?php _e('Auto Apply', 'mfbfw'); ?></th>
+            <th scope="row"><?php _e('Border Color', 'mfbfw'); ?></th>
             <td>
               <fieldset>
 
-                <label for="mfbfw_autoApply">
-                  <input type="checkbox" name="mfbfw_autoApply" id="mfbfw_autoApply"<?php if (get_option('mfbfw_autoApply') == 'on') echo ' checked="yes"';?> />
-                  <?php _e('Apply FancyBox automatically to all links pointing to .jpg, .jpeg, .png or .gif images (default: on)', 'mfbfw'); ?>
+                <label for="mfbfw_borderColor">
+                  <input type="text" name="mfbfw_borderColor" id="mfbfw_borderColor" value="<?php echo get_option('mfbfw_borderColor'); ?>" size="7" maxlength="7" />
+                  <?php _e('HTML color of the border (default: #BBBBBB)', 'mfbfw'); ?>
+                </label><br /><br />
+                
+              </fieldset>
+            </td>
+          </tr>
+
+          <tr valign="top">
+            <th scope="row"><?php _e('Padding Size', 'mfbfw'); ?></th>
+            <td>
+              <fieldset>
+
+                <label for="mfbfw_padding">
+                  <input type="text" name="mfbfw_padding" id="mfbfw_padding" value="<?php echo get_option('mfbfw_padding'); ?>" size="7" maxlength="7" />
+                  <?php _e('Padding size in pixels (default: 10)', 'mfbfw'); ?>
                 </label><br />
-                <small><em><?php _e('(The link itself must the an image as well, text links will not be affected by this option!)', 'mfbfw'); ?></em></small><br /><br />
+
+                <small><em><?php _e('(Set <strong>Border Color</strong> to "#000000" and <strong>Padding</strong> to "0" for the classic FancyBox look)', 'mfbfw'); ?></em></small><br /><br />
 
               </fieldset>
             </td>
           </tr>
 
           <tr valign="top">
-            <th scope="row"><?php _e('Auto Resize to Fit', 'mfbfw'); ?></th>
+            <th scope="row"><?php _e('Overlay Options', 'mfbfw'); ?></th>
             <td>
               <fieldset>
 
-                <label for="mfbfw_imageScale">
-                  <input type="checkbox" name="mfbfw_imageScale" id="mfbfw_imageScale"<?php if (get_option('mfbfw_imageScale') == 'on') echo ' checked="yes"';?> />
-                  <?php _e('Scale images to fit in viewport (default: on)', 'mfbfw'); ?>
+                <label for="mfbfw_overlayShow">
+                  <input type="checkbox" name="mfbfw_overlayShow" id="mfbfw_overlayShow"<?php if (get_option('mfbfw_overlayShow') == 'on') echo ' checked="yes"';?> />
+                  <?php _e('Add overlay (default: on)', 'mfbfw'); ?>
+                </label><br /><br />
+
+                <label for="mfbfw_overlayColor">
+                  <input type="text" name="mfbfw_overlayColor" id="mfbfw_overlayColor" value="<?php echo get_option('mfbfw_overlayColor'); ?>" size="7" maxlength="7" />
+                  <?php _e('HTML color of the overlay (default: #666666)', 'mfbfw'); ?>
+                </label><br /><br />
+
+                <label for="mfbfw_overlayOpacity">
+                  <select name="mfbfw_overlayOpacity" id="mfbfw_overlayOpacity">
+                    <?php
+                    foreach($overlayArray as $key=> $opacity) {
+                      if($options['overlayOpacity'] != $opacity) $selected = '';
+                      else $selected = ' selected';
+                      echo "<option value='$opacity'$selected>$opacity</option>\n";
+                    }
+                    ?>
+                  </select>
+                  <?php _e('Opacity of overlay. 0 is transparent, 1 is opaque (default: 0.3)', 'mfbfw'); ?>
                 </label><br /><br />
 
               </fieldset>
@@ -158,48 +204,41 @@ function mfbfw_options() {
             </td>
           </tr>
 
+        </tbody>
+      </table>
+
+      <h3><?php _e('Behavior Settings', 'mfbfw'); ?></h3>
+
+      <p><?php _e('Settings in this section may be a bit more tricky to configure, or just recommended to be left on default. If you want fancier animations you can just activate "Easing".', 'mfbfw'); ?></p>
+
+      <table class="form-table" style="clear:none;">
+        <tbody>
+
           <tr valign="top">
-            <th scope="row"><?php _e('Overlay Options', 'mfbfw'); ?></th>
+            <th scope="row"><?php _e('Auto Apply', 'mfbfw'); ?></th>
             <td>
               <fieldset>
 
-                <label for="mfbfw_overlayShow">
-                  <input type="checkbox" name="mfbfw_overlayShow" id="mfbfw_overlayShow"<?php if (get_option('mfbfw_overlayShow') == 'on') echo ' checked="yes"';?> />
-                  <?php _e('Add overlay (default: on)', 'mfbfw'); ?>
-                </label><br /><br />
+                <label for="mfbfw_autoApply">
+                  <input type="checkbox" name="mfbfw_autoApply" id="mfbfw_autoApply"<?php if (get_option('mfbfw_autoApply') == 'on') echo ' checked="yes"';?> />
+                  <?php _e('Apply FancyBox automatically to all links pointing to .jpg, .jpeg, .png or .gif images (default: on)', 'mfbfw'); ?>
+                </label><br />
 
-                <label for="mfbfw_overlayColor">
-                  <input type="text" name="mfbfw_overlayColor" id="mfbfw_overlayColor" value="<?php echo get_option('mfbfw_overlayColor'); ?>" size="7" maxlength="7" />
-                  <?php _e('HTML color of the overlay (default: #666666)', 'mfbfw'); ?>
-                </label><br /><br />
-
-                <label for="mfbfw_overlayOpacity">
-                  <select name="mfbfw_overlayOpacity" id="mfbfw_overlayOpacity">
-                    <?php
-                    foreach($overlayArray as $key=> $opacity) {
-                      if($options['overlayOpacity'] != $opacity) $selected = '';
-                      else $selected = ' selected';
-                      echo "<option value='$opacity'$selected>$opacity</option>\n";
-                    }
-                    ?>
-                  </select>
-                  <?php _e('Opacity of overlay. 0 is transparent, 1 is opaque (default: 0.3)', 'mfbfw'); ?>
-                </label><br /><br />
+                <small><em><?php _e('(The link itself must the an image as well, text links will not be affected by this option!)', 'mfbfw'); ?></em></small><br /><br />
 
               </fieldset>
             </td>
           </tr>
 
           <tr valign="top">
-            <th scope="row"><?php _e('Close on Click', 'mfbfw'); ?></th>
+            <th scope="row"><?php _e('Auto Resize to Fit', 'mfbfw'); ?></th>
             <td>
               <fieldset>
 
-                <label for="mfbfw_hideOnContentClick">
-                  <input type="checkbox" name="mfbfw_hideOnContentClick" id="mfbfw_hideOnContentClick"<?php if (get_option('mfbfw_hideOnContentClick') == 'on') echo ' checked="yes"';?> />
-                  <?php _e('Close FancyBox by clicking on the image (default: off)', 'mfbfw'); ?>
-                </label><br />
-                <small><em><?php _e('(This does NOT conflict with the previous and next image links on FancyBox galleries.)', 'mfbfw'); ?></em></small><br /><br />
+                <label for="mfbfw_imageScale">
+                  <input type="checkbox" name="mfbfw_imageScale" id="mfbfw_imageScale"<?php if (get_option('mfbfw_imageScale') == 'on') echo ' checked="yes"';?> />
+                  <?php _e('Scale images to fit in viewport (default: on)', 'mfbfw'); ?>
+                </label><br /><br />
 
               </fieldset>
             </td>
@@ -219,12 +258,85 @@ function mfbfw_options() {
             </td>
           </tr>
 
+          <tr valign="top">
+            <th scope="row"><?php _e('Close on Click', 'mfbfw'); ?></th>
+            <td>
+              <fieldset>
+
+                <label for="mfbfw_hideOnContentClick">
+                  <input type="checkbox" name="mfbfw_hideOnContentClick" id="mfbfw_hideOnContentClick"<?php if (get_option('mfbfw_hideOnContentClick') == 'on') echo ' checked="yes"';?> />
+                  <?php _e('Close FancyBox by clicking on the image (default: off)', 'mfbfw'); ?>
+                </label><br />
+
+                <small><em><?php _e('(This does NOT conflict with the previous and next image links on FancyBox galleries.)', 'mfbfw'); ?></em></small><br /><br />
+
+              </fieldset>
+            </td>
+          </tr>
+
+          <tr valign="top">
+            <th scope="row"><?php _e('Easing', 'mfbfw'); ?></th>
+            <td>
+              <fieldset>
+
+                <label for="mfbfw_easing">
+                  <input type="checkbox" name="mfbfw_easing" id="mfbfw_easing"<?php if (get_option('mfbfw_easing') == 'on') echo ' checked="yes"';?> />
+                  <?php _e('Activate easing (default: off)', 'mfbfw'); ?>
+                </label><br /><br />
+
+                <label for="mfbfw_easingIn">
+                  <select name="mfbfw_easingIn" id="mfbfw_easingIn">
+                    <?php
+                    foreach($easingArray as $key=> $easingIn) {
+                      if($options['easingIn'] != $easingIn) $selected = '';
+                      else $selected = ' selected';
+                      echo "<option value='$easingIn'$selected>$easingIn</option>\n";
+                    }
+                    ?>
+                  </select>
+                  <?php _e('Easing method when opening FancyBox. (default: easeOutBack)', 'mfbfw'); ?>
+                </label><br /><br />
+
+                <label for="mfbfw_easingOut">
+                  <select name="mfbfw_easingOut" id="mfbfw_easingOut">
+                    <?php
+                    foreach($easingArray as $key=> $easingOut) {
+                      if($options['easingOut'] != $easingOut) $selected = '';
+                      else $selected = ' selected';
+                      echo "<option value='$easingOut'$selected>$easingOut</option>\n";
+                    }
+                    ?>
+                  </select>
+                  <?php _e('Easing method when closing FancyBox. (default: easeInBack)', 'mfbfw'); ?>
+                </label><br /><br />
+
+                <label for="mfbfw_easingChange">
+                  <select name="mfbfw_easingChange" id="mfbfw_easingChange">
+                    <?php
+                    foreach($easingArray as $key=> $easingChange) {
+                      if($options['easingChange'] != $easingChange) $selected = '';
+                      else $selected = ' selected';
+                      echo "<option value='$easingChange'$selected>$easingChange</option>\n";
+                    }
+                    ?>
+                  </select>
+                  <?php _e('Easing method when navigating through gallery items. (default: easeInOutBack)', 'mfbfw'); ?>
+                </label><br />
+
+                <small><em><?php _e('(There are 30 different easing methods, the first ones are the most boring. <a href="http://commadot.com/jquery/easing.php" target="_blank">Test them here</a> clicking on the boxes)', 'mfbfw'); ?></em></small><br /><br />
+
+              </fieldset>
+            </td>
+          </tr>
+
         </tbody>
       </table>
 
       <h3><?php _e('Troubleshooting Settings', 'mfbfw'); ?></h3>
 
-      <p><?php _e('The following settings should only be changed if you are having problems with the plugin!', 'mfbfw'); ?></p>
+      <p><?php _e('If the plugin doesn\'t seem to work, first you should check for other plugins that may be conflicting with this one, especially other Lightbox, Slimbox, etc. Make sure all your plugins and WordPress itself are up to date (this plugin has only been tested in WordPress 2.7 and above).', 'mfbfw'); ?></p>
+
+      <p><?php _e('<span style="color:red;">The following settings should only be changed if you are having problems with the plugin!</span>', 'mfbfw'); ?></p>
 
       <p><?php _e('Change them one at a time and test to see if they help. Remember that having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options.', 'mfbfw'); ?></p><br />
 
@@ -254,6 +366,7 @@ function mfbfw_options() {
                   <input type="checkbox" name="mfbfw_jQnoConflict" id="mfbfw_jQnoConflict"<?php if (get_option('mfbfw_jQnoConflict') == 'on') echo ' checked="yes"';?> />
                   <?php _e('Use jQuery noConflict mode (default: on)', 'mfbfw'); ?>
                 </label><br />
+
                 <small><em><?php _e('(Turning this off may cause problems if there are plugins activated that use other js framework like mootools, prototype, scriptaculous, etc.)', 'mfbfw'); ?></em></small><br /><br />
 
               </fieldset>
@@ -265,7 +378,7 @@ function mfbfw_options() {
 
 
       <input type="hidden" name="action" value="update" />
-      <input type="hidden" name="page_options" value="mfbfw_autoApply,mfbfw_imageScale,mfbfw_zoomOpacity,mfbfw_zoomSpeedIn,mfbfw_zoomSpeedOut,mfbfw_overlayShow,mfbfw_overlayColor,mfbfw_overlayOpacity,mfbfw_hideOnContentClick,mfbfw_centerOnScroll,mfbfw_nojQuery,mfbfw_jQnoConflict" />
+      <input type="hidden" name="page_options" value="mfbfw_autoApply,mfbfw_imageScale,mfbfw_borderColor,mfbfw_padding,mfbfw_zoomOpacity,mfbfw_zoomSpeedIn,mfbfw_zoomSpeedOut,mfbfw_overlayShow,mfbfw_overlayColor,mfbfw_overlayOpacity,mfbfw_easing,mfbfw_easingIn,mfbfw_easingOut,mfbfw_easingChange,mfbfw_hideOnContentClick,mfbfw_centerOnScroll,mfbfw_nojQuery,mfbfw_jQnoConflict" />
 
       <p class="submit">
         <input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes','mfbfw'); ?>" />

@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 2.1.1
+Stable tag: 2.2
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -17,18 +17,27 @@ All images on the page will be considered part of a gallery, allowing you and yo
 
 The plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY image links that open an image. This includes posts, the sidebar, etc.
 
-The requirements are that the link is an image (for example a thumbnail), and that it links to a JPG, PNG or GIF file (that will be the bigger image).
+The requirements are that the link is an image (for example a thumbnail), and that it links to a JPG, PNG or GIF file (that will be the full size image).
 
-[FancyBox](http://fancy.klade.lv/) will NOT be applied on text links, but i will implement a configuration page in the admin panel to optionally customize that and much more stuff in future versions.
+This plugin will NOT apply [FancyBox](http://fancy.klade.lv/) on text links, but i will implement a setting in the Options Page to customize this in future versions.
 
-Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. However, there's no reason why you shouldn't be already using WP2.7, is there? ;)
+Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. After all, there's no reason why you shouldn't be already using WP2.7, is there? ;)
 
 
 = Changelog =
 
+2.2 Updtades:
+
+* Updated to FancyBox 1.2.1
+* Added new settings to Options Page: Easing, padding size, border color.
+* Tweaked CSS to prevent some themes from adding unwanted styles to fancybox (especially background colors and link outlines).
+* Options Page reorganized in three sections: Appearance, Behaviour and Troubleshooting Settings, to make settings easier to find.
+
+
 2.1.1 Updtades:
 
 * Fixed a new bug introduced in 2.1 that prevented options from being saved. Sorry about the mess :(
+
 
 2.1 Updtades:
 
@@ -36,20 +45,24 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 * Added two options for troubleshooting that might help in some cases if the plugin doesn't work: disable jQuery noConflict and skip jQuery call.
 * Additional fixes to caption CSS: Captions should look better now in Hybrid theme, child themes, and other situations where general table elements are improperly styled.
 
+
 2.0 Updates:
 
 * Brand new Options Page in Admin Panel lets you easely customize many options: fancybox auto apply, image resize to fit, opacity fade while zooming, zoom speed, overlay on/off, overlay color, overlay opacity, close fancybox on image click, keep fancybox centered while scrolling.
 * CSS completely updated for FancyBox 1.2.0
 * Captions fixed in IE
 
+
 1.3 Updates:
 
 * Shadows and Close button should be fixed now
 
+
 1.2 Updates:
 
-* Upgraded to use FancyBox 1.2.0
+* Updated to FancyBox 1.2.0
 * Uses packed version of the JavaScript file (8kb instead of 14kb)
+
 
 1.1 Updates:
 
@@ -60,15 +73,13 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 = TODO List =
 
-* Add support for easing effects
-* Custom expression field in Options page to specify aditional elements where FancyBox should be applied (for example "#moskislink" or ""a.someclass:has(img)[href$='.gif']" )
+* Custom expression field in Options page to specify aditional elements where FancyBox should be applied (for example "#moskislink" or "a.someclass:has(img)[href$='.gif']" )
 * Better support for inline content width adjustable window width and height.
-* Add alternative methods of loading the javascript so that the user can swuitch them in the option page if there are problems.
 
 
 = Known Bugs =
 
-* Shadows still a mess on IE6/7
+* Shadows not perfect yet on IE6/7, but close
 
 
 == Installation ==
