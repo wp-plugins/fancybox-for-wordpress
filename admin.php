@@ -54,7 +54,7 @@ function mfbfw_options_page() {
       
     </div>
 
-    <div style="clear:right;float:right;margin-left:10px;background:#9DD1F2;border-color:#419ED9;text-align:center;width:200px;" class="updated">
+    <div style="clear:right;float:right;margin-left:10px;background:#9DD1F2;border-color:#419ED9;padding-bottom:5px;text-align:center;width:200px;" class="updated">
 
       <p style="line-height:1.5em;"><a href="http://twitter.com/moskis/"><?php _e('Follow me on Twitter for more WordPress Plugins and Themes', 'mfbfw'); ?></a></p>
 
@@ -110,17 +110,24 @@ function mfbfw_options_page() {
             <td>
               <fieldset>
 
-                <label for="mfbfw_closePosition">
-                  <select name="mfbfw_closePosition" id="mfbfw_closePosition">
-                    <?php
-                    foreach($closePositionArray as $key=> $closePos) {
-                      if($settings['closePosition'] != $closePos) $selected = '';
-                      else $selected = ' selected';
-                      echo "<option value='$closePos'$selected>$closePos</option>\n";
-                    }
-                    ?>
-                  </select>
-                  <?php _e('Horizontal position of the close button (default: right)', 'mfbfw'); ?>
+                <input id="mfbfw_closePosLeft" type="radio" value="left" name="mfbfw_closeHorPos"<?php if ($settings['closeHorPos'] == 'left') echo ' checked="yes"';?> />
+                <label for="mfbfw_closePosLeft" style="padding-right:15px">
+                  <?php _e('Left', 'mfbfw'); ?>
+                </label>
+
+                <input id="mfbfw_closePosRight" type="radio" value="right" name="mfbfw_closeHorPos"<?php if ($settings['closeHorPos'] == 'right') echo ' checked="yes"';?> />
+                <label for="mfbfw_closePosRight">
+                  <?php _e('Right (default)', 'mfbfw'); ?>
+                </label><br /><br />
+                
+                <input id="mfbfw_closePosBottom" type="radio" value="bottom" name="mfbfw_closeVerPos"<?php if ($settings['closeVerPos'] == 'bottom') echo ' checked="yes"';?> />
+                <label for="mfbfw_closePosBottom" style="padding-right:15px">
+                  <?php _e('Bottom', 'mfbfw'); ?>
+                </label>
+
+                <input id="mfbfw_closePosTop" type="radio" value="top" name="mfbfw_closeVerPos"<?php if ($settings['closeVerPos'] == 'top') echo ' checked="yes"';?> />
+                <label for="mfbfw_closePosTop">
+                  <?php _e('Top (default)', 'mfbfw'); ?>
                 </label><br /><br />
 
               </fieldset>
@@ -276,7 +283,8 @@ function mfbfw_options_page() {
         </tbody>
       </table>
 
-      <span id="advOpsSwitch" class="button-primary"><?php _e('Show/Hide Advanced Options', 'mfbfw'); ?></span><br /><br />
+      <span id="advOpsSwitch" class="button"><?php _e('Show/Hide Advanced Settings', 'mfbfw'); ?></span>&nbsp;
+      <span id="troOpsSwitch" class="button"><?php _e('Show/Hide Troubleshooting &amp; Uninstall Settings', 'mfbfw'); ?></span><br /><br />
 
       <div style="display:none" class="advOpts">
 
@@ -332,6 +340,17 @@ function mfbfw_options_page() {
             </td>
           </tr>
 
+        </tbody>
+      </table>
+
+
+      <h2><?php _e('Gallery Settings <span style="color:red">(advanced)</span>', 'mfbfw'); ?></h2>
+
+      <p><?php _e('Here you can choose if you want the plugin to group all images into a gallery, or make a gallery for each post. You can also define you own jQuery expression if you like.', 'mfbfw'); ?></p>
+
+      <table class="form-table" style="clear:none;">
+        <tbody>
+
           <tr valign="top">
             <th scope="row"><?php _e('Frame Size', 'mfbfw'); ?></th>
             <td>
@@ -351,17 +370,6 @@ function mfbfw_options_page() {
             </td>
           </tr>
 
-        </tbody>
-      </table>
-
-
-      <h2><?php _e('Gallery Settings <span style="color:red">(advanced)</span>', 'mfbfw'); ?></h2>
-
-      <p><?php _e('Here you can choose if you want the plugin to group all images into a gallery, or make a gallery for each post. You can also define you own jQuery expression if you like.', 'mfbfw'); ?></p>
-
-      <table class="form-table" style="clear:none;">
-        <tbody>
-
           <tr valign="top">
             <th scope="row"><?php _e('Gallery Type', 'mfbfw'); ?></th>
             <td>
@@ -379,8 +387,10 @@ function mfbfw_options_page() {
 
                 <input id="mfbfw_galleryTypeCustom" type="radio" value="custom" name="mfbfw_galleryType"<?php if ($settings['galleryType'] == 'custom') echo ' checked="yes"';?> />
                 <label for="mfbfw_galleryTypeCustom">
-                  <?php _e('Use the following custom expression to apply FancyBox', 'mfbfw'); ?>
+                  <?php _e('Use a custom expression to apply FancyBox', 'mfbfw'); ?>
                 </label><br /><br />
+
+                <div id="customExpressionBlock">
 
                 <label for="mfbfw_customExpression">
                   <textarea rows="8" cols="30" name="mfbfw_customExpression" wrap="physical" id="mfbfw_customExpression"><?php echo ($settings['customExpression']); ?></textarea>
@@ -392,6 +402,8 @@ function mfbfw_options_page() {
 
                 <small><em><?php _e('(Do not call the fancybox() function here, the plugin does this for you.)', 'mfbfw'); ?></em></small><br /><br />
 
+                </div>
+
               </fieldset>
             </td>
           </tr>
@@ -401,6 +413,8 @@ function mfbfw_options_page() {
 
       </div>
 
+
+      <div style="display:none" class="troOpts">
 
       <h2><?php _e('Troubleshooting Settings', 'mfbfw'); ?></h2>
 
@@ -470,9 +484,11 @@ function mfbfw_options_page() {
         </tbody>
       </table>
 
+      </div>
+
 
       <input type="hidden" name="action" value="update" />
-      <input type="hidden" name="page_options" value="mfbfw_autoApply,mfbfw_imageScale,mfbfw_borderColor,mfbfw_closePosition,mfbfw_padding,mfbfw_paddingColor,mfbfw_zoomOpacity,mfbfw_zoomSpeedIn,mfbfw_zoomSpeedOut,mfbfw_overlayShow,mfbfw_overlayColor,mfbfw_overlayOpacity,mfbfw_easing,mfbfw_easingIn,mfbfw_easingOut,mfbfw_easingChange,mfbfw_hideOnContentClick,mfbfw_centerOnScroll,mfbfw_noTextLinks,mfbfw_galleryType,mfbfw_customExpression,mfbfw_frameWidth,mfbfw_frameHeight,mfbfw_nojQuery,mfbfw_jQnoConflict,mfbfw_uninstall" />
+      <input type="hidden" name="page_options" value="mfbfw_autoApply,mfbfw_imageScale,mfbfw_borderColor,mfbfw_closeHorPos,mfbfw_closeVerPos,mfbfw_padding,mfbfw_paddingColor,mfbfw_zoomOpacity,mfbfw_zoomSpeedIn,mfbfw_zoomSpeedOut,mfbfw_overlayShow,mfbfw_overlayColor,mfbfw_overlayOpacity,mfbfw_easing,mfbfw_easingIn,mfbfw_easingOut,mfbfw_easingChange,mfbfw_hideOnContentClick,mfbfw_centerOnScroll,mfbfw_noTextLinks,mfbfw_galleryType,mfbfw_customExpression,mfbfw_frameWidth,mfbfw_frameHeight,mfbfw_nojQuery,mfbfw_jQnoConflict,mfbfw_uninstall" />
 
       <p class="submit">
         <input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes','mfbfw'); ?>" />

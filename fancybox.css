@@ -108,7 +108,6 @@ img#fancy_img {
 
 div#fancy_close {
 	position: absolute;
-	top: -12px;
 	height: 30px;
 	width: 30px;
 	background: url('img/fancy_closebox.png') top left no-repeat;

@@ -15,7 +15,8 @@ function mfbfw_install() {
     update_option('mfbfw_active_version', '2.5 Beta');
 
     add_option('mfbfw_borderColor', '#BBBBBB');
-    add_option('mfbfw_closePosition', 'right');
+    add_option('mfbfw_closeHorPos', 'right');
+    add_option('mfbfw_closeVerPos', 'top');
     add_option('mfbfw_paddingColor', '#FFFFFF');
     add_option('mfbfw_padding', '10');
     add_option('mfbfw_overlayShow', 'on');
@@ -37,19 +38,24 @@ function mfbfw_install() {
 
     add_option('mfbfw_galleryType', 'all');
     add_option('mfbfw_customExpression',
-'// This example expression will group all the image links after each H3 headline
-// in a post or page and make a gallery with each group.
+'// This example expression will group all the image links
+// make a gallery with them.
 
-jQuery("h3:eq(0)").nextAll("a:has(img)[href$=".jpg"]").attr("rel","fancybox1");
-jQuery("h3:eq(1)").nextAll("a:has(img)[href$=".jpg"]").attr("rel","fancybox2");
-jQuery("h3:eq(2)").nextAll("a:has(img)[href$=".jpg"]").attr("rel","fancybox3");
-jQuery("h3:eq(3)").nextAll("a:has(img)[href$=".jpg"]").attr("rel","fancybox4");
-jQuery("h3:eq(4)").nextAll("a:has(img)[href$=".jpg"]").attr("rel","fancybox5");');
+jQuery("a:has(img)[href$=\'.jpg\']").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.jpeg\']").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.gif\']").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.png\']").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.bmp\']").attr({ rel: "fancybox" }).getTitle();');
 
     add_option('mfbfw_nojQuery', '');
     add_option('mfbfw_jQnoConflict', 'on');
 
     add_option('mfbfw_uninstall', '');
+
+    // Old settings, no longer used
+    delete_option('mfbfw_autoApply');
+    delete_option('mfbfw_closePosition');
+    delete_option('mfbfw_noTextLinks');
   
 }
 
@@ -62,7 +68,8 @@ function mfbfw_uninstall() {
     delete_option('mfbfw_active_version');
 
     delete_option('mfbfw_borderColor');
-    delete_option('mfbfw_closePosition');
+    delete_option('mfbfw_closeHorPos');
+    delete_option('mfbfw_closeVerPos');
     delete_option('mfbfw_paddingColor');
     delete_option('mfbfw_padding');
     delete_option('mfbfw_overlayShow');
@@ -104,7 +111,8 @@ function mfbfw_get_settings() {
     'version' => get_option('mfbfw_active_version'),
 
     'borderColor' => get_option('mfbfw_borderColor'),
-    'closePosition' => get_option('mfbfw_closePosition'),
+    'closeHorPos' => get_option('mfbfw_closeHorPos'),
+    'closeVerPos' => get_option('mfbfw_closeVerPos'),
     'paddingColor' => get_option('mfbfw_paddingColor'),
     'padding' => get_option('mfbfw_padding'),
     'overlayShow' => get_option('mfbfw_overlayShow'),
@@ -179,7 +187,7 @@ function mfbfw_css() {
   <style type="text/css">
     div#fancy_overlay {background-color:<?php echo $settings['overlayColor']; ?>}
     div#fancy_inner {border-color:<?php echo $settings['borderColor']; ?>}
-    div#fancy_close {<?php echo $settings['closePosition']; ?>:-15px}
+    div#fancy_close {<?php echo $settings['closeHorPos']; ?>:-15px;<?php echo $settings['closeVerPos']; ?>:-12px;}
     div#fancy_bg {background-color:<?php echo $settings['paddingColor']; ?>}
   </style>
 
@@ -201,76 +209,85 @@ function mfbfw_init() {
 
   jQuery(function(){
 
+   // This copies the title of every IMG tag and add it to its parent A so that fancybox can use it
+   jQuery.fn.getTitle = function() {
+     var arr = jQuery("a[rel^='fancybox']");
+     jQuery.each(arr, function() {
+       var title = jQuery(this).children("img").attr("title");
+       jQuery(this).attr('title',title);
+     })
+   }
+
   <?php if ($settings['galleryType'] == 'post') {
 
     // If gallery type is by post and we are on home, category, tag or archive
     if (is_home() | is_category() | is_tag() | is_archive() ) { ?>
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox1');
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox2');
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox3');
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox4');
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox5');
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox6');
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox7');
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox8');
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox9');
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox10');
+    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox1').getTitle();
+    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox2').getTitle();
+    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox3').getTitle();
+    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox4').getTitle();
+    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox5').getTitle();
+    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox6').getTitle();
+    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox7').getTitle();
+    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox8').getTitle();
+    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox9').getTitle();
+    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox10').getTitle();
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox1');
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox2');
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox3');
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox4');
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox5');
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox6');
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox7');
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox8');
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox9');
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox10');
+    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox1').getTitle();
+    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox2').getTitle();
+    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox3').getTitle();
+    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox4').getTitle();
+    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox5').getTitle();
+    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox6').getTitle();
+    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox7').getTitle();
+    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox8').getTitle();
+    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox9').getTitle();
+    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.jpeg']").attr('rel','fancybox10').getTitle();
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox1');
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox2');
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox3');
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox4');
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox5');
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox6');
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox7');
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox8');
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox9');
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox10');
+    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox1').getTitle();
+    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox2').getTitle();
+    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox3').getTitle();
+    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox4').getTitle();
+    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox5').getTitle();
+    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox6').getTitle();
+    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox7').getTitle();
+    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox8').getTitle();
+    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox9').getTitle();
+    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.gif']").attr('rel','fancybox10').getTitle();
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox1');
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox2');
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox3');
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox4');
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox5');
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox6');
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox7');
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox8');
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox9');
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox10');
+    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox1').getTitle();
+    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox2').getTitle();
+    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox3').getTitle();
+    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox4').getTitle();
+    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox5').getTitle();
+    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox6').getTitle();
+    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox7').getTitle();
+    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox8').getTitle();
+    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox9').getTitle();
+    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.png']").attr('rel','fancybox10').getTitle();
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox1');
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox2');
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox3');
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox4');
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox5');
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox6');
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox7');
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox8');
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox9');
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox10');
+    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox1').getTitle();
+    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox2').getTitle();
+    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox3').getTitle();
+    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox4').getTitle();
+    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox5').getTitle();
+    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox6').getTitle();
+    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox7').getTitle();
+    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox8').getTitle();
+    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox9').getTitle();
+    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox10').getTitle();
 
   <?php }
 
   // If gallery type is by post but we are neither on home, category, tag or archive (so only one post or page is visible)
   else { ?>
 
-    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" });
+    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" }).getTitle();
 
   <?php }
   
@@ -279,11 +296,11 @@ function mfbfw_init() {
   // If gallery type is all
   elseif ($settings['galleryType'] == 'all') { ?>
 
-    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" });
-    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" });
+    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" }).getTitle();
 
   <?php }
 
@@ -292,8 +309,8 @@ function mfbfw_init() {
 
     echo $settings['customExpression'];
 
-  } 
-
+  }
+  
   // Now we call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel ?>
   jQuery("a[rel^='fancybox']").fancybox({
     'imageScale': <?php if ($settings['imageScale']) { echo "true"; } else { echo "false"; } ?>,
@@ -315,7 +332,7 @@ function mfbfw_init() {
 })
 
 </script>
-<?php echo "<!-- Fancybox for WordPress v". $settings['version'] ." -->"."\n";
+<?php echo "<!-- END Fancybox for WordPress -->"."\n";
 
 }
 
@@ -328,12 +345,38 @@ function mfbfw_admin_head() {
   <script type="text/javascript">
 
     jQuery(function(){
-      // Advanced Options Switcher
-      jQuery(document).ready(function(){
-        jQuery("#advOpsSwitch").click(function(){
-          jQuery(".advOpts").toggle("slow");
-        });
+
+      // Advanced Settings Switcher
+      jQuery("#advOpsSwitch").click(function(){
+        jQuery(".advOpts").toggle("slow");
       });
+
+      // Troubleshooting & Settings Switcher
+      jQuery("#troOpsSwitch").click(function(){
+        jQuery(".troOpts").toggle("slow");
+      });
+
+      // Hide Custom Expresion textarea if not needed
+      var galleryType = jQuery("input:radio[name=mfbfw_galleryType]:checked").val();
+
+      if (galleryType == "all") {
+        jQuery("#customExpressionBlock").css("display", "none");
+      } else if (galleryType == "post") {
+        jQuery("#customExpressionBlock").css("display", "none");
+      }
+
+      jQuery("#mfbfw_galleryTypeAll").click(function () {
+        jQuery("#customExpressionBlock").hide("slow");
+      });
+
+      jQuery("#mfbfw_galleryTypePost").click(function () {
+        jQuery("#customExpressionBlock").hide("slow");
+      });
+
+      jQuery("#mfbfw_galleryTypeCustom").click(function () {
+        jQuery("#customExpressionBlock").show("slow");
+      });
+
     })
 
   </script>
@@ -347,9 +390,19 @@ function mfbfw_admin_head() {
 function mfbfw_admin_menu() {
 
   require dirname(__FILE__) . '/admin.php';
-  
-  add_submenu_page('options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WordPress Options', 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
-  
+
+//  global $wp_version;
+//  $menutitle = '';
+//
+//  if ( version_compare( $wp_version, '2.6.999', '>' ) ) {
+//
+//    $menutitle = '<img src="' . WP_PLUGIN_URL .'/fancybox-for-wordpress/img/extra_menu.png" alt="" width="12" height="12" />' . ' ';
+//    $menutitle .= ('Fancybox for WP');
+//    add_options_page('Fancybox for WordPress Options', $menutitle, 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
+//  } else {
+    add_submenu_page('options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
+//  }
+
 }
 
 
