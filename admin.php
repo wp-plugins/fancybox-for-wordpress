@@ -380,9 +380,14 @@ function mfbfw_options_page() {
                   <?php _e('Make a gallery for all images on the page (default)', 'mfbfw'); ?>
                 </label><br />
 
+                <input id="mfbfw_galleryTypeAll" type="radio" value="none" name="mfbfw_galleryType"<?php if ($settings['galleryType'] == 'none') echo ' checked="yes"';?> />
+                <label for="mfbfw_galleryTypeAll">
+                  <?php _e('Do not group images in gallery automatically (use this if you want to make galleries manually with the <code>REL</code> attribute)', 'mfbfw'); ?>
+                </label><br />
+
                 <input id="mfbfw_galleryTypePost" type="radio" value="post" name="mfbfw_galleryType"<?php if ($settings['galleryType'] == 'post') echo ' checked="yes"';?> />
                 <label for="mfbfw_galleryTypePost">
-                  <?php _e('Make a gallery for each post', 'mfbfw'); ?>
+                  <?php _e('Make a gallery for each post (will only work if your theme uses <code>class="post"</code> on each post, which is common in WordPress', 'mfbfw'); ?>
                 </label><br />
 
                 <input id="mfbfw_galleryTypeCustom" type="radio" value="custom" name="mfbfw_galleryType"<?php if ($settings['galleryType'] == 'custom') echo ' checked="yes"';?> />
@@ -396,11 +401,15 @@ function mfbfw_options_page() {
                   <textarea rows="8" cols="30" name="mfbfw_customExpression" wrap="physical" id="mfbfw_customExpression"><?php echo ($settings['customExpression']); ?></textarea>
                 </label><br />
 
-                <small><em><?php _e('The custom expression has to apply the "rel=fancybox" attribute to the links where you want to use FancyBox.', 'mfbfw'); ?></em></small><br />
+                <small><strong><em><?php _e('Custom expression guidelines:', 'mfbfw'); ?></em></strong></small><br />
 
-                <small><em><?php _e('The attribute has to start with fancybox, but can end with however you like: "fancybox1", "fancybox2", "fancybox-custom" will work.', 'mfbfw'); ?></em></small><br />
+                <small><em><?php _e('The custom expression has to apply <code>class="fancybox"</code> to the links where you want to use FancyBox.', 'mfbfw'); ?></em></small><br />
 
-                <small><em><?php _e('(Do not call the fancybox() function here, the plugin does this for you.)', 'mfbfw'); ?></em></small><br /><br />
+                <small><em><?php _e('The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class.', 'mfbfw'); ?></em></small><br />
+
+                <small><em><?php _e('You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions.', 'mfbfw'); ?></em></small><br />
+
+                <small><em><?php _e('Do not call the <code>fancybox()</code> function here, the plugin does this for you.', 'mfbfw'); ?></em></small><br /><br />
 
                 </div>
 

@@ -2,8 +2,8 @@
 /*
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
-Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress. All images on a page are treated as a gallery allowing visitors to use Next and Previous buttons on the FancyBox frontend.
-Version: 2.5 Beta
+Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
+Version: 2.5
 Author: Jose Pardilla
 Author URI: http://moskis.net/
 */
@@ -12,7 +12,7 @@ Author URI: http://moskis.net/
 // When plugin is activated, update version, and set any new settings to default
 function mfbfw_install() {
 
-    update_option('mfbfw_active_version', '2.5 Beta');
+    update_option('mfbfw_active_version', '2.5');
 
     add_option('mfbfw_borderColor', '#BBBBBB');
     add_option('mfbfw_closeHorPos', 'right');
@@ -38,14 +38,14 @@ function mfbfw_install() {
 
     add_option('mfbfw_galleryType', 'all');
     add_option('mfbfw_customExpression',
-'// This example expression will group all the image links
-// make a gallery with them.
+'// This example expression will group all the image links in a page and make a gallery with them.
+// Each line adds support to a different image format: JPG, JPEG, GIF, PNG and BMP.
 
-jQuery("a:has(img)[href$=\'.jpg\']").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.jpeg\']").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.gif\']").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.png\']").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.bmp\']").attr({ rel: "fancybox" }).getTitle();');
+jQuery("a:has(img)[href$=\'.jpg\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.jpeg\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.gif\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.png\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+jQuery("a:has(img)[href$=\'.bmp\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();');
 
     add_option('mfbfw_nojQuery', '');
     add_option('mfbfw_jQnoConflict', 'on');
@@ -209,7 +209,7 @@ function mfbfw_init() {
 
   jQuery(function(){
 
-   // This copies the title of every IMG tag and add it to its parent A so that fancybox can use it
+   <?php // This copies the title of every IMG tag and add it to its parent A so that fancybox can use it ?>
    jQuery.fn.getTitle = function() {
      var arr = jQuery("a[rel^='fancybox']");
      jQuery.each(arr, function() {
@@ -220,8 +220,19 @@ function mfbfw_init() {
 
   <?php if ($settings['galleryType'] == 'post') {
 
-    // If gallery type is by post and we are on home, category, tag or archive
-    if (is_home() | is_category() | is_tag() | is_archive() ) { ?>
+    // Gallery type BY POST and we are on post or page (so only one post or page is visible)
+    if ( is_single() | is_page() ) { ?>
+
+    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" }).getTitle();
+
+  <?php }
+
+  // Gallery type BY POST, but we are neither on post or page, so we make a different rel attribute on each post
+  else { ?>
 
     jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox1').getTitle();
     jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpg']").attr('rel','fancybox2').getTitle();
@@ -279,28 +290,28 @@ function mfbfw_init() {
     jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.bmp']").attr('rel','fancybox10').getTitle();
 
   <?php }
-
-  // If gallery type is by post but we are neither on home, category, tag or archive (so only one post or page is visible)
-  else { ?>
-
-    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" }).getTitle();
-
-  <?php }
   
   }
 
-  // If gallery type is all
+  // Gallery type ALL
   elseif ($settings['galleryType'] == 'all') { ?>
 
-    jQuery("a:has(img)[href$='.jpg']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.jpeg']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.gif']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.png']").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.bmp']").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.jpeg']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.gif']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.png']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+    jQuery("a:has(img)[href$='.bmp']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+
+  <?php }
+
+  // Gallery type NONE
+  elseif ($settings['galleryType'] == 'none') { ?>
+
+    jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").getTitle();
+    jQuery("a:has(img)[href$='.jpeg']").addClass("fancybox").getTitle();
+    jQuery("a:has(img)[href$='.gif']").addClass("fancybox").getTitle();
+    jQuery("a:has(img)[href$='.png']").addClass("fancybox").getTitle();
+    jQuery("a:has(img)[href$='.bmp']").addClass("fancybox").getTitle();
 
   <?php }
 
@@ -312,7 +323,7 @@ function mfbfw_init() {
   }
   
   // Now we call fancybox and apply it on any link with a rel atribute that starts with "fancybox", with the options set on the admin panel ?>
-  jQuery("a[rel^='fancybox']").fancybox({
+  jQuery("a.fancybox").fancybox({
     'imageScale': <?php if ($settings['imageScale']) { echo "true"; } else { echo "false"; } ?>,
     'padding': <?php echo $settings['padding']; ?>,
     'zoomOpacity': <?php if ($settings['zoomOpacity']) { echo "true"; } else { echo "false"; } ?>,
