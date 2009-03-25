@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 2.5
+Stable tag: 2.5.1
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -22,13 +22,20 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 = Changelog =
 
+2.5.1 Updates:
+
+* Fixed the plugin not working when selecting Gallery Type "By Post"
+* Fixed a bug that would prevent the title in the IMG tag from being copied to the A tag in some cases
+* Fixed the Custom Expression showing in the Admin panel when other gallery types are selected
+
+
 2.5 Updates:
 
 * Support for localizations (Spanish and German localizations included)
 * Some parts of the code completely rewritten
 * Fixed fancybox files being loaded on the admin pages
 * New options for close button position, custom jquery expressions, iframe content
-* Options page mostly rewritten, better organized.
+* Options page mostly rewritten, better organized
 * Medium/advanced, troubleshooting/uninstall options collapsable, hidden by default
 * Better support guidelines and links on options page
 * Settings link on the Manage plugins page
@@ -41,9 +48,9 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 2.2 Updtades:
 
 * Updated to FancyBox 1.2.1
-* Added new settings to Options Page: Easing, padding size, border color.
-* Tweaked CSS to prevent some themes from adding unwanted styles to fancybox (especially background colors and link outlines).
-* Options Page reorganized in three sections: Appearance, Behaviour and Troubleshooting Settings, to make settings easier to find.
+* Added new settings to Options Page: Easing, padding size, border color
+* Tweaked CSS to prevent some themes from adding unwanted styles to fancybox (especially background colors and link outlines)
+* Options Page reorganized in three sections: Appearance, Behaviour and Troubleshooting Settings, to make settings easier to find
 
 
 2.1.1 Updtades:
@@ -53,14 +60,14 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 2.1 Updtades:
 
-* Fixed a major bug in 2.0 that prevented it from working until plugin's options page was visited.
-* Added two options for troubleshooting that might help in some cases if the plugin doesn't work: disable jQuery noConflict and skip jQuery call.
-* Additional fixes to caption CSS: Captions should look better now in Hybrid theme, child themes, and other situations where general table elements are improperly styled.
+* Fixed a major bug in 2.0 that prevented it from working until plugin's options page was visited
+* Added two options for troubleshooting that might help in some cases if the plugin doesn't work: disable jQuery noConflict and skip jQuery call
+* Additional fixes to caption CSS: Captions should look better now in Hybrid theme, child themes, and other situations where general table elements are improperly styled
 
 
 2.0 Updates:
 
-* Brand new Options Page in Admin Panel lets you easely customize many options: fancybox auto apply, image resize to fit, opacity fade while zooming, zoom speed, overlay on/off, overlay color, overlay opacity, close fancybox on image click, keep fancybox centered while scrolling.
+* Brand new Options Page in Admin Panel lets you easely customize many options: fancybox auto apply, image resize to fit, opacity fade while zooming, zoom speed, overlay on/off, overlay color, overlay opacity, close fancybox on image click, keep fancybox centered while scrolling
 * CSS completely updated for FancyBox 1.2.0
 * Captions fixed in IE
 
@@ -93,14 +100,14 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 1. Upload the `fancybox-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. That's it, [FancyBox](http://fancy.klade.lv/) will be automatically applied to all your image links and galleries.
-4. If you want to customize a bit the look and feel of FancyBox, go to the Options Page under General Options in the WordPress Admin panel.
+4. If you want to customize a bit the look and feel of FancyBox, go to the Options Page under General Options in the WordPress Admin panel
 
 
 == Screenshots ==
 
-1. Simple example of fancybox on a post. [Live demo here](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/).
-2. Basic settings on Options Page in the Admin Panel. This makes it very easy to customize the plugin to your needs.
-2. Full settings on Options Page.
+1. Simple example of fancybox on a post. [Live demo here](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/)
+2. Basic settings on Options Page in the Admin Panel. This makes it very easy to customize the plugin to your needs
+2. Full settings on Options Page
 
 
 == Frequently Asked Questions ==

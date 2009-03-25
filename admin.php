@@ -380,8 +380,8 @@ function mfbfw_options_page() {
                   <?php _e('Make a gallery for all images on the page (default)', 'mfbfw'); ?>
                 </label><br />
 
-                <input id="mfbfw_galleryTypeAll" type="radio" value="none" name="mfbfw_galleryType"<?php if ($settings['galleryType'] == 'none') echo ' checked="yes"';?> />
-                <label for="mfbfw_galleryTypeAll">
+                <input id="mfbfw_galleryTypeNone" type="radio" value="none" name="mfbfw_galleryType"<?php if ($settings['galleryType'] == 'none') echo ' checked="yes"';?> />
+                <label for="mfbfw_galleryTypeNone">
                   <?php _e('Do not group images in gallery automatically (use this if you want to make galleries manually with the <code>REL</code> attribute)', 'mfbfw'); ?>
                 </label><br />
 
