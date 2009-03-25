@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
 Tested up to: 2.7.1
-Stable tag: 2.2
+Stable tag: 2.5
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -13,18 +13,30 @@ Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
-All images on the page will be considered part of a gallery, allowing you and your visitors to navigate through them with the [FancyBox](http://fancy.klade.lv/) interface.
+You can easely customize almost anything you can think about fancybox: the border, margin width and color, zoom speed, animation type, close button position, overlay color and opacity and even more advanced option like several options to group images into galleries, and more...
 
-The plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY image links that open an image. This includes posts, the sidebar, etc.
-
-The requirements are that the link is an image (for example a thumbnail), and that it links to a JPG, PNG or GIF file (that will be the full size image).
-
-This plugin will NOT apply [FancyBox](http://fancy.klade.lv/) on text links, but i will implement a setting in the Options Page to customize this in future versions.
+By default, the plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY image links that open an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
 
 Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. After all, there's no reason why you shouldn't be already using WP2.7, is there? ;)
 
 
 = Changelog =
+
+2.5 Updates:
+
+* Support for localizations (Spanish and German localizations included)
+* Some parts of the code completely rewritten
+* Fixed fancybox files being loaded on the admin pages
+* New options for close button position, custom jquery expressions, iframe content
+* Options page mostly rewritten, better organized.
+* Medium/advanced, troubleshooting/uninstall options collapsable, hidden by default
+* Better support guidelines and links on options page
+* Settings link on the Manage plugins page
+* Custom expression hidden when not used
+* Title atribute on IMG tags is now copied to its parent A tag for better caption support
+* New uninstall options and better handling of new options when installing/updating
+* Cleans any old options no longer needed when plugin is activated/updated
+
 
 2.2 Updtades:
 
@@ -71,12 +83,6 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 * Moved images to /img/ folder
 
 
-= TODO List =
-
-* Custom expression field in Options page to specify aditional elements where FancyBox should be applied (for example "#moskislink" or "a.someclass:has(img)[href$='.gif']" )
-* Better support for inline content width adjustable window width and height.
-
-
 = Known Bugs =
 
 * Shadows not perfect yet on IE6/7, but close
@@ -92,8 +98,9 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 == Screenshots ==
 
-1. Simple example of fancybox applied to a wordpress page gallery. [Live demo here](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/).
-2. Options Page in the Admin Panel makes it very easy to customize the plugin to your needs.
+1. Simple example of fancybox on a post. [Live demo here](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/).
+2. Basic settings on Options Page in the Admin Panel. This makes it very easy to customize the plugin to your needs.
+2. Full settings on Options Page.
 
 
 == Frequently Asked Questions ==
@@ -102,13 +109,13 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 NO. I just ported it to WordPress. For more info on the FancyBox script itself [visit its website](http://fancy.klade.lv/home).
 
-= About future releases =
+= Help translate the plugin to your language =
 
-Future releases will continue to work without having to make any configuration, but i will provide an options page to allow customization of the [FancyBox](http://fancy.klade.lv/) effect, and being able to change where it is used in your blog.
+If you want to make a localization you can use the sources in the laguages folder and email me the PO and MO files (or just the PO) at jose (at) moskis.net. I will add it in the next release and if you want me to, i'll send you updated pot file a couple of days before future releases.
 
-= No worky, what now? =
+= The plugin does not work =
 
-First, try other versions of this plugin, and see if any version works for you. Version 1.2 uses the latest FancyBox which might not work well without jQuery 1.3.x or later.
+The most common problem is another plugin or your theme conflicting with the plugin. This is usually caused by some plugin that load jQuery directly instead of using the wp_enqueue_script function. Try following all the guidelines in the options page, and if necesary try the troubleshooting settings.
 
 If the plugin is not working or you find any bug/bad behaviour/conflict deactivate it and email me at jose (at) moskis.net with a description of the problem, and i'll take a look at it.
 
@@ -120,7 +127,7 @@ Don't hesitate to email me at jose (at) moskis.net with any thoughts about this 
 
 = How does the plugin exactly work? =
 
-First the plugin checks if your blog uses jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript wait for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
+First the plugin checks if your blog is using jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript wait for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
 
 = The plugin does not work with Mandingo theme =
 
@@ -135,4 +142,4 @@ After applying this fix everything seems to work perfectly.
 
 You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/) although there's nothing amazing to see, just a FancyBox simple implementation, that's the point ;)
 
-You can take a look at the code if you're curious, though. Most of it is in the Head section of the page.
+You can take a look at the code if you're curious, though. You will find it in the Head section of the page.
