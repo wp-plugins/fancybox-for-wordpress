@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FancyBox for WordPress Español\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fancybox-for-wordpress\n"
-"POT-Creation-Date: 2009-03-24 02:17+0000\n"
+"POT-Creation-Date: 2009-03-25 16:40+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jose Pardilla 'Th3 ProphetMan' <jose@moskis.net>\n"
 "Language-Team: Moskis <jose@moskis.net>\n"
@@ -234,85 +234,105 @@ msgid "Make a gallery for all images on the page (default)"
 msgstr "Incluir todas las imágenes de la página en una única galería (opción por defecto)"
 
 #: admin.php:385
-msgid "Make a gallery for each post"
-msgstr "Hacer una galería para cada entrada"
+msgid "Do not group images in gallery automatically (use this if you want to make galleries manually with the <code>REL</code> attribute)"
+msgstr "No agrupar im&aacute;genes en galer&iacute;as autom&aacute;ticamente (usa esta opci&oacute;n si quieres agrupar las imagenes manualmente con el atributo <code>REL</code>)"
 
 #: admin.php:390
+msgid "Make a gallery for each post (will only work if your theme uses <code>class=\"post\"</code> on each post, which is common in WordPress"
+msgstr "Hacer una galer&iacute;a para cada post (solo funcionar&aacute; si el tema usa <code>class=\"post\"</code> en cada post, que es lo m&aacute;s com&uacte;n en WordPress"
+
+#: admin.php:395
 msgid "Use a custom expression to apply FancyBox"
 msgstr "Aplicar FancyBox con una expresión personalizada"
 
-#: admin.php:399
-msgid "The custom expression has to apply the \"rel=fancybox\" attribute to the links where you want to use FancyBox."
-msgstr "La expresión personalizada tiene que aplicar el atributo \"rel=fancybox\" a los enlaces en los que quieras usar FancyBox."
+#: admin.php:404
+msgid "Custom expression guidelines:"
+msgstr "Indicaciones para expresiones personalizadas:"
 
-#: admin.php:401
-msgid "The attribute has to start with fancybox, but can end with however you like: \"fancybox1\", \"fancybox2\", \"fancybox-custom\" will work."
-msgstr "El atributo debe empezar por fancybox pero puede terminar como quieras:  \"fancybox1\", \"fancybox2\", \"fancybox-custom\" servirían."
+#: admin.php:406
+msgid "The custom expression has to apply <code>class=\"fancybox\"</code> to the links where you want to use FancyBox."
+msgstr "La expresión personalizada tiene que aplicar el atributo <code>class=\"fancybox\"</code> a los enlaces en los que quieras usar FancyBox."
 
-#: admin.php:403
-msgid "(Do not call the fancybox() function here, the plugin does this for you.)"
-msgstr "(No llames a la función fancybox() desde aquí, eso ya lo hace el plugin por tí.)"
+#: admin.php:408
+msgid "The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class."
+msgstr "La funci&oacute;n <code>addClass()</code> de jQuery es una buena forma de a&ntilde;adir el class a los links deseados."
 
-#: admin.php:419
+#: admin.php:410
+msgid "You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions."
+msgstr "Puedes usar <code>getTitle()</code> en tu expresi&oacute;n para copiar el atributo title desde el tag <code>IMG</code> al tag <code>A</code> para que FancyBox pueda mostrar el t&iacute;tulo de la imagen."
+
+#: admin.php:412
+msgid "Do not call the <code>fancybox()</code> function here, the plugin does this for you."
+msgstr "No llames a la función <code>fancybox()</code> desde aquí, eso ya lo hace el plugin por tí."
+
+#: admin.php:428
 msgid "Troubleshooting Settings"
 msgstr "Resolución de Problemas"
 
-#: admin.php:421
+#: admin.php:430
 msgid "Settings in this section should only be changed if you are having problems with the plugin!"
 msgstr "Las opciones de esta sección solo deben ser editadas si tienes problemas con el plugin!"
 
-#: admin.php:423
+#: admin.php:432
 msgid "If the plugin doesn't seem to work, first you should check for other plugins that may be conflicting with this one, especially other Lightbox, Slimbox, etc. Make sure all your plugins and WordPress itself are up to date (this plugin has only been tested in WordPress 2.7 and above)."
 msgstr "Si el plugin no funciona, lo primero que deberías hacer es comprobar que no haya un conflicto con otros plugins, especialmente otro tipo de Lightbox, Slimbox, etc. Asegúrate de que todos tus plugins y tu WordPress están actualizados (este plugin solo se ha testado con WordPress 2.7 y superiores)."
 
-#: admin.php:425
+#: admin.php:434
 msgid "Change them one at a time and test to see if they help. Remember that having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options."
 msgstr "Cámbialas de una en una y comprueba si solucionan tu problema. Recuqerda que usar un plugin de caché puede hacer que los cambios no surjan efecto inmediatamente, vacía el cache después de guardar los cambios or desactivalo hasta que termines de ajustar estas opciones."
 
-#: admin.php:431
+#: admin.php:440
 msgid "Do not call jQuery"
 msgstr "No cargar jQuery"
 
-#: admin.php:437
+#: admin.php:446
 msgid "Skip jQuery call. Use this only if jQuery is being loaded twice (default: off)"
 msgstr "Omitir llamada a jQuery. Usa esta opción sólo si jQuery se está cargando dos veces por error. (por defecto: desactivado)"
 
-#: admin.php:445
+#: admin.php:454
 msgid "jQuery \"noConflict\" Mode"
 msgstr "Modo jQuery \"noConflict\""
 
-#: admin.php:451
+#: admin.php:460
 msgid "Use jQuery noConflict mode (default: on)"
 msgstr "Usar parámetro noConflict de jQuery (por defecto: activado)"
 
-#: admin.php:454
+#: admin.php:463
 msgid "(Turning this off may cause problems if there are plugins activated that use other js framework like mootools, prototype, scriptaculous, etc.)"
 msgstr "(Desactivar esta opción puede causar problemas si hay plugins activadoes que usen otros frameworks javascript como Mootols, Prototype, Scriptaculous, etc.)"
 
-#: admin.php:463
+#: admin.php:472
 msgid "Uninstall"
 msgstr "Desinstalar"
 
-#: admin.php:465
+#: admin.php:474
 msgid "Like many other plugins, FancyBox for WordPress stores its settings on your WordPress' options database table. Actually, these settings are not using more than a couple of kilobytes of space, but if you want to completely uninstall this plugin, check the option below, then save changes, and <strong>when you deactivate the plugin</strong>, all its settings will be removed from the database."
 msgstr "Al igual que otros plugins, FancyBox for WordPress guarda sus opciones en la tabla de opciones de la base de datos de WordPress. En realidad, estas opcines no ocupam más que unos kilobytes de espacio, pero si quieres eliminar el plugin por completo, activa la siguiente opción, guarda los cambios, y <strong>cuando desactives el plugin</strong>, todas las opciones se eliminarán de la base de datos."
 
-#: admin.php:471
+#: admin.php:480
 msgid "Remove settings"
 msgstr "Eliminar Opciones"
 
-#: admin.php:477
+#: admin.php:486
 msgid "Remove Settings when plugin is deactivated from the \"Manage Plugins\" page. (default: off)"
 msgstr "Eliminar opciones cuando se desactive el plugin desde la página \"Gestionar Plugins\". (por defecto: desactivado)"
 
-#: admin.php:494
+#: admin.php:503
 msgid "Save Changes"
 msgstr "Guardar Cambios"
 
-#: fancybox.php:426
+#: fancybox.php:437
 msgid "Settings"
 msgstr "Opciones"
 
+#~ msgid "Make a gallery for each post"
+#~ msgstr "Hacer una galería para cada entrada"
+#~ msgid ""
+#~ "The attribute has to start with fancybox, but can end with however you "
+#~ "like: \"fancybox1\", \"fancybox2\", \"fancybox-custom\" will work."
+#~ msgstr ""
+#~ "El atributo debe empezar por fancybox pero puede terminar como quieras:  "
+#~ "\"fancybox1\", \"fancybox2\", \"fancybox-custom\" servirían."
 #~ msgid "Horizontal position of the close button (default: right)"
 #~ msgstr ""
 #~ "Posición horizontal del botón para cerrar FancyBox (por defecto: derecha)"

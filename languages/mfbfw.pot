@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fancybox-for-wordpress\n"
-"POT-Creation-Date: 2009-03-24 02:17+0000\n"
+"POT-Creation-Date: 2009-03-25 16:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,41 +278,61 @@ msgid "Make a gallery for all images on the page (default)"
 msgstr ""
 
 #: admin.php:385
-msgid "Make a gallery for each post"
+msgid ""
+"Do not group images in gallery automatically (use this if you want to make "
+"galleries manually with the <code>REL</code> attribute)"
 msgstr ""
 
 #: admin.php:390
+msgid ""
+"Make a gallery for each post (will only work if your theme uses <code>class="
+"\"post\"</code> on each post, which is common in WordPress"
+msgstr ""
+
+#: admin.php:395
 msgid "Use a custom expression to apply FancyBox"
 msgstr ""
 
-#: admin.php:399
+#: admin.php:404
+msgid "Custom expression guidelines:"
+msgstr ""
+
+#: admin.php:406
 msgid ""
-"The custom expression has to apply the \"rel=fancybox\" attribute to the "
+"The custom expression has to apply <code>class=\"fancybox\"</code> to the "
 "links where you want to use FancyBox."
 msgstr ""
 
-#: admin.php:401
+#: admin.php:408
 msgid ""
-"The attribute has to start with fancybox, but can end with however you like: "
-"\"fancybox1\", \"fancybox2\", \"fancybox-custom\" will work."
+"The jQuery <code>addClass()</code> function is a good way to add the class "
+"to the desired links conserving any existing class."
 msgstr ""
 
-#: admin.php:403
+#: admin.php:410
 msgid ""
-"(Do not call the fancybox() function here, the plugin does this for you.)"
+"You can use <code>getTitle()</code> in your expression to copy the title "
+"attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that "
+"FancyBox can show captions."
 msgstr ""
 
-#: admin.php:419
+#: admin.php:412
+msgid ""
+"Do not call the <code>fancybox()</code> function here, the plugin does this "
+"for you."
+msgstr ""
+
+#: admin.php:428
 msgid "Troubleshooting Settings"
 msgstr ""
 
-#: admin.php:421
+#: admin.php:430
 msgid ""
 "Settings in this section should only be changed if you are having problems "
 "with the plugin!"
 msgstr ""
 
-#: admin.php:423
+#: admin.php:432
 msgid ""
 "If the plugin doesn't seem to work, first you should check for other plugins "
 "that may be conflicting with this one, especially other Lightbox, Slimbox, "
@@ -320,7 +340,7 @@ msgid ""
 "plugin has only been tested in WordPress 2.7 and above)."
 msgstr ""
 
-#: admin.php:425
+#: admin.php:434
 msgid ""
 "Change them one at a time and test to see if they help. Remember that having "
 "a cache plugin may prevent changes from taking effect immidiately, so clear "
@@ -328,35 +348,35 @@ msgid ""
 "these options."
 msgstr ""
 
-#: admin.php:431
+#: admin.php:440
 msgid "Do not call jQuery"
 msgstr ""
 
-#: admin.php:437
+#: admin.php:446
 msgid ""
 "Skip jQuery call. Use this only if jQuery is being loaded twice (default: "
 "off)"
 msgstr ""
 
-#: admin.php:445
+#: admin.php:454
 msgid "jQuery \"noConflict\" Mode"
 msgstr ""
 
-#: admin.php:451
+#: admin.php:460
 msgid "Use jQuery noConflict mode (default: on)"
 msgstr ""
 
-#: admin.php:454
+#: admin.php:463
 msgid ""
 "(Turning this off may cause problems if there are plugins activated that use "
 "other js framework like mootools, prototype, scriptaculous, etc.)"
 msgstr ""
 
-#: admin.php:463
+#: admin.php:472
 msgid "Uninstall"
 msgstr ""
 
-#: admin.php:465
+#: admin.php:474
 msgid ""
 "Like many other plugins, FancyBox for WordPress stores its settings on your "
 "WordPress' options database table. Actually, these settings are not using "
@@ -366,20 +386,20 @@ msgid ""
 "removed from the database."
 msgstr ""
 
-#: admin.php:471
+#: admin.php:480
 msgid "Remove settings"
 msgstr ""
 
-#: admin.php:477
+#: admin.php:486
 msgid ""
 "Remove Settings when plugin is deactivated from the \"Manage Plugins\" page. "
 "(default: off)"
 msgstr ""
 
-#: admin.php:494
+#: admin.php:503
 msgid "Save Changes"
 msgstr ""
 
-#: fancybox.php:426
+#: fancybox.php:437
 msgid "Settings"
 msgstr ""

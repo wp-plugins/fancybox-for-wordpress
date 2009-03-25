@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FancyBox for WordPress\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fancybox-for-wordpress\n"
-"POT-Creation-Date: 2009-03-18 10:21+0000\n"
+"POT-Creation-Date: 2009-03-25 16:40+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jose Pardilla 'Th3 ProphetMan' <jose@moskis.net>\n"
 "Language-Team: \n"
@@ -71,227 +71,255 @@ msgstr ""
 msgid "Close Button Position"
 msgstr ""
 
-#: admin.php:123
-msgid "Horizontal position of the close button (default: right)"
+#: admin.php:115
+msgid "Left"
 msgstr ""
 
-#: admin.php:131
+#: admin.php:120
+msgid "Right (default)"
+msgstr ""
+
+#: admin.php:125
+msgid "Bottom"
+msgstr ""
+
+#: admin.php:130
+msgid "Top (default)"
+msgstr ""
+
+#: admin.php:138
 msgid "Padding"
 msgstr ""
 
-#: admin.php:137
+#: admin.php:144
 msgid "HTML color of the padding (default: #FFFFFF)"
 msgstr ""
 
-#: admin.php:142
+#: admin.php:149
 msgid "Padding size in pixels (default: 10)"
 msgstr ""
 
-#: admin.php:145
+#: admin.php:152
 msgid "(Set <strong>Border Color</strong> to \"#000000\" and <strong>Padding Size</strong> to \"0\" for the classic FancyBox look)"
 msgstr ""
 
-#: admin.php:152
+#: admin.php:159
 msgid "Overlay Options"
 msgstr ""
 
-#: admin.php:158
+#: admin.php:165
 msgid "Add overlay (default: on)"
 msgstr ""
 
-#: admin.php:163
+#: admin.php:170
 msgid "HTML color of the overlay (default: #666666)"
 msgstr ""
 
-#: admin.php:176
+#: admin.php:183
 msgid "Opacity of overlay. 0 is transparent, 1 is opaque (default: 0.3)"
 msgstr ""
 
-#: admin.php:184
+#: admin.php:191
 msgid "Zoom Options"
 msgstr ""
 
-#: admin.php:190
+#: admin.php:197
 msgid "Change content transparency during zoom animations (default: on)"
 msgstr ""
 
-#: admin.php:202
+#: admin.php:209
 msgid "Speed in miliseconds of the zooming-in animation (default: 500)"
 msgstr ""
 
-#: admin.php:214
+#: admin.php:221
 msgid "Speed in miliseconds of the zooming-out animation (default: 500)"
 msgstr ""
 
-#: admin.php:222
+#: admin.php:229
 msgid "Easing"
 msgstr ""
 
-#: admin.php:228
+#: admin.php:235
 msgid "Activate easing (default: off)"
 msgstr ""
 
-#: admin.php:241
+#: admin.php:248
 msgid "Easing method when opening FancyBox. (default: easeOutBack)"
 msgstr ""
 
-#: admin.php:254
+#: admin.php:261
 msgid "Easing method when closing FancyBox. (default: easeInBack)"
 msgstr ""
 
-#: admin.php:267
+#: admin.php:274
 msgid "Easing method when navigating through gallery items. (default: easeInOutQuart)"
 msgstr ""
 
-#: admin.php:270
+#: admin.php:277
 msgid "(There are 30 different easing methods, the first ones are the most boring. You can test them <a href=\"http://commadot.com/jquery/easing.php\" target=\"_blank\">here</a> or <a href=\"http://hosted.zeh.com.br/mctween/animationtypes.html\" target=\"_blank\">here</a>)"
 msgstr ""
 
-#: admin.php:279
-msgid "Show/Hide Advanced Options"
-msgstr ""
-
-#: admin.php:284
-msgid "Behavior Settings <span style=\"color:orange\">(medium)</span>"
-msgstr ""
-
 #: admin.php:286
-msgid "The following settings should be left on default unless you know what you are doing."
+msgid "Show/Hide Advanced Settings"
+msgstr ""
+
+#: admin.php:287
+msgid "Show/Hide Troubleshooting &amp; Uninstall Settings"
 msgstr ""
 
 #: admin.php:292
+msgid "Behavior Settings <span style=\"color:orange\">(medium)</span>"
+msgstr ""
+
+#: admin.php:294
+msgid "The following settings should be left on default unless you know what you are doing."
+msgstr ""
+
+#: admin.php:300
 msgid "Auto Resize to Fit"
 msgstr ""
 
-#: admin.php:298
+#: admin.php:306
 msgid "Scale images to fit in viewport (default: on)"
 msgstr ""
 
-#: admin.php:306
+#: admin.php:314
 msgid "Center on Scroll"
 msgstr ""
 
-#: admin.php:312
+#: admin.php:320
 msgid "Keep image in the center of the browser window when scrolling (default: on)"
 msgstr ""
 
-#: admin.php:320
+#: admin.php:328
 msgid "Close on Click"
 msgstr ""
 
-#: admin.php:326
+#: admin.php:334
 msgid "Close FancyBox by clicking on the image (default: off)"
 msgstr ""
 
-#: admin.php:329
+#: admin.php:337
 msgid "(You may want to leave this off if you display iframed or inline content and it containts clickable elements - for example: play buttons for movies, links to other pages)"
 msgstr ""
 
-#: admin.php:336
-msgid "Frame Size"
-msgstr ""
-
-#: admin.php:342
-msgid "Width in pixels of FancyBox when showing iframe content (default: 640)"
-msgstr ""
-
 #: admin.php:347
-msgid "Height in pixels of FancyBox when showing iframe content (default: 500)"
-msgstr ""
-
-#: admin.php:358
 msgid "Gallery Settings <span style=\"color:red\">(advanced)</span>"
 msgstr ""
 
-#: admin.php:360
+#: admin.php:349
 msgid "Here you can choose if you want the plugin to group all images into a gallery, or make a gallery for each post. You can also define you own jQuery expression if you like."
 msgstr ""
 
+#: admin.php:355
+msgid "Frame Size"
+msgstr ""
+
+#: admin.php:361
+msgid "Width in pixels of FancyBox when showing iframe content (default: 640)"
+msgstr ""
+
 #: admin.php:366
+msgid "Height in pixels of FancyBox when showing iframe content (default: 500)"
+msgstr ""
+
+#: admin.php:374
 msgid "Gallery Type"
 msgstr ""
 
-#: admin.php:372
+#: admin.php:380
 msgid "Make a gallery for all images on the page (default)"
 msgstr ""
 
-#: admin.php:377
-msgid "Make a gallery for each post"
+#: admin.php:385
+msgid "Do not group images in gallery automatically (use this if you want to make galleries manually with the <code>REL</code> attribute)"
 msgstr ""
 
-#: admin.php:382
-msgid "Use the following custom expression to apply FancyBox"
+#: admin.php:390
+msgid "Make a gallery for each post (will only work if your theme uses <code>class=\"post\"</code> on each post, which is common in WordPress"
 msgstr ""
 
-#: admin.php:389
-msgid "The custom expression has to apply the \"rel=fancybox\" attribute to the links where you want to use FancyBox."
+#: admin.php:395
+msgid "Use a custom expression to apply FancyBox"
 msgstr ""
 
-#: admin.php:391
-msgid "The attribute has to start with fancybox, but can end with however you like: \"fancybox1\", \"fancybox2\", \"fancybox-custom\" will work."
+#: admin.php:404
+msgid "Custom expression guidelines:"
 msgstr ""
 
-#: admin.php:393
-msgid "(Do not call the fancybox() function here, the plugin does this for you.)"
+#: admin.php:406
+msgid "The custom expression has to apply <code>class=\"fancybox\"</code> to the links where you want to use FancyBox."
 msgstr ""
 
-#: admin.php:405
+#: admin.php:408
+msgid "The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class."
+msgstr ""
+
+#: admin.php:410
+msgid "You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions."
+msgstr ""
+
+#: admin.php:412
+msgid "Do not call the <code>fancybox()</code> function here, the plugin does this for you."
+msgstr ""
+
+#: admin.php:428
 msgid "Troubleshooting Settings"
 msgstr ""
 
-#: admin.php:407
+#: admin.php:430
 msgid "Settings in this section should only be changed if you are having problems with the plugin!"
 msgstr ""
 
-#: admin.php:409
+#: admin.php:432
 msgid "If the plugin doesn't seem to work, first you should check for other plugins that may be conflicting with this one, especially other Lightbox, Slimbox, etc. Make sure all your plugins and WordPress itself are up to date (this plugin has only been tested in WordPress 2.7 and above)."
 msgstr ""
 
-#: admin.php:411
+#: admin.php:434
 msgid "Change them one at a time and test to see if they help. Remember that having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options."
 msgstr ""
 
-#: admin.php:417
+#: admin.php:440
 msgid "Do not call jQuery"
 msgstr ""
 
-#: admin.php:423
+#: admin.php:446
 msgid "Skip jQuery call. Use this only if jQuery is being loaded twice (default: off)"
 msgstr ""
 
-#: admin.php:431
+#: admin.php:454
 msgid "jQuery \"noConflict\" Mode"
 msgstr ""
 
-#: admin.php:437
+#: admin.php:460
 msgid "Use jQuery noConflict mode (default: on)"
 msgstr ""
 
-#: admin.php:440
+#: admin.php:463
 msgid "(Turning this off may cause problems if there are plugins activated that use other js framework like mootools, prototype, scriptaculous, etc.)"
 msgstr ""
 
-#: admin.php:449
+#: admin.php:472
 msgid "Uninstall"
 msgstr ""
 
-#: admin.php:451
+#: admin.php:474
 msgid "Like many other plugins, FancyBox for WordPress stores its settings on your WordPress' options database table. Actually, these settings are not using more than a couple of kilobytes of space, but if you want to completely uninstall this plugin, check the option below, then save changes, and <strong>when you deactivate the plugin</strong>, all its settings will be removed from the database."
 msgstr ""
 
-#: admin.php:457
+#: admin.php:480
 msgid "Remove settings"
 msgstr ""
 
-#: admin.php:463
+#: admin.php:486
 msgid "Remove Settings when plugin is deactivated from the \"Manage Plugins\" page. (default: off)"
 msgstr ""
 
-#: admin.php:478
+#: admin.php:503
 msgid "Save Changes"
 msgstr ""
 
-#: fancybox.php:373
+#: fancybox.php:437
 msgid "Settings"
 msgstr ""
 
