@@ -37,15 +37,7 @@ function mfbfw_install() {
     add_option('mfbfw_frameHeight', '500');
 
     add_option('mfbfw_galleryType', 'all');
-    add_option('mfbfw_customExpression',
-'// This example expression will group all the image links in a page and make a gallery with them.
-// Each line adds support to a different image format: JPG, JPEG, GIF, PNG and BMP.
-
-jQuery("a:has(img)[href$=\'.jpg\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.jpeg\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.gif\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.png\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-jQuery("a:has(img)[href$=\'.bmp\']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();');
+    add_option('mfbfw_customExpression', 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();');
 
     add_option('mfbfw_nojQuery', '');
     add_option('mfbfw_jQnoConflict', 'on');
@@ -209,85 +201,36 @@ function mfbfw_init() {
 
   jQuery(function(){
 
-   <?php // This copies the title of every IMG tag and adds it to its parent A so that fancybox can use it ?>
-   jQuery.fn.getTitle = function() {
+    <?php // This copies the title of every IMG tag and adds it to its parent A so that fancybox can use it ?>
+    jQuery.fn.getTitle = function() {
      var arr = jQuery("a.fancybox");
      jQuery.each(arr, function() {
        var title = jQuery(this).children("img").attr("title");
        jQuery(this).attr('title',title);
      })
-   }
+    }
+
+    // Supported file extensions
+    var thumbnails = 'a:has(img)[href$=".bmp"],a:has(img)[href$=".gif"],a:has(img)[href$=".jpg"],a:has(img)[href$=".jpeg"],a:has(img)[href$=".png"],a:has(img)[href$=".BMP"],a:has(img)[href$=".GIF"],a:has(img)[href$=".JPG"],a:has(img)[href$=".JPEG"],a:has(img)[href$=".PNG"]';
 
   <?php if ($settings['galleryType'] == 'post') {
 
     // Gallery type BY POST and we are on post or page (so only one post or page is visible)
     if ( is_single() | is_page() ) { ?>
 
-    jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.jpeg']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.gif']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.png']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.bmp']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+    jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();
 
   <?php }
 
   // Gallery type BY POST, but we are neither on post or page, so we make a different rel attribute on each post
   else { ?>
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox1').getTitle();
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox2').getTitle();
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox3').getTitle();
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox4').getTitle();
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox5').getTitle();
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox6').getTitle();
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox7').getTitle();
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox8').getTitle();
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox9').getTitle();
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.jpg']").addClass("fancybox").attr('rel','fancybox10').getTitle();
+    var posts = jQuery('.post');
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox1').getTitle();
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox2').getTitle();
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox3').getTitle();
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox4').getTitle();
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox5').getTitle();
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox6').getTitle();
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox7').getTitle();
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox8').getTitle();
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox9').getTitle();
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.jpeg']").addClass("fancybox").attr('rel','fancybox10').getTitle();
+    posts.each(function() {
+      jQuery(this).find(thumbnails).addClass("fancybox").attr('rel','fancybox'+posts.index(this)).getTitle()
+    });
 
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox1').getTitle();
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox2').getTitle();
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox3').getTitle();
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox4').getTitle();
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox5').getTitle();
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox6').getTitle();
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox7').getTitle();
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox8').getTitle();
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox9').getTitle();
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.gif']").addClass("fancybox").attr('rel','fancybox10').getTitle();
-
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox1').getTitle();
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox2').getTitle();
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox3').getTitle();
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox4').getTitle();
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox5').getTitle();
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox6').getTitle();
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox7').getTitle();
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox8').getTitle();
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox9').getTitle();
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.png']").addClass("fancybox").attr('rel','fancybox10').getTitle();
-
-    jQuery('.post:eq(0)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox1').getTitle();
-    jQuery('.post:eq(1)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox2').getTitle();
-    jQuery('.post:eq(2)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox3').getTitle();
-    jQuery('.post:eq(3)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox4').getTitle();
-    jQuery('.post:eq(4)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox5').getTitle();
-    jQuery('.post:eq(5)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox6').getTitle();
-    jQuery('.post:eq(6)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox7').getTitle();
-    jQuery('.post:eq(7)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox8').getTitle();
-    jQuery('.post:eq(8)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox9').getTitle();
-    jQuery('.post:eq(9)').contents().find("a:has(img)[href$='.bmp']").addClass("fancybox").attr('rel','fancybox10').getTitle();
 
   <?php }
   
@@ -296,22 +239,14 @@ function mfbfw_init() {
   // Gallery type ALL
   elseif ($settings['galleryType'] == 'all') { ?>
 
-    jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.jpeg']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.gif']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.png']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
-    jQuery("a:has(img)[href$='.bmp']").addClass("fancybox").attr({ rel: "fancybox" }).getTitle();
+    jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();
 
   <?php }
 
   // Gallery type NONE
   elseif ($settings['galleryType'] == 'none') { ?>
 
-    jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").getTitle();
-    jQuery("a:has(img)[href$='.jpeg']").addClass("fancybox").getTitle();
-    jQuery("a:has(img)[href$='.gif']").addClass("fancybox").getTitle();
-    jQuery("a:has(img)[href$='.png']").addClass("fancybox").getTitle();
-    jQuery("a:has(img)[href$='.bmp']").addClass("fancybox").getTitle();
+    jQuery(thumbnails).addClass("fancybox").getTitle();
 
   <?php }
 
@@ -422,7 +357,7 @@ function mfbfw_admin_menu() {
 function mfbfw_textdomain() {
 
   if (function_exists('load_plugin_textdomain')) {
-    load_plugin_textdomain('mfbfw', 'wp-content/plugins/fancybox-for-wordpress/languages', 'fancybox-for-wordpress/languages');
+    load_plugin_textdomain('mfbfw', WP_PLUGIN_URL . '/fancybox-for-wordpress/languages', 'fancybox-for-wordpress/languages');
   }
 
 }
@@ -444,6 +379,38 @@ function mfbfw_plugin_action_links($links, $file) {
 }
 
 
+// Load text domain
+function mfbfw_admin_init() {
+
+    register_setting('mfbfw-options', 'mfbfw_borderColor');
+    register_setting('mfbfw-options', 'mfbfw_closeHorPos');
+    register_setting('mfbfw-options', 'mfbfw_closeVerPos');
+    register_setting('mfbfw-options', 'mfbfw_paddingColor');
+    register_setting('mfbfw-options', 'mfbfw_padding');
+    register_setting('mfbfw-options', 'mfbfw_overlayShow');
+    register_setting('mfbfw-options', 'mfbfw_overlayColor');
+    register_setting('mfbfw-options', 'mfbfw_overlayOpacity');
+    register_setting('mfbfw-options', 'mfbfw_zoomOpacity');
+    register_setting('mfbfw-options', 'mfbfw_zoomSpeedIn');
+    register_setting('mfbfw-options', 'mfbfw_zoomSpeedOut');
+    register_setting('mfbfw-options', 'mfbfw_easing');
+    register_setting('mfbfw-options', 'mfbfw_easingIn');
+    register_setting('mfbfw-options', 'mfbfw_easingOut');
+    register_setting('mfbfw-options', 'mfbfw_easingChange');
+    register_setting('mfbfw-options', 'mfbfw_imageScale');
+    register_setting('mfbfw-options', 'mfbfw_centerOnScroll');
+    register_setting('mfbfw-options', 'mfbfw_hideOnContentClick');
+    register_setting('mfbfw-options', 'mfbfw_frameWidth');
+    register_setting('mfbfw-options', 'mfbfw_frameHeight');
+    register_setting('mfbfw-options', 'mfbfw_galleryType');
+    register_setting('mfbfw-options', 'mfbfw_customExpression');
+    register_setting('mfbfw-options', 'mfbfw_nojQuery');
+    register_setting('mfbfw-options', 'mfbfw_jQnoConflict');
+    register_setting('mfbfw-options', 'mfbfw_uninstall');
+
+}
+
+
 
 // Actions
 add_action('init', 'mfbfw_textdomain');           // Load Text Domain
@@ -452,6 +419,7 @@ add_action('wp_head', 'mfbfw_css');               // Fancybox Stylesheet
 add_action('wp_head', 'mfbfw_init');              // Initiate Fancybox
 add_action('admin_head', 'mfbfw_admin_head');     // Admin Panel Head
 add_action('admin_menu', 'mfbfw_admin_menu');     // Admin Panel Page
+add_action('admin_init', 'mfbfw_admin_init');     // Register options
 
 
 // Filters

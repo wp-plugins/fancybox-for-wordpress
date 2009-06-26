@@ -86,7 +86,12 @@ function mfbfw_options_page() {
 
     <form method="post" action="options.php" id="options">
 
-      <?php	echo wp_nonce_field('update-options'); ?>
+      <?php
+      
+      wp_nonce_field('update-options');
+      settings_fields('mfbfw-options');
+
+      ?>
 
       <table class="form-table" style="clear:none;">
         <tbody>
@@ -398,18 +403,28 @@ function mfbfw_options_page() {
                 <div id="customExpressionBlock">
 
                 <label for="mfbfw_customExpression">
-                  <textarea rows="8" cols="30" name="mfbfw_customExpression" wrap="physical" id="mfbfw_customExpression"><?php echo ($settings['customExpression']); ?></textarea>
+                  <textarea rows="10" cols="50" class="large-text code" name="mfbfw_customExpression" wrap="physical" id="mfbfw_customExpression"><?php echo ($settings['customExpression']); ?></textarea>
                 </label><br />
 
                 <small><strong><em><?php _e('Custom expression guidelines:', 'mfbfw'); ?></em></strong></small><br />
 
-                <small><em><?php _e('The custom expression has to apply <code>class="fancybox"</code> to the links where you want to use FancyBox.', 'mfbfw'); ?></em></small><br />
+                <small><em><?php _e('&middot; The custom expression has to apply <code>class="fancybox"</code> to the links where you want to use FancyBox. Do not call the <code>fancybox()</code> function here, the plugin does this for you.', 'mfbfw'); ?></em></small><br />
 
-                <small><em><?php _e('The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class.', 'mfbfw'); ?></em></small><br />
+                <small><em><?php _e('&middot; The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class.', 'mfbfw'); ?></em></small><br />
 
-                <small><em><?php _e('You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions.', 'mfbfw'); ?></em></small><br />
+                <small><em><?php _e('&middot; You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions.', 'mfbfw'); ?></em></small><br />
 
-                <small><em><?php _e('Do not call the <code>fancybox()</code> function here, the plugin does this for you.', 'mfbfw'); ?></em></small><br /><br />
+                <small><em><?php _e('&middot; You can use <code>jQuery(thumbnails)</code> like in the example expression to apply FancyBox to thumbnails that link to these extensions: BMP, GIF, JPG, JPEG, PNG (both lowercase and uppercase).', 'mfbfw'); ?></em></small><br />
+
+                <small><em><?php _e('&middot; If you want to do it manually you can use something like <code>jQuery("a:has(img)[href$=\'.jpg\']")</code> or whatever works for you.', 'mfbfw'); ?></em></small><br />
+
+                <small><em><?php _e('See the <a href="http://docs.jquery.com/" target="_blank">jQuery Documentation</a> for more help.', 'mfbfw'); ?></em></small><br /><br />
+
+                <small><strong><em><?php _e('Examples:', 'mfbfw'); ?></em></strong></small><br />
+
+                <small><em><code>jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();</code></em></small><br />
+
+                <small><em><code>jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").attr("rel","fancybox").getTitle();</code></em></small><br /><br />
 
                 </div>
 
@@ -497,7 +512,6 @@ function mfbfw_options_page() {
 
 
       <input type="hidden" name="action" value="update" />
-      <input type="hidden" name="page_options" value="mfbfw_autoApply,mfbfw_imageScale,mfbfw_borderColor,mfbfw_closeHorPos,mfbfw_closeVerPos,mfbfw_padding,mfbfw_paddingColor,mfbfw_zoomOpacity,mfbfw_zoomSpeedIn,mfbfw_zoomSpeedOut,mfbfw_overlayShow,mfbfw_overlayColor,mfbfw_overlayOpacity,mfbfw_easing,mfbfw_easingIn,mfbfw_easingOut,mfbfw_easingChange,mfbfw_hideOnContentClick,mfbfw_centerOnScroll,mfbfw_noTextLinks,mfbfw_galleryType,mfbfw_customExpression,mfbfw_frameWidth,mfbfw_frameHeight,mfbfw_nojQuery,mfbfw_jQnoConflict,mfbfw_uninstall" />
 
       <p class="submit">
         <input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes','mfbfw'); ?>" />
