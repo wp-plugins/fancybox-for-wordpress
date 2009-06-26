@@ -3,8 +3,8 @@ Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
-Tested up to: 2.7.1
-Stable tag: 2.5.1
+Tested up to: 2.8
+Stable tag: 2.6.0
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -15,12 +15,27 @@ Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done
 
 You can easely customize almost anything you can think about fancybox: the border, margin width and color, zoom speed, animation type, close button position, overlay color and opacity and even more advanced option like several options to group images into galleries, and more...
 
-By default, the plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY image links that open an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
+By default, the plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY thumbnails that link directly to an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
 
 Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. After all, there's no reason why you shouldn't be already using WP2.7, is there? ;)
 
 
 = Changelog =
+
+2.6.0 Updates:
+
+* Optimized the JavaScript code used to apply FancyBox
+* Updated Custom Expression section in Options Page
+* Fixed uppercase image extensions not being recognized
+* CSS is now loaded before the JavaScript for better parallelization
+* jquery.easing.1.3.js compressed (from 8,10kb to 3,47kb) and renamed to jquery.easing.1.3.pack.js
+* Added Turkish translation (some strings missing)
+* Added Japanese translation (some strings missing)
+* Updated Spanish translation
+* Updated to use new Plugin API in WP2.7 for better forward compatibility
+* Removed /wp-content/ reference in fancybox.php for better WP2.8 support
+* Optimized some code readability
+
 
 2.5.1 Updates:
 
@@ -92,7 +107,8 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 = Known Bugs =
 
-* Shadows not perfect yet on IE6/7, but close
+* Shadows not perfect on IE6/7
+* Options page may not work on WordPress MU
 
 
 == Installation ==
