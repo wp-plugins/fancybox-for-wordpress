@@ -14,32 +14,32 @@ function mfbfw_install() {
 
     update_option('mfbfw_active_version', '2.5.1');
 
-    add_option('mfbfw_borderColor', '#BBBBBB');
-    add_option('mfbfw_closeHorPos', 'right');
-    add_option('mfbfw_closeVerPos', 'top');
-    add_option('mfbfw_paddingColor', '#FFFFFF');
-    add_option('mfbfw_padding', '10');
-    add_option('mfbfw_overlayShow', 'on');
-    add_option('mfbfw_overlayColor', '#666666');
+    add_option('mfbfw_borderColor',    '#BBBBBB');
+    add_option('mfbfw_closeHorPos',    'right');
+    add_option('mfbfw_closeVerPos',    'top');
+    add_option('mfbfw_paddingColor',   '#FFFFFF');
+    add_option('mfbfw_padding',        '10');
+    add_option('mfbfw_overlayShow',    'on');
+    add_option('mfbfw_overlayColor',   '#666666');
     add_option('mfbfw_overlayOpacity', '0.3');
-    add_option('mfbfw_zoomOpacity', 'on');
-    add_option('mfbfw_zoomSpeedIn', '500');
-    add_option('mfbfw_zoomSpeedOut', '500');
-    add_option('mfbfw_easing', '');
-    add_option('mfbfw_easingIn', 'easeOutBack');
-    add_option('mfbfw_easingOut', 'easeInBack');
-    add_option('mfbfw_easingChange', 'easeInOutQuart');
+    add_option('mfbfw_zoomOpacity',    'on');
+    add_option('mfbfw_zoomSpeedIn',    '500');
+    add_option('mfbfw_zoomSpeedOut',   '500');
+    add_option('mfbfw_easing',         '');
+    add_option('mfbfw_easingIn',       'easeOutBack');
+    add_option('mfbfw_easingOut',      'easeInBack');
+    add_option('mfbfw_easingChange',   'easeInOutQuart');
 
-    add_option('mfbfw_imageScale', 'on');
-    add_option('mfbfw_centerOnScroll', 'on');
+    add_option('mfbfw_imageScale',         'on');
+    add_option('mfbfw_centerOnScroll',     'on');
     add_option('mfbfw_hideOnContentClick', '');
-    add_option('mfbfw_frameWidth', '640');
-    add_option('mfbfw_frameHeight', '500');
+    add_option('mfbfw_frameWidth',         '640');
+    add_option('mfbfw_frameHeight',        '500');
 
-    add_option('mfbfw_galleryType', 'all');
+    add_option('mfbfw_galleryType',      'all');
     add_option('mfbfw_customExpression', 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();');
 
-    add_option('mfbfw_nojQuery', '');
+    add_option('mfbfw_nojQuery',     '');
     add_option('mfbfw_jQnoConflict', 'on');
 
     add_option('mfbfw_uninstall', '');
@@ -102,32 +102,32 @@ function mfbfw_get_settings() {
 
     'version' => get_option('mfbfw_active_version'),
 
-    'borderColor' => get_option('mfbfw_borderColor'),
-    'closeHorPos' => get_option('mfbfw_closeHorPos'),
-    'closeVerPos' => get_option('mfbfw_closeVerPos'),
-    'paddingColor' => get_option('mfbfw_paddingColor'),
-    'padding' => get_option('mfbfw_padding'),
-    'overlayShow' => get_option('mfbfw_overlayShow'),
-    'overlayColor' => get_option('mfbfw_overlayColor'),
+    'borderColor'    => get_option('mfbfw_borderColor'),
+    'closeHorPos'    => get_option('mfbfw_closeHorPos'),
+    'closeVerPos'    => get_option('mfbfw_closeVerPos'),
+    'paddingColor'   => get_option('mfbfw_paddingColor'),
+    'padding'        => get_option('mfbfw_padding'),
+    'overlayShow'    => get_option('mfbfw_overlayShow'),
+    'overlayColor'   => get_option('mfbfw_overlayColor'),
     'overlayOpacity' => get_option('mfbfw_overlayOpacity'),
-    'zoomOpacity' => get_option('mfbfw_zoomOpacity'),
-    'zoomSpeedIn' => get_option('mfbfw_zoomSpeedIn'),
-    'zoomSpeedOut' => get_option('mfbfw_zoomSpeedOut'),
-    'easing' => get_option('mfbfw_easing'),
-    'easingIn' => get_option('mfbfw_easingIn'),
-    'easingOut' => get_option('mfbfw_easingOut'),
-    'easingChange' => get_option('mfbfw_easingChange'),
+    'zoomOpacity'    => get_option('mfbfw_zoomOpacity'),
+    'zoomSpeedIn'    => get_option('mfbfw_zoomSpeedIn'),
+    'zoomSpeedOut'   => get_option('mfbfw_zoomSpeedOut'),
+    'easing'         => get_option('mfbfw_easing'),
+    'easingIn'       => get_option('mfbfw_easingIn'),
+    'easingOut'      => get_option('mfbfw_easingOut'),
+    'easingChange'   => get_option('mfbfw_easingChange'),
 
-    'imageScale' => get_option('mfbfw_imageScale'),
-    'centerOnScroll' => get_option('mfbfw_centerOnScroll'),
+    'imageScale'         => get_option('mfbfw_imageScale'),
+    'centerOnScroll'     => get_option('mfbfw_centerOnScroll'),
     'hideOnContentClick' => get_option('mfbfw_hideOnContentClick'),
-    'frameWidth' => get_option('mfbfw_frameWidth'),
-    'frameHeight' => get_option('mfbfw_frameHeight'),
+    'frameWidth'         => get_option('mfbfw_frameWidth'),
+    'frameHeight'        => get_option('mfbfw_frameHeight'),
 
-    'galleryType' => get_option('mfbfw_galleryType'),
+    'galleryType'      => get_option('mfbfw_galleryType'),
     'customExpression' => get_option('mfbfw_customExpression'),
 
-    'nojQuery' => get_option('mfbfw_nojQuery'),
+    'nojQuery'     => get_option('mfbfw_nojQuery'),
     'jQnoConflict' => get_option('mfbfw_jQnoConflict'),
 
     'uninstall' => get_option('mfbfw_uninstall')
@@ -158,7 +158,7 @@ function mfbfw_load() {
 
     if (get_option('mfbfw_easing')) {
 
-      wp_enqueue_script('jqueryeasing', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.easing.1.3.js', array('jquery'), '1.3.2'); // Load easing javascript file if required
+      wp_enqueue_script('jqueryeasing', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.easing.1.3.pack.js', array('jquery'), '1.3.2'); // Load easing javascript file if required
 
     }
 
@@ -172,7 +172,7 @@ function mfbfw_css() {
 
   $settings = mfbfw_get_settings();
 
-  echo "\n"."<!-- Fancybox for WordPress v". $settings['version'] ." -->"."\n".'<link rel="stylesheet" href="'.WP_PLUGIN_URL.'/fancybox-for-wordpress/fancybox.css" type="text/css" media="screen" />'."\n";
+  echo "\n".'<link rel="stylesheet" href="'.WP_PLUGIN_URL.'/fancybox-for-wordpress/fancybox.css" type="text/css" media="screen" />'."\n";
 
   ?>
 
@@ -192,6 +192,8 @@ function mfbfw_css() {
 function mfbfw_init() {
   
   $settings = mfbfw_get_settings();
+
+  echo "\n"."\n"."<!-- Fancybox for WordPress v". $settings['version'] ." -->"."\n";
   
   ?>
 
@@ -203,11 +205,11 @@ function mfbfw_init() {
 
     <?php // This copies the title of every IMG tag and adds it to its parent A so that fancybox can use it ?>
     jQuery.fn.getTitle = function() {
-     var arr = jQuery("a.fancybox");
-     jQuery.each(arr, function() {
-       var title = jQuery(this).children("img").attr("title");
-       jQuery(this).attr('title',title);
-     })
+      var arr = jQuery("a.fancybox");
+      jQuery.each(arr, function() {
+        var title = jQuery(this).children("img").attr("title");
+        jQuery(this).attr('title',title);
+      })
     }
 
     // Supported file extensions
@@ -338,17 +340,7 @@ function mfbfw_admin_menu() {
 
   require dirname(__FILE__) . '/admin.php';
 
-//  global $wp_version;
-//  $menutitle = '';
-//
-//  if ( version_compare( $wp_version, '2.6.999', '>' ) ) {
-//
-//    $menutitle = '<img src="' . WP_PLUGIN_URL .'/fancybox-for-wordpress/img/extra_menu.png" alt="" width="12" height="12" />' . ' ';
-//    $menutitle .= ('Fancybox for WP');
-//    add_options_page('Fancybox for WordPress Options', $menutitle, 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
-//  } else {
-    add_submenu_page('options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
-//  }
+  add_submenu_page('options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
 
 }
 
@@ -415,7 +407,7 @@ function mfbfw_admin_init() {
 // Actions
 add_action('init', 'mfbfw_textdomain');           // Load Text Domain
 add_action('wp_print_scripts', 'mfbfw_load');     // Load FancyBox Script
-add_action('wp_head', 'mfbfw_css');               // Fancybox Stylesheet
+add_action('wp_print_styles', 'mfbfw_css');       // Fancybox Stylesheet
 add_action('wp_head', 'mfbfw_init');              // Initiate Fancybox
 add_action('admin_head', 'mfbfw_admin_head');     // Admin Panel Head
 add_action('admin_menu', 'mfbfw_admin_menu');     // Admin Panel Page
