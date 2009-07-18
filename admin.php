@@ -355,6 +355,22 @@ function mfbfw_options_page() {
 
       <table class="form-table" style="clear:none;">
         <tbody>
+				
+					<tr valign="top">
+            <th scope="row"><?php _e('Load JavaScript in Footer', 'mfbfw'); ?></th>
+            <td>
+              <fieldset>
+
+                <label for="mfbfw_loadAtFooter">
+                  <input type="checkbox" name="mfbfw_loadAtFooter" id="mfbfw_loadAtFooter"<?php if ($settings['loadAtFooter']) echo ' checked="yes"';?> />
+                  <?php _e('Loads JavaScript at the end of the blog\'s HTML (experimental) (default: off)', 'mfbfw'); ?>
+                </label><br />
+								
+								<small><em><?php _e('This option won\'t be recognized if you use <strong>Parallel Load</strong> plugin. In that case, you can do this from Parallel Load\'s options.', 'mfbfw'); ?></em></small><br /><br />
+
+              </fieldset>
+            </td>
+          </tr>
 
           <tr valign="top">
             <th scope="row"><?php _e('Frame Size', 'mfbfw'); ?></th>
@@ -422,9 +438,9 @@ function mfbfw_options_page() {
 
                 <small><strong><em><?php _e('Examples:', 'mfbfw'); ?></em></strong></small><br />
 
-                <small><em><code>jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();</code></em></small><br />
+                <small><em><code>jQuery(thumbnails).addClass(&quot;fancybox&quot;).attr(&quot;rel&quot;,&quot;fancybox&quot;).getTitle();</code></em></small><br />
 
-                <small><em><code>jQuery("a:has(img)[href$='.jpg']").addClass("fancybox").attr("rel","fancybox").getTitle();</code></em></small><br /><br />
+                <small><em><code>jQuery&quot;a:has(img)[href$='.jpg']&quot;).addClass&quot;fancybox&quot;).attr(&quot;rel&quot;,&quot;fancybox&quot;).getTitle();</code></em></small><br /><br />
 
                 </div>
 

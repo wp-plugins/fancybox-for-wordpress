@@ -203,7 +203,7 @@ msgstr "Cerrar FancyBox al hacer click en la imagen (por defecto: desactivado)"
 
 #: admin.php:342
 msgid "(You may want to leave this off if you display iframed or inline content and it containts clickable elements - for example: play buttons for movies, links to other pages)"
-msgstr "(Puedes que quieras dejar esta opción desactivada si vas a usar contendido anidado que incluya enlaces - for ejemplo: botones de play, enlaces a otras páginas))"
+msgstr "(Puede que quieras dejar esta opción desactivada si vas a usar contendido anidado que incluya enlaces - for ejemplo: botones de play, enlaces a otras páginas))"
 
 #: admin.php:352
 msgid "Gallery Settings <span style=\"color:red\">(advanced)</span>"
@@ -239,7 +239,7 @@ msgstr "No agrupar im&aacute;genes en galer&iacute;as autom&aacute;ticamente (us
 
 #: admin.php:395
 msgid "Make a gallery for each post (will only work if your theme uses <code>class=\"post\"</code> on each post, which is common in WordPress"
-msgstr "Hacer una galer&iacute;a para cada post (solo funcionar&aacute; si el tema usa <code>class=\"post\"</code> en cada post, que es lo m&aacute;s com&uacte;n en WordPress"
+msgstr "Hacer una galer&iacute;a para cada post (solo funcionar&aacute; si el tema usa <code>class=\"post\"</code> en cada post, que es lo m&aacute;s com&uacute;n en WordPress"
 
 #: admin.php:400
 msgid "Use a custom expression to apply FancyBox"
@@ -263,7 +263,7 @@ msgstr "&middot; Puedes usar <code>getTitle()</code> en tu expresi&oacute;n para
 
 #: admin.php:417
 msgid "&middot; You can use <code>jQuery(thumbnails)</code> like in the example expression to apply FancyBox to thumbnails that link to these extensions: BMP, GIF, JPG, JPEG, PNG (both lowercase and uppercase)."
-msgstr "&middot; Puedes usar <code>jQuery(thumbnails)</code> como en el ejemplo para aplicar FancyBox a las miniaturas de im%aacute;genes que enlazen a estas extensiones: BMP, GIF, JPG, JPEG, PNG tanto en min&uacute;scula como en may&uacute;scula)."
+msgstr "&middot; Puedes usar <code>jQuery(thumbnails)</code> como en el ejemplo para aplicar FancyBox a las miniaturas de im&aacute;genes que enlazen a estas extensiones: BMP, GIF, JPG, JPEG, PNG tanto en min&uacute;scula como en may&uacute;scula)."
 
 #: admin.php:419
 msgid "&middot; If you want to do it manually you can use something like <code>jQuery(\"a:has(img)[href$='.jpg']\")</code> or whatever works for you."
@@ -283,7 +283,7 @@ msgstr "Resolución de Problemas"
 
 #: admin.php:445
 msgid "Settings in this section should only be changed if you are having problems with the plugin!"
-msgstr "Las opciones de esta sección solo deben ser editadas si tienes problemas con el plugin!"
+msgstr "¡Las opciones de esta sección solo deben ser editadas si tienes problemas con el plugin!"
 
 #: admin.php:447
 msgid "If the plugin doesn't seem to work, first you should check for other plugins that may be conflicting with this one, especially other Lightbox, Slimbox, etc. Make sure all your plugins and WordPress itself are up to date (this plugin has only been tested in WordPress 2.7 and above)."
@@ -291,7 +291,7 @@ msgstr "Si el plugin no funciona, lo primero que deberías hacer es comprobar qu
 
 #: admin.php:449
 msgid "Change them one at a time and test to see if they help. Remember that having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options."
-msgstr "Cámbialas de una en una y comprueba si solucionan tu problema. Recuqerda que usar un plugin de caché puede hacer que los cambios no surjan efecto inmediatamente, vacía el cache después de guardar los cambios or desactivalo hasta que termines de ajustar estas opciones."
+msgstr "Cámbialas de una en una y comprueba si solucionan tu problema. Recuerda que usar un plugin de caché puede hacer que los cambios no surjan efecto inmediatamente, vacía el cache después de guardar los cambios or desactivalo hasta que termines de ajustar estas opciones."
 
 #: admin.php:455
 msgid "Do not call jQuery"
@@ -311,7 +311,7 @@ msgstr "Usar parámetro noConflict de jQuery (por defecto: activado)"
 
 #: admin.php:478
 msgid "(Turning this off may cause problems if there are plugins activated that use other js framework like mootools, prototype, scriptaculous, etc.)"
-msgstr "(Desactivar esta opción puede causar problemas si hay plugins activadoes que usen otros frameworks javascript como Mootols, Prototype, Scriptaculous, etc.)"
+msgstr "(Desactivar esta opción puede causar problemas si hay plugins activados que usen otros frameworks javascript como Mootols, Prototype, Scriptaculous, etc.)"
 
 #: admin.php:487
 msgid "Uninstall"

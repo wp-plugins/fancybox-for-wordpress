@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 2.6.0
+Version: 2.6.1
 Author: Jose Pardilla
 Author URI: http://moskis.net/
 */
@@ -12,7 +12,7 @@ Author URI: http://moskis.net/
 // When plugin is activated, update version, and set any new settings to default
 function mfbfw_install() {
 
-    update_option('mfbfw_active_version', '2.6.0');
+    update_option('mfbfw_active_version', '2.6.1');
 
     add_option('mfbfw_borderColor',    '#BBBBBB');
     add_option('mfbfw_closeHorPos',    'right');
@@ -33,6 +33,7 @@ function mfbfw_install() {
     add_option('mfbfw_imageScale',         'on');
     add_option('mfbfw_centerOnScroll',     'on');
     add_option('mfbfw_hideOnContentClick', '');
+    add_option('mfbfw_loadAtFooter',       '');
     add_option('mfbfw_frameWidth',         '640');
     add_option('mfbfw_frameHeight',        '500');
 
@@ -78,6 +79,7 @@ function mfbfw_uninstall() {
     delete_option('mfbfw_imageScale');
     delete_option('mfbfw_centerOnScroll');
     delete_option('mfbfw_hideOnContentClick');
+    delete_option('mfbfw_loadAtFooter');
     delete_option('mfbfw_frameWidth');
     delete_option('mfbfw_frameHeight');
 
@@ -100,7 +102,7 @@ function mfbfw_get_settings() {
 
   $mfbfwSettingsArray=array(
 
-    'version' => get_option('mfbfw_active_version'),
+    'version'        => get_option('mfbfw_active_version'),
 
     'borderColor'    => get_option('mfbfw_borderColor'),
     'closeHorPos'    => get_option('mfbfw_closeHorPos'),
@@ -121,16 +123,17 @@ function mfbfw_get_settings() {
     'imageScale'         => get_option('mfbfw_imageScale'),
     'centerOnScroll'     => get_option('mfbfw_centerOnScroll'),
     'hideOnContentClick' => get_option('mfbfw_hideOnContentClick'),
+    'loadAtFooter'       => get_option('mfbfw_loadAtFooter'),
     'frameWidth'         => get_option('mfbfw_frameWidth'),
     'frameHeight'        => get_option('mfbfw_frameHeight'),
 
-    'galleryType'      => get_option('mfbfw_galleryType'),
-    'customExpression' => get_option('mfbfw_customExpression'),
+    'galleryType'        => get_option('mfbfw_galleryType'),
+    'customExpression'   => get_option('mfbfw_customExpression'),
 
-    'nojQuery'     => get_option('mfbfw_nojQuery'),
-    'jQnoConflict' => get_option('mfbfw_jQnoConflict'),
+    'nojQuery'           => get_option('mfbfw_nojQuery'),
+    'jQnoConflict'       => get_option('mfbfw_jQnoConflict'),
 
-    'uninstall' => get_option('mfbfw_uninstall')
+    'uninstall'          => get_option('mfbfw_uninstall')
 
   );
 
@@ -143,22 +146,24 @@ function mfbfw_get_settings() {
 function mfbfw_load() {
 
   $settings = mfbfw_get_settings();
+	
+	if ($settings['loadAtFooter']) $loadAtFooter = true;
 
   if (!is_admin()) { // avoid the scripts from loading on admin panel
 
     if ($settings['nojQuery']) {
 
-      wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.1.pack.js'); // Load fancybox without jQuery (for troubleshooting)
+      wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.1.min.js', $loadAtFooter); // Load fancybox without jQuery (for troubleshooting)
 
     } else {
 
-      wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.1.pack.js', array('jquery'), '1.3.2'); // Load fancybox with jQuery
+      wp_enqueue_script('fancybox', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.fancybox-1.2.1.min.js', array('jquery'), '1.3.2', $loadAtFooter); // Load fancybox with jQuery
 
     }
 
     if (get_option('mfbfw_easing')) {
 
-      wp_enqueue_script('jqueryeasing', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.easing.1.3.pack.js', array('jquery'), '1.3.2'); // Load easing javascript file if required
+      wp_enqueue_script('jqueryeasing', WP_PLUGIN_URL . '/fancybox-for-wordpress/jquery.easing.1.3.min.js', array('jquery'), '1.3.2', $loadAtFooter); // Load easing javascript file if required
 
     }
 
@@ -225,6 +230,7 @@ function mfbfw_init() {
   <?php }
 
   // Gallery type BY POST, but we are neither on post or page, so we make a different rel attribute on each post
+  // (optimized based on sugestions from http://mentalfruition.com/)
   else { ?>
 
     var posts = jQuery('.post');
@@ -288,7 +294,7 @@ function mfbfw_init() {
 // Admin Head
 function mfbfw_admin_head() {
 
-  ?>
+  if (is_plugin_page()) { ?>
 
   <script type="text/javascript">
 
@@ -331,6 +337,8 @@ function mfbfw_admin_head() {
   </script>
 
   <?php
+
+  }
 
 }
 
@@ -392,6 +400,7 @@ function mfbfw_admin_init() {
     register_setting('mfbfw-options', 'mfbfw_imageScale');
     register_setting('mfbfw-options', 'mfbfw_centerOnScroll');
     register_setting('mfbfw-options', 'mfbfw_hideOnContentClick');
+    register_setting('mfbfw-options', 'mfbfw_loadAtFooter');
     register_setting('mfbfw-options', 'mfbfw_frameWidth');
     register_setting('mfbfw-options', 'mfbfw_frameHeight');
     register_setting('mfbfw-options', 'mfbfw_galleryType');
