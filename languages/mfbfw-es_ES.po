@@ -1,0 +1,406 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FancyBox for WordPress Español\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/fancybox-for-wordpress\n"
+"POT-Creation-Date: 2009-06-26 04:32+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jose <jose@moskis.net>\n"
+"Language-Team: Moskis <jose@moskis.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#: admin.php:21
+#, php-format
+msgid "Fancybox for WordPress Options (version %s)"
+msgstr "Opciones de Fancybox for WordPress (versión %s)"
+
+#: admin.php:25
+msgid "If you use FancyBox and like it, buy the author a beer!"
+msgstr "Si usas FancyBox y te gusta, c&oacute;mprale una cerveza al autor!"
+
+#: admin.php:46
+msgid "The author of this WordPress Plugin also likes beer :P"
+msgstr "Al autor de este plugin para WordPress tambi&eacute;n le gusta la cerveza :P"
+
+#: admin.php:59
+msgid "Follow me on Twitter for more WordPress Plugins and Themes"
+msgstr "S&iacute;gueme en Twitter para m&aacute;s Plugins y Temas de WordPress"
+
+#: admin.php:66
+msgid "Info & Support"
+msgstr "Info & Soporte"
+
+#: admin.php:68
+msgid "<a href=\"http://fancy.klade.lv/home\">FancyBox</a> developed by <a href=\"http://kac.klade.lv/\">Janis Skarnelis</a>, ported to WordPress by <a href=\"http://moskis.net/\">Jos&eacute; Pardilla</a>. Licensed under the <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/MIT_License\">MIT License</a>."
+msgstr "<a href=\"http://fancy.klade.lv/home\">FancyBox</a> desarrollado por <a href=\"http://kac.klade.lv/\">Janis Skarnelis</a>, adaptado a WordPress por <a href=\"http://moskis.net/\">Jos&eacute; Pardilla</a>. Licenciado bajo <a target=\"_blank\" href=\"http://en.wikipedia.org/wiki/MIT_License\">Licencia MIT</a>."
+
+#: admin.php:70
+msgid "As you can see, this plugin has many options you can edit, but have no fear, you can leave everything as it is if you want, since the default options should be a good start... :)"
+msgstr "Como puedes ver, este plugin te permite editar muchas opciones, pero no te preocupes, puedes dejarlo todo como está, ya que las opciones predefinidas no están mal para empezar... :)"
+
+#: admin.php:74
+msgid "If you have problems or questions about FancyBox, please start with these links: <a href=\"http://fancy.klade.lv/howto\">How-To</a> & <a href=\"http://fancy.klade.lv/faq\">FAQ</a>.<br />If that does not help, go to <a href=\"http://groups.google.com/group/fancybox\">the FancyBox Google Group</a>, use the <strong>Search</strong> option, and if necesary, post your question."
+msgstr "Si tienes problemas o dudas acerca de FancyBox, por favor visita estos enlaces (en inglés): <a href=\"http://fancy.klade.lv/howto\">How-To</a> & <a href=\"http://fancy.klade.lv/faq\">FAQ</a>.<br />Si eso no ayuda, ves al <a href=\"http://groups.google.com/group/fancybox\">Grupo de Google de FancyBox</a>, usa la opción de <strong>Búsqueda</strong>, y si no encuentras lo que buscas, pregunta allí."
+
+#: admin.php:76
+msgid "If you are having trouble with this plugin try to localize the problem (switch your theme and/or deactivate plugins until you find the source of the problem). You can also try the Troubleshooting settings at the bottom of this page if necesary. If you still can not get the plugin to work, <a href=\"http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/\">leave a comment here</a> explaining the problem."
+msgstr "Si tienes problemas con este plugin para WordPress, intenta localizar la fuente del problema (cambia de tema y/o desactiva plugins hasta que encuentres lo que causa el problema). También puedes usar las optiones de Resolución de Errores que hay al final de esta página. Si no consigues hacer funcionar el plugin, <a href=\"http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/\">deja un comentario aquí</a> explicando el problema."
+
+#: admin.php:81
+msgid "Appearance Settings <span style=\"color:green\">(basic)</span>"
+msgstr "Opciones de Apariencia <span style=\"color:green\">(básico)</span>"
+
+#: admin.php:83
+msgid "These are the main settings, which let you tweak color, borders and animation."
+msgstr "Estas son las opciones principales, que te permiten ajustar los colores, bordes y animación."
+
+#: admin.php:85
+msgid "<strong>Note:</strong> Having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options."
+msgstr "<strong>Nota:</strong> Usar un plugin de caché puede hacer que los cambios no surjan efecto inmediatamente, vacía el cache después de guardar los cambios or desactivalo hasta que termines de ajustar estas opciones."
+
+#: admin.php:100
+msgid "Border Color"
+msgstr "Color del Borde"
+
+#: admin.php:106
+msgid "HTML color of the border (default: #BBBBBB)"
+msgstr "Color HTML del borde (por defecto: #BBBBBB)"
+
+#: admin.php:114
+msgid "Close Button Position"
+msgstr "Posición del Botón de Cerrar"
+
+#: admin.php:120
+msgid "Left"
+msgstr "Izquierda"
+
+#: admin.php:125
+msgid "Right (default)"
+msgstr "Derecha (por defecto)"
+
+#: admin.php:130
+msgid "Bottom"
+msgstr "Abajo"
+
+#: admin.php:135
+msgid "Top (default)"
+msgstr "Arriba (por defecto)"
+
+#: admin.php:143
+msgid "Padding"
+msgstr "Margen"
+
+#: admin.php:149
+msgid "HTML color of the padding (default: #FFFFFF)"
+msgstr "Color HTML del margen (por defecto: #FFFFFF)"
+
+#: admin.php:154
+msgid "Padding size in pixels (default: 10)"
+msgstr "Tamaño del margen en píxeles (por defecto: 10)"
+
+#: admin.php:157
+msgid "(Set <strong>Border Color</strong> to \"#000000\" and <strong>Padding Size</strong> to \"0\" for the classic FancyBox look)"
+msgstr "(Pon el <strong>Color del Borde</strong> en \"#000000\" y el <strong>Tamaño del Margen</strong> en \"0\" para el aspecto clásico de FancyBox)"
+
+#: admin.php:164
+msgid "Overlay Options"
+msgstr "Opciones de Overlay"
+
+#: admin.php:170
+msgid "Add overlay (default: on)"
+msgstr "Añadir overlay (por defecto: activado)"
+
+#: admin.php:175
+msgid "HTML color of the overlay (default: #666666)"
+msgstr "Color HTML del overlay (por defecto: #666666)"
+
+#: admin.php:188
+msgid "Opacity of overlay. 0 is transparent, 1 is opaque (default: 0.3)"
+msgstr "Opacidad del overlay. 0 es transparente, 1 es opaco (por defecto: 0.3)"
+
+#: admin.php:196
+msgid "Zoom Options"
+msgstr "Opciones de Zoom"
+
+#: admin.php:202
+msgid "Change content transparency during zoom animations (default: on)"
+msgstr "Animar opacidad durante el efecto de zoom (por defecto: activado)"
+
+#: admin.php:214
+msgid "Speed in miliseconds of the zooming-in animation (default: 500)"
+msgstr "Velocidad en milisegundos del efecto de Zoom In (por defecto: 500)"
+
+#: admin.php:226
+msgid "Speed in miliseconds of the zooming-out animation (default: 500)"
+msgstr "Velocidad en milisegundos del efecto de Zoom Out (por defecto: 500)"
+
+#: admin.php:234
+msgid "Easing"
+msgstr "Efecto de Animación"
+
+#: admin.php:240
+msgid "Activate easing (default: off)"
+msgstr "Activar efecto de animación (por defecto: desactivado)"
+
+#: admin.php:253
+msgid "Easing method when opening FancyBox. (default: easeOutBack)"
+msgstr "Efecto de animación al abrir FancyBox. (por defecto: easeOutBack)"
+
+#: admin.php:266
+msgid "Easing method when closing FancyBox. (default: easeInBack)"
+msgstr "Efecto de animación al cerrar FancyBox. (por defecto: easeInBack)"
+
+#: admin.php:279
+msgid "Easing method when navigating through gallery items. (default: easeInOutQuart)"
+msgstr "Efecto de animación al navegar por galerías. (por defecto: easoInOutQuart)"
+
+#: admin.php:282
+msgid "(There are 30 different easing methods, the first ones are the most boring. You can test them <a href=\"http://commadot.com/jquery/easing.php\" target=\"_blank\">here</a> or <a href=\"http://hosted.zeh.com.br/mctween/animationtypes.html\" target=\"_blank\">here</a>)"
+msgstr "(Hay 30 efectos diferentes, los primeros son los más aburridos. Puedes probarlos <a href=\"http://commadot.com/jquery/easing.php\" target=\"_blank\">aquí</a> o <a href=\"http://hosted.zeh.com.br/mctween/animationtypes.html\" target=\"_blank\">aquí</a>)"
+
+#: admin.php:291
+msgid "Show/Hide Advanced Settings"
+msgstr "Mostrar/Ocultar Opciones Avanzadas"
+
+#: admin.php:292
+msgid "Show/Hide Troubleshooting &amp; Uninstall Settings"
+msgstr "Mostrar/Ocultar Resolución de Problemas y Desinstalaci&oacute;n"
+
+#: admin.php:297
+msgid "Behavior Settings <span style=\"color:orange\">(medium)</span>"
+msgstr "Opciones de Comportamiento <span style=\"color:orange\">(medio)</span>"
+
+#: admin.php:299
+msgid "The following settings should be left on default unless you know what you are doing."
+msgstr "Las siguientes opciones solo deberían ser editadas si sabes lo que estás haciendo."
+
+#: admin.php:305
+msgid "Auto Resize to Fit"
+msgstr "Ajustar Tamaño"
+
+#: admin.php:311
+msgid "Scale images to fit in viewport (default: on)"
+msgstr "Ajusta el tamaño de las imagenes a la ventana del navegador (por defecto: activado)"
+
+#: admin.php:319
+msgid "Center on Scroll"
+msgstr "Centrar al hacer Scroll"
+
+#: admin.php:325
+msgid "Keep image in the center of the browser window when scrolling (default: on)"
+msgstr "Mantiene la imagen en el centro de la ventana del naegador al hacer scroll (por defecto: activado)"
+
+#: admin.php:333
+msgid "Close on Click"
+msgstr "Cerrar al hacer click"
+
+#: admin.php:339
+msgid "Close FancyBox by clicking on the image (default: off)"
+msgstr "Cerrar FancyBox al hacer click en la imagen (por defecto: desactivado)"
+
+#: admin.php:342
+msgid "(You may want to leave this off if you display iframed or inline content and it containts clickable elements - for example: play buttons for movies, links to other pages)"
+msgstr "(Puedes que quieras dejar esta opción desactivada si vas a usar contendido anidado que incluya enlaces - for ejemplo: botones de play, enlaces a otras páginas))"
+
+#: admin.php:352
+msgid "Gallery Settings <span style=\"color:red\">(advanced)</span>"
+msgstr "Opciones de Galería <span style=\"color:red\">(avanzado)</span>"
+
+#: admin.php:354
+msgid "Here you can choose if you want the plugin to group all images into a gallery, or make a gallery for each post. You can also define you own jQuery expression if you like."
+msgstr "Aquí puedes elegir si quieres que el plugin agrupe las imágenes en una galería, o hacer una galería para cada entrada. También puedes definir tu propia expresión en jQuery."
+
+#: admin.php:360
+msgid "Frame Size"
+msgstr "Tamaño del recuadro"
+
+#: admin.php:366
+msgid "Width in pixels of FancyBox when showing iframe content (default: 640)"
+msgstr "Ancho en píxeles de FancyBox cuado se muestre contenido anidado (por defecto: 640)"
+
+#: admin.php:371
+msgid "Height in pixels of FancyBox when showing iframe content (default: 500)"
+msgstr "Alto en píxeles de FancyBox cuado se muestre contenido anidado (por defecto: 500)"
+
+#: admin.php:379
+msgid "Gallery Type"
+msgstr "Tipo de Galería"
+
+#: admin.php:385
+msgid "Make a gallery for all images on the page (default)"
+msgstr "Incluir todas las imágenes de la página en una única galería (opción por defecto)"
+
+#: admin.php:390
+msgid "Do not group images in gallery automatically (use this if you want to make galleries manually with the <code>REL</code> attribute)"
+msgstr "No agrupar im&aacute;genes en galer&iacute;as autom&aacute;ticamente (usa esta opci&oacute;n si quieres agrupar las imagenes manualmente con el atributo <code>REL</code>)"
+
+#: admin.php:395
+msgid "Make a gallery for each post (will only work if your theme uses <code>class=\"post\"</code> on each post, which is common in WordPress"
+msgstr "Hacer una galer&iacute;a para cada post (solo funcionar&aacute; si el tema usa <code>class=\"post\"</code> en cada post, que es lo m&aacute;s com&uacte;n en WordPress"
+
+#: admin.php:400
+msgid "Use a custom expression to apply FancyBox"
+msgstr "Aplicar FancyBox con una expresión personalizada"
+
+#: admin.php:409
+msgid "Custom expression guidelines:"
+msgstr "Indicaciones para expresiones personalizadas:"
+
+#: admin.php:411
+msgid "&middot; The custom expression has to apply <code>class=\"fancybox\"</code> to the links where you want to use FancyBox. Do not call the <code>fancybox()</code> function here, the plugin does this for you."
+msgstr "&middot; La expresión personalizada tiene que aplicar el atributo <code>class=\"fancybox\"</code> a los enlaces en los que quieras usar FancyBox. No llames a la funci&oacute;n <code>fancybox()</code> aqu&iacute;, de eso ya se encarga el plugin."
+
+#: admin.php:413
+msgid "&middot; The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class."
+msgstr "&middot; La funci&oacute;n <code>addClass()</code> de jQuery es una buena forma de a&ntilde;adir el class a los links deseados."
+
+#: admin.php:415
+msgid "&middot; You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions."
+msgstr "&middot; Puedes usar <code>getTitle()</code> en tu expresi&oacute;n para copiar el atributo title desde el tag <code>IMG</code> al tag <code>A</code>, para que FancyBox pueda mostrar el t&iacute;tulo de la imagen."
+
+#: admin.php:417
+msgid "&middot; You can use <code>jQuery(thumbnails)</code> like in the example expression to apply FancyBox to thumbnails that link to these extensions: BMP, GIF, JPG, JPEG, PNG (both lowercase and uppercase)."
+msgstr "&middot; Puedes usar <code>jQuery(thumbnails)</code> como en el ejemplo para aplicar FancyBox a las miniaturas de im%aacute;genes que enlazen a estas extensiones: BMP, GIF, JPG, JPEG, PNG tanto en min&uacute;scula como en may&uacute;scula)."
+
+#: admin.php:419
+msgid "&middot; If you want to do it manually you can use something like <code>jQuery(\"a:has(img)[href$='.jpg']\")</code> or whatever works for you."
+msgstr "&middot; Si prefieres hacerlo manualmente puedes usar algo como <code>jQuery(\"a:has(img)[href$='.jpg']\")</code> o lo que m&aacute;s se ajuste a tu blog."
+
+#: admin.php:421
+msgid "See the <a href=\"http://docs.jquery.com/\" target=\"_blank\">jQuery Documentation</a> for more help."
+msgstr "Visita la <a href=\"http://docs.jquery.com/\" target=\"_blank\">Documentaci&oacute;n de jQuery</a> para encontrar m&aacute;s ayuda."
+
+#: admin.php:423
+msgid "Examples:"
+msgstr "Ejemplos:"
+
+#: admin.php:443
+msgid "Troubleshooting Settings"
+msgstr "Resolución de Problemas"
+
+#: admin.php:445
+msgid "Settings in this section should only be changed if you are having problems with the plugin!"
+msgstr "Las opciones de esta sección solo deben ser editadas si tienes problemas con el plugin!"
+
+#: admin.php:447
+msgid "If the plugin doesn't seem to work, first you should check for other plugins that may be conflicting with this one, especially other Lightbox, Slimbox, etc. Make sure all your plugins and WordPress itself are up to date (this plugin has only been tested in WordPress 2.7 and above)."
+msgstr "Si el plugin no funciona, lo primero que deberías hacer es comprobar que no haya un conflicto con otros plugins, especialmente otro tipo de Lightbox, Slimbox, etc. Asegúrate de que todos tus plugins y tu WordPress están actualizados (este plugin solo se ha testado con WordPress 2.7 y superiores)."
+
+#: admin.php:449
+msgid "Change them one at a time and test to see if they help. Remember that having a cache plugin may prevent changes from taking effect immidiately, so clear cache after saving changes here or deactivate cache until you finish editing these options."
+msgstr "Cámbialas de una en una y comprueba si solucionan tu problema. Recuqerda que usar un plugin de caché puede hacer que los cambios no surjan efecto inmediatamente, vacía el cache después de guardar los cambios or desactivalo hasta que termines de ajustar estas opciones."
+
+#: admin.php:455
+msgid "Do not call jQuery"
+msgstr "No cargar jQuery"
+
+#: admin.php:461
+msgid "Skip jQuery call. Use this only if jQuery is being loaded twice (default: off)"
+msgstr "Omitir llamada a jQuery. Usa esta opción sólo si jQuery se está cargando dos veces por error. (por defecto: desactivado)"
+
+#: admin.php:469
+msgid "jQuery \"noConflict\" Mode"
+msgstr "Modo jQuery \"noConflict\""
+
+#: admin.php:475
+msgid "Use jQuery noConflict mode (default: on)"
+msgstr "Usar parámetro noConflict de jQuery (por defecto: activado)"
+
+#: admin.php:478
+msgid "(Turning this off may cause problems if there are plugins activated that use other js framework like mootools, prototype, scriptaculous, etc.)"
+msgstr "(Desactivar esta opción puede causar problemas si hay plugins activadoes que usen otros frameworks javascript como Mootols, Prototype, Scriptaculous, etc.)"
+
+#: admin.php:487
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: admin.php:489
+msgid "Like many other plugins, FancyBox for WordPress stores its settings on your WordPress' options database table. Actually, these settings are not using more than a couple of kilobytes of space, but if you want to completely uninstall this plugin, check the option below, then save changes, and <strong>when you deactivate the plugin</strong>, all its settings will be removed from the database."
+msgstr "Al igual que otros plugins, FancyBox for WordPress guarda sus opciones en la tabla de opciones de la base de datos de WordPress. En realidad, estas opcines no ocupam más que unos kilobytes de espacio, pero si quieres eliminar el plugin por completo, activa la siguiente opción, guarda los cambios, y <strong>cuando desactives el plugin</strong>, todas las opciones se eliminarán de la base de datos."
+
+#: admin.php:495
+msgid "Remove settings"
+msgstr "Eliminar Opciones"
+
+#: admin.php:501
+msgid "Remove Settings when plugin is deactivated from the \"Manage Plugins\" page. (default: off)"
+msgstr "Eliminar opciones cuando se desactive el plugin desde la página \"Gestionar Plugins\". (por defecto: desactivado)"
+
+#: admin.php:517
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+#: fancybox.php:373
+msgid "Settings"
+msgstr "Opciones"
+
+#~ msgid ""
+#~ "Do not call the <code>fancybox()</code> function here, the plugin does "
+#~ "this for you."
+#~ msgstr ""
+#~ "No llames a la función <code>fancybox()</code> desde aquí, eso ya lo hace "
+#~ "el plugin por tí."
+#~ msgid "Make a gallery for each post"
+#~ msgstr "Hacer una galería para cada entrada"
+#~ msgid ""
+#~ "The attribute has to start with fancybox, but can end with however you "
+#~ "like: \"fancybox1\", \"fancybox2\", \"fancybox-custom\" will work."
+#~ msgstr ""
+#~ "El atributo debe empezar por fancybox pero puede terminar como quieras:  "
+#~ "\"fancybox1\", \"fancybox2\", \"fancybox-custom\" servirían."
+#~ msgid "Horizontal position of the close button (default: right)"
+#~ msgstr ""
+#~ "Posición horizontal del botón para cerrar FancyBox (por defecto: derecha)"
+#~ msgid "About"
+#~ msgstr "Informaci&oacute;n"
+#~ msgid ""
+#~ "This plugin integrates FancyBox with WordPress without having to edit any "
+#~ "file or code. Once activated the plugin will apply FancyBox automatically "
+#~ "to all image links, including WordPress galleries. Future versions will "
+#~ "include some more options like easier inline content integration and more "
+#~ "advanced customization. Enjoy!"
+#~ msgstr ""
+#~ "Este plugin integra FancyBox con WordPress sin necesidad de editar ningún "
+#~ "archivo o HTML. Una vez activado, el plugin aplicará FancyBox "
+#~ "automáticamente a todos los enlaces a imágenes, incluyendo galerias de "
+#~ "WordPress. Que lo disfrutes!"
+#~ msgid ""
+#~ "If you have problems or questions about FancyBox itself you should <a "
+#~ "href=\"http://groups.google.com/group/fancybox\">ask in the FancyBox "
+#~ "Google Group</a>. If you want to make suggestions or ask just about this "
+#~ "WordPress plugin you can <a href=\"http://blog.moskis.net/downloads/"
+#~ "plugins/fancybox-for-wordpress/\">leave a comment here</a>, <a href="
+#~ "\"http://blog.moskis.net/contactar/\">send me an email</a>, or <a href="
+#~ "\"http://twitter.com/moskis\">contact me on twitter</a>."
+#~ msgstr ""
+#~ "Si tienes problemas o preguntas sobre FancyBox deberías <a href=\"http://"
+#~ "groups.google.com/group/fancybox\">preguntar en este grupo de Google</a> "
+#~ "(enlace en inglés). Si tienes preguntas o sugerencias sobre este plugin "
+#~ "para WordPress, puedes <a href=\"http://blog.moskis.net/downloads/plugins/"
+#~ "fancybox-for-wordpress/\">dejar un comentario aquí</a>, <a href=\"http://"
+#~ "blog.moskis.net/contactar/\">enviarme un email</a>, o <a href=\"http://"
+#~ "twitter.com/moskis\">contactar conmigo vía Twitter</a>."
+#~ msgid "Auto Apply"
+#~ msgstr "Auto Aplicar"
+#~ msgid ""
+#~ "Apply FancyBox automatically to all links pointing to .jpg, .jpeg, .png "
+#~ "or .gif images (default: on)"
+#~ msgstr ""
+#~ "Aplicar FancyBox automáticamente a todos los enlaces que apunten a "
+#~ "archivos .jpg, .jpeg, .png o .gif (por defecto: activado)"
+#~ msgid ""
+#~ "(The link itself must the an image as well, text links will not be "
+#~ "affected by this option!)"
+#~ msgstr ""
+#~ "(El link tiene que estar en una imagen, esta opción no affecta a enlaces "
+#~ "de texto!)"
+#~ msgid ""
+#~ "(This does NOT conflict with the previous and next image links on "
+#~ "FancyBox galleries.)"
+#~ msgstr ""
+#~ "(Esto no afecta a los enlaces de Imagen Siguiente e Imagen Anterior en "
+#~ "galerias de varias imágenes)"
+

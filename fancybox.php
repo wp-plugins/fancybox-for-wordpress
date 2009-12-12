@@ -18,6 +18,7 @@ function mfbfw_install() {
 
 		update_option('mfbfw_active_version', '2.7.0');
 
+		add_option('mfbfw_showTitle',					'on');
 		add_option('mfbfw_border',						'');
 		add_option('mfbfw_borderColor',				'#BBBBBB');
 		add_option('mfbfw_closeHorPos',				'right');
@@ -73,6 +74,7 @@ function mfbfw_uninstall() {
 
 		delete_option('mfbfw_active_version');
 
+		delete_option('mfbfw_showTitle');
 		delete_option('mfbfw_border');
 		delete_option('mfbfw_borderColor');
 		delete_option('mfbfw_closeHorPos');
@@ -125,6 +127,7 @@ function mfbfw_get_settings() {
 
 		'version'						=> get_option('mfbfw_active_version'),
 
+		'showTitle'					=> get_option('mfbfw_showTitle'),
 		'border'						=> get_option('mfbfw_border'),
 		'borderColor'				=> get_option('mfbfw_borderColor'),
 		'closeHorPos'				=> get_option('mfbfw_closeHorPos'),
@@ -221,6 +224,7 @@ function mfbfw_css() {
 		div#fancy_inner {border-color:<?php echo $settings['borderColor']; ?>}
 		div#fancy_close {<?php echo $settings['closeHorPos']; ?>:-15px;<?php echo $settings['closeVerPos']; ?>:-12px}
 		div#fancy_bg {background-color:<?php echo $settings['paddingColor']; if ($settings['border']) { echo "; border:1px solid " . $settings['borderColor']; } ?>}
+		<?php if (!$settings['showTitle']) { echo "div#fancy_title table {display:none} \n"; } ?>
 	</style>
 
 	<?php
@@ -375,6 +379,7 @@ function mfbfw_plugin_action_links($links, $file) {
 // Load text domain
 function mfbfw_admin_init() {
 
+		register_setting('mfbfw-options', 'mfbfw_showTitle');
 		register_setting('mfbfw-options', 'mfbfw_border');
 		register_setting('mfbfw-options', 'mfbfw_borderColor');
 		register_setting('mfbfw-options', 'mfbfw_closeHorPos');

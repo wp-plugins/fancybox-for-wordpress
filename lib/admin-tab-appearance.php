@@ -60,7 +60,7 @@
 						</tr>
 
 						<tr valign="top">
-							<th scope="row"><?php _e('Presentation', 'mfbfw'); ?></th>
+							<th scope="row"><?php _e('Padding', 'mfbfw'); ?></th>
 							<td>
 								<fieldset>
 
@@ -108,6 +108,20 @@
 										<?php _e('Opacity of overlay. 0 is transparent, 1 is opaque (default: 0.3)', 'mfbfw'); ?>
 									</label><br /><br />
 
+								</fieldset>
+							</td>
+						</tr>
+						
+						<tr valign="top">
+							<th scope="row"><?php _e('Show Title', 'mfbfw'); ?></th>
+							<td>
+								<fieldset>
+
+									<label for="mfbfw_showTitle">
+										<input type="checkbox" name="mfbfw_showTitle" id="mfbfw_showTitle"<?php if ($settings['showTitle']) echo ' checked="yes"';?> />
+										<?php _e('Show the image title (default: on)', 'mfbfw'); ?>
+									</label><br /><br />
+									
 								</fieldset>
 							</td>
 						</tr>
