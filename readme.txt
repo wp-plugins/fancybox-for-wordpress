@@ -3,8 +3,8 @@ Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.7
-Tested up to: 2.8
-Stable tag: 2.6.0
+Tested up to: 2.8.6
+Stable tag: 2.7.0
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -19,11 +19,36 @@ By default, the plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv
 
 Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. After all, there's no reason why you shouldn't be already using WP2.7, is there? ;)
 
+= Known Bugs =
+* Shadows not perfect on IE6/7
+* Options page doesn't on WordPress MU
 
-= Changelog =
 
-2.6.0 Updates:
+== Changelog ==
 
+This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancy.klade.lv/).
+
+=2.7.0=
+* New: Fancybox v1.2.6 support
+* New: New Admin page with tabs for better organization of all the options
+* Added: Setting to change the speed of the animation when changing gallery items
+* Added: Setting to enable or disable Escape key to close Fancybox
+* Added: Setting to show or hide close button
+* Added: Setting to close fancybox when clicking on the overlay
+* Added: Setting to enable or disable callback function on start, show and close events
+* Added: Italian translation
+* Added: Russian translation
+* Added: "Load JS at Footer" option
+* Added: New Changelog tab in  Wordpress Plugin Directory
+* Fixed: Some typos in Spanish translation
+* Fixed: FancyBox not showing above some elements (those with zindex higher than 90)
+* Fixed: JavaScript code being included in all admin pages instead of just the plugin's options page.
+* Fixed: noClonflict preventing frames to work in Fancybox
+* Fixed: Custom frame width and height not being applied
+* Updated: Japanese translation
+* Updated: JS is now Minified instead of Packed (thanks to mentalfruition.com)
+
+=2.6.0=
 * Optimized the JavaScript code used to apply FancyBox
 * Updated Custom Expression section in Options Page
 * Fixed uppercase image extensions not being recognized
@@ -36,16 +61,12 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 * Removed /wp-content/ reference in fancybox.php for better WP2.8 support
 * Optimized some code readability
 
-
-2.5.1 Updates:
-
+=2.5.1=
 * Fixed the plugin not working when selecting Gallery Type "By Post"
 * Fixed a bug that would prevent the title in the IMG tag from being copied to the A tag in some cases
 * Fixed the Custom Expression showing in the Admin panel when other gallery types are selected
 
-
-2.5 Updates:
-
+=2.5=
 * Support for localizations (Spanish and German localizations included)
 * Some parts of the code completely rewritten
 * Fixed fancybox files being loaded on the admin pages
@@ -59,56 +80,36 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 * New uninstall options and better handling of new options when installing/updating
 * Cleans any old options no longer needed when plugin is activated/updated
 
-
-2.2 Updtades:
-
+=2.2=
 * Updated to FancyBox 1.2.1
 * Added new settings to Options Page: Easing, padding size, border color
 * Tweaked CSS to prevent some themes from adding unwanted styles to fancybox (especially background colors and link outlines)
 * Options Page reorganized in three sections: Appearance, Behaviour and Troubleshooting Settings, to make settings easier to find
 
-
-2.1.1 Updtades:
-
+=2.1.1=
 * Fixed a new bug introduced in 2.1 that prevented options from being saved. Sorry about the mess :(
 
-
-2.1 Updtades:
-
+=2.1=
 * Fixed a major bug in 2.0 that prevented it from working until plugin's options page was visited
 * Added two options for troubleshooting that might help in some cases if the plugin doesn't work: disable jQuery noConflict and skip jQuery call
 * Additional fixes to caption CSS: Captions should look better now in Hybrid theme, child themes, and other situations where general table elements are improperly styled
 
-
-2.0 Updates:
-
+=2.0=
 * Brand new Options Page in Admin Panel lets you easely customize many options: fancybox auto apply, image resize to fit, opacity fade while zooming, zoom speed, overlay on/off, overlay color, overlay opacity, close fancybox on image click, keep fancybox centered while scrolling
 * CSS completely updated for FancyBox 1.2.0
 * Captions fixed in IE
 
-
-1.3 Updates:
-
+=1.3=
 * Shadows and Close button should be fixed now
 
-
-1.2 Updates:
-
+=1.2=
 * Updated to FancyBox 1.2.0
 * Uses packed version of the JavaScript file (8kb instead of 14kb)
 
-
-1.1 Updates:
-
+=1.1=
 * Fixed FancyBox not being applied to .jpeg files
 * Fixed "Click to close" overlay text
 * Moved images to /img/ folder
-
-
-= Known Bugs =
-
-* Shadows not perfect on IE6/7
-* Options page may not work on WordPress MU
 
 
 == Installation ==
@@ -123,7 +124,6 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 1. Simple example of fancybox on a post. [Live demo here](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/)
 2. Basic settings on Options Page in the Admin Panel. This makes it very easy to customize the plugin to your needs
-2. Full settings on Options Page
 
 
 == Frequently Asked Questions ==
@@ -150,7 +150,7 @@ Don't hesitate to email me at jose (at) moskis.net with any thoughts about this 
 
 = How does the plugin exactly work? =
 
-First the plugin checks if your blog is using jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript wait for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
+First the plugin checks if your blog is using jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript waits for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
 
 = The plugin does not work with Mandingo theme =
 
