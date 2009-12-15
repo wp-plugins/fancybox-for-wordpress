@@ -28,7 +28,7 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancy.klade.lv/).
 
-=2.7.0=
+= 2.7.0 =
 * New: Fancybox v1.2.6 support
 * New: New Admin page with tabs for better organization of all the options
 * Added: Setting to change the speed of the animation when changing gallery items
@@ -48,7 +48,7 @@ This changelog is for the WordPress plugin. For the Fancybox main changelog go t
 * Updated: Japanese translation
 * Updated: JS is now Minified instead of Packed (thanks to mentalfruition.com)
 
-=2.6.0=
+= 2.6.0 =
 * Optimized the JavaScript code used to apply FancyBox
 * Updated Custom Expression section in Options Page
 * Fixed uppercase image extensions not being recognized
@@ -61,12 +61,12 @@ This changelog is for the WordPress plugin. For the Fancybox main changelog go t
 * Removed /wp-content/ reference in fancybox.php for better WP2.8 support
 * Optimized some code readability
 
-=2.5.1=
+= 2.5.1 =
 * Fixed the plugin not working when selecting Gallery Type "By Post"
 * Fixed a bug that would prevent the title in the IMG tag from being copied to the A tag in some cases
 * Fixed the Custom Expression showing in the Admin panel when other gallery types are selected
 
-=2.5=
+= 2.5 =
 * Support for localizations (Spanish and German localizations included)
 * Some parts of the code completely rewritten
 * Fixed fancybox files being loaded on the admin pages
@@ -80,33 +80,33 @@ This changelog is for the WordPress plugin. For the Fancybox main changelog go t
 * New uninstall options and better handling of new options when installing/updating
 * Cleans any old options no longer needed when plugin is activated/updated
 
-=2.2=
+= 2.2 =
 * Updated to FancyBox 1.2.1
 * Added new settings to Options Page: Easing, padding size, border color
 * Tweaked CSS to prevent some themes from adding unwanted styles to fancybox (especially background colors and link outlines)
 * Options Page reorganized in three sections: Appearance, Behaviour and Troubleshooting Settings, to make settings easier to find
 
-=2.1.1=
+= 2.1.1 =
 * Fixed a new bug introduced in 2.1 that prevented options from being saved. Sorry about the mess :(
 
-=2.1=
+= 2.1 =
 * Fixed a major bug in 2.0 that prevented it from working until plugin's options page was visited
 * Added two options for troubleshooting that might help in some cases if the plugin doesn't work: disable jQuery noConflict and skip jQuery call
 * Additional fixes to caption CSS: Captions should look better now in Hybrid theme, child themes, and other situations where general table elements are improperly styled
 
-=2.0=
+= 2.0 =
 * Brand new Options Page in Admin Panel lets you easely customize many options: fancybox auto apply, image resize to fit, opacity fade while zooming, zoom speed, overlay on/off, overlay color, overlay opacity, close fancybox on image click, keep fancybox centered while scrolling
 * CSS completely updated for FancyBox 1.2.0
 * Captions fixed in IE
 
-=1.3=
+= 1.3 =
 * Shadows and Close button should be fixed now
 
-=1.2=
+= 1.2 =
 * Updated to FancyBox 1.2.0
 * Uses packed version of the JavaScript file (8kb instead of 14kb)
 
-=1.1=
+= 1.1 =
 * Fixed FancyBox not being applied to .jpeg files
 * Fixed "Click to close" overlay text
 * Moved images to /img/ folder
