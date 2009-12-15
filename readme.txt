@@ -2,7 +2,7 @@
 Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
-Requires at least: 2.7
+Requires at least: 2.8
 Tested up to: 2.8.6
 Stable tag: 2.7.0
 
