@@ -28,6 +28,12 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancy.klade.lv/).
 
+= 2.7.1 =
+* Fixed: Z-index issue was left out in previus release
+* Fixed: Setting to close fancybox when clicking on the overlay wasn't available in the menu
+* Fixed: Frame width and height options are now in the "Other" tab
+* Fixed: Tabs now translated in Spanish localization
+
 = 2.7.0 =
 * New: Fancybox v1.2.6 support
 * New: New Admin page with tabs for better organization of all the options

@@ -34,7 +34,7 @@
 						</tr>
 
 						<tr valign="top">
-							<th scope="row"><?php _e('Close on Click', 'mfbfw'); ?></th>
+							<th scope="row"><?php _e('Close on Content Click', 'mfbfw'); ?></th>
 							<td>
 								<fieldset>
 
@@ -44,6 +44,20 @@
 									</label><br />
 
 									<small><em><?php _e('(You may want to leave this off if you display iframed or inline content that containts clickable elements - for example: play buttons for movies, links to other pages)', 'mfbfw'); ?></em></small><br /><br />
+
+								</fieldset>
+							</td>
+						</tr>
+						
+						<tr valign="top">
+							<th scope="row"><?php _e('Close on Overlay Click', 'mfbfw'); ?></th>
+							<td>
+								<fieldset>
+
+									<label for="mfbfw_hideOnOverlayClick">
+										<input type="checkbox" name="mfbfw_hideOnOverlayClick" id="mfbfw_hideOnOverlayClick"<?php if ($settings['hideOnOverlayClick']) echo ' checked="yes"';?> />
+										<?php _e('Close FancyBox by clicking on the overlay sorrounding it (default: on)', 'mfbfw'); ?>
+									</label><br /><br />
 
 								</fieldset>
 							</td>
