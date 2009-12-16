@@ -6,25 +6,6 @@
 					<tbody>
 
 						<tr valign="top">
-							<th scope="row"><?php _e('Frame Size', 'mfbfw'); ?></th>
-							<td>
-								<fieldset>
-
-									<label for="mfbfw_frameWidth">
-										<input type="text" name="mfbfw_frameWidth" id="mfbfw_frameWidth" value="<?php echo $settings['frameWidth']; ?>" size="4" maxlength="4" />
-										<?php _e('Width in pixels of FancyBox when showing iframe content (default: 560)', 'mfbfw'); ?>
-									</label><br /><br />
-
-									<label for="mfbfw_frameHeight">
-										<input type="text" name="mfbfw_frameHeight" id="mfbfw_frameHeight" value="<?php echo $settings['frameHeight']; ?>" size="4" maxlength="4" />
-										<?php _e('Height in pixels of FancyBox when showing iframe content (default: 340)', 'mfbfw'); ?>
-									</label><br /><br />
-
-								</fieldset>
-							</td>
-						</tr>
-
-						<tr valign="top">
 							<th scope="row"><?php _e('Gallery Type', 'mfbfw'); ?></th>
 							<td>
 								<fieldset>

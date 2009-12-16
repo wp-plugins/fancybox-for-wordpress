@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FancyBox for WordPress Español\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fancybox-for-wordpress\n"
-"POT-Creation-Date: 2009-12-12 21:30+0000\n"
+"POT-Creation-Date: 2009-12-16 17:37+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jose Pardilla <jose@moskis.net>\n"
 "Language-Team: Moskis <jose@moskis.net>\n"
@@ -14,8 +14,41 @@ msgstr ""
 
 #: admin.php:11
 #, php-format
-msgid "Fancybox for WordPress Options (version %s)"
-msgstr "Opciones de Fancybox for WordPress (versión %s)"
+msgid "Fancybox for WordPress (version %s)"
+msgstr "Fancybox for WordPress (versión %s)"
+
+#: admin.php:27
+msgid "Info"
+msgstr "Informaci&oacute;n"
+
+#: admin.php:28
+msgid "Appearance"
+msgstr "Apariencia"
+
+#: admin.php:29
+msgid "Animations"
+msgstr "Animaciones"
+
+#: admin.php:30
+msgid "Behaviour"
+msgstr "Comportamiento"
+
+#: admin.php:31
+msgid "Galleries"
+msgstr "Galerías"
+
+#: admin.php:32
+msgid "Other"
+msgstr "Otros"
+
+#: admin.php:33
+msgid "Troubleshooting"
+msgstr "Ayuda"
+
+#: admin.php:34
+#: lib/admin-tab-uninstall.php:1
+msgid "Uninstall"
+msgstr "Desinstalar"
 
 #: admin.php:90
 msgid "Save Changes"
@@ -190,8 +223,8 @@ msgid "Keep image in the center of the browser window when scrolling (default: o
 msgstr "Mantiene la imagen en el centro de la ventana del naegador al hacer scroll (por defecto: activado)"
 
 #: lib/admin-tab-behaviour.php:37
-msgid "Close on Click"
-msgstr "Cerrar al hacer click"
+msgid "Close on Content Click"
+msgstr "Cerrar al hacer click en contenido"
 
 #: lib/admin-tab-behaviour.php:43
 msgid "Close FancyBox by clicking on the image (default: off)"
@@ -202,10 +235,18 @@ msgid "(You may want to leave this off if you display iframed or inline content 
 msgstr "(Puedes que quieras dejar esta opción desactivada si vas a usar contendido anidado que incluya enlaces - for ejemplo: botones de play, enlaces a otras páginas)"
 
 #: lib/admin-tab-behaviour.php:53
+msgid "Close on Overlay Click"
+msgstr "Cerrar al hacer click en el fondo"
+
+#: lib/admin-tab-behaviour.php:59
+msgid "Close FancyBox by clicking on the overlay sorrounding it (default: on)"
+msgstr "Cerrar FancyBox al hacer click en el fondo (por defecto: activado)"
+
+#: lib/admin-tab-behaviour.php:67
 msgid "Close with &quot;Esc&quot;"
 msgstr "Cerrar con &quot;Esc&quot;"
 
-#: lib/admin-tab-behaviour.php:59
+#: lib/admin-tab-behaviour.php:73
 msgid "Close FancyBox when &quot;Escape&quot; key is pressed (default: on)"
 msgstr "Cerrar Fancybox cuando se pulse la tecla &quot;Escape&quot; (por defecto: activado)"
 
@@ -218,66 +259,54 @@ msgid "Here you can choose if you want the plugin to group all images into a gal
 msgstr "Aquí puedes elegir si quieres que el plugin agrupe las imágenes en una galería, o hacer una galería para cada entrada. También puedes definir tu propia expresión en jQuery."
 
 #: lib/admin-tab-galleries.php:9
-msgid "Frame Size"
-msgstr "Tamaño del recuadro"
-
-#: lib/admin-tab-galleries.php:15
-msgid "Width in pixels of FancyBox when showing iframe content (default: 560)"
-msgstr "Ancho en píxeles de FancyBox cuado se muestre contenido anidado (por defecto: 560)"
-
-#: lib/admin-tab-galleries.php:20
-msgid "Height in pixels of FancyBox when showing iframe content (default: 340)"
-msgstr "Alto en píxeles de FancyBox cuado se muestre contenido anidado (por defecto: 340)"
-
-#: lib/admin-tab-galleries.php:28
 msgid "Gallery Type"
 msgstr "Tipo de Galería"
 
-#: lib/admin-tab-galleries.php:34
+#: lib/admin-tab-galleries.php:15
 msgid "Make a gallery for all images on the page (default)"
 msgstr "Incluir todas las imágenes de la página en una única galería (opción por defecto)"
 
-#: lib/admin-tab-galleries.php:39
+#: lib/admin-tab-galleries.php:20
 msgid "Do not group images in gallery automatically (use this if you want to make galleries manually with the <code>REL</code> attribute)"
 msgstr "No agrupar im&aacute;genes en galer&iacute;as autom&aacute;ticamente (usa esta opci&oacute;n si quieres agrupar las imagenes manualmente con el atributo <code>REL</code>)"
 
-#: lib/admin-tab-galleries.php:44
+#: lib/admin-tab-galleries.php:25
 msgid "Make a gallery for each post (will only work if your theme uses <code>class=\"post\"</code> on each post, which is common in WordPress"
-msgstr "Hacer una galer&iacute;a para cada post (solo funcionar&aacute; si el tema usa <code>class=\"post\"</code> en cada post, que es lo m&aacute;s com&uacte;n en WordPress"
+msgstr "Hacer una galer&iacute;a para cada post (solo funcionar&aacute; si el tema usa <code>class=\"post\"</code> en cada post, que es lo m&aacute;s com&uacute;n en WordPress"
 
-#: lib/admin-tab-galleries.php:49
+#: lib/admin-tab-galleries.php:30
 msgid "Use a custom expression to apply FancyBox"
 msgstr "Aplicar FancyBox con una expresión personalizada"
 
-#: lib/admin-tab-galleries.php:58
+#: lib/admin-tab-galleries.php:39
 msgid "Custom expression guidelines:"
 msgstr "Indicaciones para expresiones personalizadas:"
 
-#: lib/admin-tab-galleries.php:60
+#: lib/admin-tab-galleries.php:41
 msgid "&middot; The custom expression has to apply <code>class=\"fancybox\"</code> to the links where you want to use FancyBox. Do not call the <code>fancybox()</code> function here, the plugin does this for you."
 msgstr "&middot; La expresión personalizada tiene que aplicar el atributo <code>class=\"fancybox\"</code> a los enlaces en los que quieras usar FancyBox. No llames a la funci&oacute;n <code>fancybox()</code> aqu&iacute;, de eso ya se encarga el plugin."
 
-#: lib/admin-tab-galleries.php:62
+#: lib/admin-tab-galleries.php:43
 msgid "&middot; The jQuery <code>addClass()</code> function is a good way to add the class to the desired links conserving any existing class."
 msgstr "&middot; La funci&oacute;n <code>addClass()</code> de jQuery es una buena forma de a&ntilde;adir el class a los links deseados."
 
-#: lib/admin-tab-galleries.php:64
+#: lib/admin-tab-galleries.php:45
 msgid "&middot; You can use <code>getTitle()</code> in your expression to copy the title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so that FancyBox can show captions."
 msgstr "&middot; Puedes usar <code>getTitle()</code> en tu expresi&oacute;n para copiar el atributo title desde el tag <code>IMG</code> al tag <code>A</code>, para que FancyBox pueda mostrar el t&iacute;tulo de la imagen."
 
-#: lib/admin-tab-galleries.php:66
+#: lib/admin-tab-galleries.php:47
 msgid "&middot; You can use <code>jQuery(thumbnails)</code> like in the example expression to apply FancyBox to thumbnails that link to these extensions: BMP, GIF, JPG, JPEG, PNG (both lowercase and uppercase)."
 msgstr "&middot; Puedes usar <code>jQuery(thumbnails)</code> como en el ejemplo para aplicar FancyBox a las miniaturas de im%aacute;genes que enlazen a estas extensiones: BMP, GIF, JPG, JPEG, PNG tanto en min&uacute;scula como en may&uacute;scula)."
 
-#: lib/admin-tab-galleries.php:68
+#: lib/admin-tab-galleries.php:49
 msgid "&middot; If you want to do it manually you can use something like <code>jQuery(\"a:has(img)[href$='.jpg']\")</code> or whatever works for you."
 msgstr "&middot; Si prefieres hacerlo manualmente puedes usar algo como <code>jQuery(\"a:has(img)[href$='.jpg']\")</code> o lo que m&aacute;s se ajuste a tu blog."
 
-#: lib/admin-tab-galleries.php:70
+#: lib/admin-tab-galleries.php:51
 msgid "See the <a href=\"http://docs.jquery.com/\" target=\"_blank\">jQuery Documentation</a> for more help."
 msgstr "Visita la <a href=\"http://docs.jquery.com/\" target=\"_blank\">Documentaci&oacute;n de jQuery</a> para encontrar m&aacute;s ayuda."
 
-#: lib/admin-tab-galleries.php:72
+#: lib/admin-tab-galleries.php:53
 msgid "Examples:"
 msgstr "Ejemplos:"
 
@@ -350,14 +379,26 @@ msgid "Leave the fields empty to disable."
 msgstr "Deja estos campos vacíos para desactivar cualqueir retrollamada."
 
 #: lib/admin-tab-other.php:39
+msgid "Frame Size"
+msgstr "Tamaño del recuadro"
+
+#: lib/admin-tab-other.php:45
+msgid "Width in pixels of FancyBox when showing iframe content (default: 560)"
+msgstr "Ancho en píxeles de FancyBox cuado se muestre contenido anidado (por defecto: 560)"
+
+#: lib/admin-tab-other.php:50
+msgid "Height in pixels of FancyBox when showing iframe content (default: 340)"
+msgstr "Alto en píxeles de FancyBox cuado se muestre contenido anidado (por defecto: 340)"
+
+#: lib/admin-tab-other.php:58
 msgid "Load JavaScript in Footer"
 msgstr "Cargar JavaScript en el Pié de página"
 
-#: lib/admin-tab-other.php:45
+#: lib/admin-tab-other.php:64
 msgid "Loads JavaScript at the end of the blog's HTML (experimental) (default: off)"
 msgstr "Carga el JavaScript al final del código HTML del blog (experimental) (por defecto: desactivado)"
 
-#: lib/admin-tab-other.php:48
+#: lib/admin-tab-other.php:67
 msgid "This option won't be recognized if you use <strong>Parallel Load</strong> plugin. In that case, you can do this from Parallel Load's options."
 msgstr "Esta opción será ignorada si el plugin <strong>Parallel Load</strong> está instalado. Si es así, usa las opciones del plugin Parallel Load."
 
@@ -396,10 +437,6 @@ msgstr "Usar parámetro noConflict de jQuery (por defecto: activado)"
 #: lib/admin-tab-troubleshooting.php:36
 msgid "(Turning this off may cause problems if there are plugins activated that use other js framework like mootools, prototype, scriptaculous, etc.)"
 msgstr "(Desactivar esta opción puede causar problemas si hay plugins activadoes que usen otros frameworks javascript como Mootols, Prototype, Scriptaculous, etc.)"
-
-#: lib/admin-tab-uninstall.php:1
-msgid "Uninstall"
-msgstr "Desinstalar"
 
 #: lib/admin-tab-uninstall.php:3
 msgid "Like many other plugins, FancyBox for WordPress stores its settings on your WordPress' options database table. Actually, these settings are not using more than a couple of kilobytes of space, but if you want to completely uninstall this plugin, check the option below, then save changes, and <strong>when you deactivate the plugin</strong>, all its settings will be removed from the database."

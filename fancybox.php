@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 2.7.0
+Version: 2.7.1
 Author: Jose Pardilla
 Author URI: http://moskis.net/
 */
@@ -16,7 +16,7 @@ define('FBFW_URL', WP_PLUGIN_URL . '/fancybox-for-wordpress');
 // When plugin is activated, update version, and set any new settings to default
 function mfbfw_install() {
 
-		update_option('mfbfw_active_version', '2.7.0');
+		update_option('mfbfw_active_version', '2.7.1');
 
 		add_option('mfbfw_showTitle',					'on');
 		add_option('mfbfw_border',						'');

@@ -8,7 +8,7 @@ function mfbfw_options_page() {
 
 	<div class="wrap">
 
-	<div id="icon-plugins" class="icon32"></div><h2><?php printf(__('Fancybox for WordPress Options (version %s)', 'mfbfw'), $settings['version']); ?></h2>
+	<div id="icon-plugins" class="icon32"></div><h2><?php printf(__('Fancybox for WordPress (version %s)', 'mfbfw'), $settings['version']); ?></h2>
 
 	<br />
 
@@ -24,14 +24,14 @@ function mfbfw_options_page() {
 		<div id="fbfwTabs">
 
 			<ul>
-				<li><a href="#fbfw-info">Info</a></li>
-				<li><a href="#fbfw-appearance">Appearance</a></li>
-				<li><a href="#fbfw-animations">Animations</a></li>
-				<li><a href="#fbfw-behaviour">Behaviour</a></li>
-				<li><a href="#fbfw-galleries">Galleries</a></li>
-				<li><a href="#fbfw-other">Other</a></li>
-				<li><a href="#fbfw-troubleshooting">Troubleshooting</a></li>
-				<li><a href="#fbfw-uninstall">Uninstall</a></li>
+				<li><a href="#fbfw-info"><?php _e('Info', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-appearance"><?php _e('Appearance', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-animations"><?php _e('Animations', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-behaviour"><?php _e('Behaviour', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-galleries"><?php _e('Galleries', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-other"><?php _e('Other', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-troubleshooting"><?php _e('Troubleshooting', 'mfbfw'); ?></a></li>
+				<li><a href="#fbfw-uninstall"><?php _e('Uninstall', 'mfbfw'); ?></a></li>
 			</ul>
 
 			<div id="fbfw-info">

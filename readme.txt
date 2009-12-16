@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.8
 Tested up to: 2.8.6
-Stable tag: 2.7.0
+Stable tag: 2.7.1
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -23,10 +23,19 @@ Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended
 * Shadows not perfect on IE6/7
 * Options page doesn't on WordPress MU
 
+= Demo =
+
+You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/) although there's nothing amazing to see, just a FancyBox simple implementation, that's the point ;) You can take a look at the code if you're curious, though.
 
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancy.klade.lv/).
+
+= 2.7.1 =
+* Fixed: Z-index issue was left out in previus release
+* Fixed: Setting to close fancybox when clicking on the overlay wasn't available in the menu
+* Fixed: Frame width and height options are now in the "Other" tab
+* Fixed: Tabs now translated in Spanish localization
 
 = 2.7.0 =
 * New: Fancybox v1.2.6 support
@@ -159,10 +168,3 @@ To fix this edit the file /themes/mandigo/header.php and remove the line 231:
 <code>&lt;script type="text/javascript" src="&lt;?php echo $dirs['www']['js']; ?&gt;jquery.js"&gt;&lt;/script&gt;</code>
 
 After applying this fix everything seems to work perfectly.
-
-
-== Demo ==
-
-You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/) although there's nothing amazing to see, just a FancyBox simple implementation, that's the point ;)
-
-You can take a look at the code if you're curious, though. You will find it in the Head section of the page.
