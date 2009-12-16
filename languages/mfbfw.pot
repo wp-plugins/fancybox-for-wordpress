@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/fancybox-for-wordpress\n"
-"POT-Creation-Date: 2009-12-12 21:30+0000\n"
+"POT-Creation-Date: 2009-12-16 17:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,39 @@ msgstr ""
 
 #: admin.php:11
 #, php-format
-msgid "Fancybox for WordPress Options (version %s)"
+msgid "Fancybox for WordPress (version %s)"
+msgstr ""
+
+#: admin.php:27
+msgid "Info"
+msgstr ""
+
+#: admin.php:28
+msgid "Appearance"
+msgstr ""
+
+#: admin.php:29
+msgid "Animations"
+msgstr ""
+
+#: admin.php:30
+msgid "Behaviour"
+msgstr ""
+
+#: admin.php:31
+msgid "Galleries"
+msgstr ""
+
+#: admin.php:32
+msgid "Other"
+msgstr ""
+
+#: admin.php:33
+msgid "Troubleshooting"
+msgstr ""
+
+#: admin.php:34 lib/admin-tab-uninstall.php:1
+msgid "Uninstall"
 msgstr ""
 
 #: admin.php:90
@@ -210,7 +242,7 @@ msgid ""
 msgstr ""
 
 #: lib/admin-tab-behaviour.php:37
-msgid "Close on Click"
+msgid "Close on Content Click"
 msgstr ""
 
 #: lib/admin-tab-behaviour.php:43
@@ -225,10 +257,18 @@ msgid ""
 msgstr ""
 
 #: lib/admin-tab-behaviour.php:53
-msgid "Close with &quot;Esc&quot;"
+msgid "Close on Overlay Click"
 msgstr ""
 
 #: lib/admin-tab-behaviour.php:59
+msgid "Close FancyBox by clicking on the overlay sorrounding it (default: on)"
+msgstr ""
+
+#: lib/admin-tab-behaviour.php:67
+msgid "Close with &quot;Esc&quot;"
+msgstr ""
+
+#: lib/admin-tab-behaviour.php:73
 msgid "Close FancyBox when &quot;Escape&quot; key is pressed (default: on)"
 msgstr ""
 
@@ -244,85 +284,73 @@ msgid ""
 msgstr ""
 
 #: lib/admin-tab-galleries.php:9
-msgid "Frame Size"
-msgstr ""
-
-#: lib/admin-tab-galleries.php:15
-msgid "Width in pixels of FancyBox when showing iframe content (default: 560)"
-msgstr ""
-
-#: lib/admin-tab-galleries.php:20
-msgid "Height in pixels of FancyBox when showing iframe content (default: 340)"
-msgstr ""
-
-#: lib/admin-tab-galleries.php:28
 msgid "Gallery Type"
 msgstr ""
 
-#: lib/admin-tab-galleries.php:34
+#: lib/admin-tab-galleries.php:15
 msgid "Make a gallery for all images on the page (default)"
 msgstr ""
 
-#: lib/admin-tab-galleries.php:39
+#: lib/admin-tab-galleries.php:20
 msgid ""
 "Do not group images in gallery automatically (use this if you want to make "
 "galleries manually with the <code>REL</code> attribute)"
 msgstr ""
 
-#: lib/admin-tab-galleries.php:44
+#: lib/admin-tab-galleries.php:25
 msgid ""
 "Make a gallery for each post (will only work if your theme uses <code>class="
 "\"post\"</code> on each post, which is common in WordPress"
 msgstr ""
 
-#: lib/admin-tab-galleries.php:49
+#: lib/admin-tab-galleries.php:30
 msgid "Use a custom expression to apply FancyBox"
 msgstr ""
 
-#: lib/admin-tab-galleries.php:58
+#: lib/admin-tab-galleries.php:39
 msgid "Custom expression guidelines:"
 msgstr ""
 
-#: lib/admin-tab-galleries.php:60
+#: lib/admin-tab-galleries.php:41
 msgid ""
 "&middot; The custom expression has to apply <code>class=\"fancybox\"</code> "
 "to the links where you want to use FancyBox. Do not call the <code>fancybox()"
 "</code> function here, the plugin does this for you."
 msgstr ""
 
-#: lib/admin-tab-galleries.php:62
+#: lib/admin-tab-galleries.php:43
 msgid ""
 "&middot; The jQuery <code>addClass()</code> function is a good way to add "
 "the class to the desired links conserving any existing class."
 msgstr ""
 
-#: lib/admin-tab-galleries.php:64
+#: lib/admin-tab-galleries.php:45
 msgid ""
 "&middot; You can use <code>getTitle()</code> in your expression to copy the "
 "title attribute from the <code>IMG</code> tag to the <code>A</code> tag, so "
 "that FancyBox can show captions."
 msgstr ""
 
-#: lib/admin-tab-galleries.php:66
+#: lib/admin-tab-galleries.php:47
 msgid ""
 "&middot; You can use <code>jQuery(thumbnails)</code> like in the example "
 "expression to apply FancyBox to thumbnails that link to these extensions: "
 "BMP, GIF, JPG, JPEG, PNG (both lowercase and uppercase)."
 msgstr ""
 
-#: lib/admin-tab-galleries.php:68
+#: lib/admin-tab-galleries.php:49
 msgid ""
 "&middot; If you want to do it manually you can use something like "
 "<code>jQuery(\"a:has(img)[href$='.jpg']\")</code> or whatever works for you."
 msgstr ""
 
-#: lib/admin-tab-galleries.php:70
+#: lib/admin-tab-galleries.php:51
 msgid ""
 "See the <a href=\"http://docs.jquery.com/\" target=\"_blank\">jQuery "
 "Documentation</a> for more help."
 msgstr ""
 
-#: lib/admin-tab-galleries.php:72
+#: lib/admin-tab-galleries.php:53
 msgid "Examples:"
 msgstr ""
 
@@ -417,15 +445,27 @@ msgid "Leave the fields empty to disable."
 msgstr ""
 
 #: lib/admin-tab-other.php:39
-msgid "Load JavaScript in Footer"
+msgid "Frame Size"
 msgstr ""
 
 #: lib/admin-tab-other.php:45
+msgid "Width in pixels of FancyBox when showing iframe content (default: 560)"
+msgstr ""
+
+#: lib/admin-tab-other.php:50
+msgid "Height in pixels of FancyBox when showing iframe content (default: 340)"
+msgstr ""
+
+#: lib/admin-tab-other.php:58
+msgid "Load JavaScript in Footer"
+msgstr ""
+
+#: lib/admin-tab-other.php:64
 msgid ""
 "Loads JavaScript at the end of the blog's HTML (experimental) (default: off)"
 msgstr ""
 
-#: lib/admin-tab-other.php:48
+#: lib/admin-tab-other.php:67
 msgid ""
 "This option won't be recognized if you use <strong>Parallel Load</strong> "
 "plugin. In that case, you can do this from Parallel Load's options."
@@ -479,10 +519,6 @@ msgstr ""
 msgid ""
 "(Turning this off may cause problems if there are plugins activated that use "
 "other js framework like mootools, prototype, scriptaculous, etc.)"
-msgstr ""
-
-#: lib/admin-tab-uninstall.php:1
-msgid "Uninstall"
 msgstr ""
 
 #: lib/admin-tab-uninstall.php:3
