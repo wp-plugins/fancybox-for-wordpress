@@ -5,7 +5,7 @@ Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
 Version: 2.7.2
 Author: Jose Pardilla
-Author URI: http://moskis.net/
+Author URI: http://josepardilla.com/
 */
 
 
