@@ -3,8 +3,8 @@ Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, image, gallery
 Requires at least: 2.8
-Tested up to: 2.8.6
-Stable tag: 2.7.1
+Tested up to: 2.9
+Stable tag: 2.7.2
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -17,8 +17,6 @@ You can easely customize almost anything you can think about fancybox: the borde
 
 By default, the plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY thumbnails that link directly to an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
 
-Finally, i have only tested the plugin in WordPress 2.7, so it's very recomended to use it with WordPress 2.7 or later. After all, there's no reason why you shouldn't be already using WP2.7, is there? ;)
-
 = Known Bugs =
 * Shadows not perfect on IE6/7
 * Options page doesn't on WordPress MU
@@ -30,6 +28,9 @@ You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plu
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancy.klade.lv/).
+
+= 2.7.2 =
+* Fixed: Layout problem in options page in WordPress 2.9
 
 = 2.7.1 =
 * Fixed: Z-index issue was left out in previus release
