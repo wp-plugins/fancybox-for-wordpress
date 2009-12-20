@@ -14,7 +14,7 @@
 				
 				<br /><small><em><?php _e('<strong>Note:</strong> Having a cache plugin may prevent changes from taking effect immidiately, if this happens clear cache after saving changes here or deactivate cache until you finish editing these options.', 'mfbfw'); ?></em></small><br /><br />
 
-				<div style="height:90px;float:left;text-align:center;width:200px;" class="updated">
+				<div style="background-color:#FFFFE0;border:1px solid #E6DB55;padding:0 .6em;margin:5px 15px 2px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;height:110px;float:left;text-align:center;width:200px">
 					<p style="line-height:1.5em;"><?php _e('If you use FancyBox and like it, buy the author a beer!', 'mfbfw'); ?></p>
 					<form id="donate_form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 						<input name="cmd" value="_donations" type="hidden">
@@ -32,7 +32,7 @@
 					</form>
 				</div>
 
-				<div style="height:90px;float:left;margin-left:10px;text-align:center;width:200px;" class="updated">
+				<div style="background-color:#FFFFE0;border:1px solid #E6DB55;padding:0 .6em;margin:5px 15px 2px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;height:110px;float:left;margin-left:10px;text-align:center;width:200px">
 					<p style="line-height:1.5em;"><?php _e('The author of this WordPress Plugin also likes beer :P', 'mfbfw'); ?></p>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 						<input type="hidden" name="cmd" value="_s-xclick"/>
@@ -42,7 +42,7 @@
 					</form>
 				</div>
 
-				<div style="height:90px;float:left;margin-left:10px;background:#9DD1F2;border-color:#419ED9;text-align:center;width:200px;" class="updated">
+				<div style="background-color:#9DD1F2;border:1px solid #419ED9;padding:0 .6em;margin:5px 15px 2px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;height:110px;float:left;margin-left:10px;text-align:center;width:200px">
 					<p style="line-height:1.5em;"><a href="http://twitter.com/moskis/"><?php _e('Follow me on Twitter for more WordPress Plugins and Themes', 'mfbfw'); ?></a></p>
 					<img height="16" width="16" border="0" alt="" src="<?php echo FBFW_URL ?>/css/img/extra_twitter.png" />
 				</div>
