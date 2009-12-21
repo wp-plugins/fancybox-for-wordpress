@@ -1,7 +1,7 @@
 === FancyBox for WordPress ===
 Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
-Tags: fancybox, lightbox, jquery, image, gallery
+Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 2.8
 Tested up to: 2.9
 Stable tag: 2.7.2
