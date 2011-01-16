@@ -8,7 +8,7 @@
 				<h3>Help with Fancybox for WordPress plugin</h3>
 				<ul style="list-style-type:disc;padding-left:15px;">
 					<li><?php _e('If you are having trouble with this plugin try to localize the problem (switch your theme and deactivate plugins until you find the source of the problem). You can also try the Troubleshooting settings of this plugin if necesary.', 'mfbfw'); ?></li>
-					<li><?php _e('Try reverting these settings to their defaults with the button below.', 'mfbfw'); ?></li>
+					<!--<li><?php _e('Try reverting these settings to their defaults with the button below.', 'mfbfw'); ?></li>-->
 					<li><?php _e('If you still can not get the plugin to work, <a target="_blank" href="http://wordpress.org/tags/fancybox-for-wordpress?forum_id=10#postform">write a post here</a> explaining the problem or take a look and the <a target="_blank" href="http://wordpress.org/tags/fancybox-for-wordpress?forum_id=10">already posted messages</a>.', 'mfbfw'); ?></li>
 				</ul>
 				

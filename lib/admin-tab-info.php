@@ -10,4 +10,4 @@
 				
 				<h3><?php _e('What\'s New in this version?', 'mfbfw'); ?></h3>
 				<p><?php _e('To see what\'s new in this version check the <a href="http://wordpress.org/extend/plugins/fancybox-for-wordpress/changelog/">changelog</a> at WordPress Plugins Directory.', 'mfbfw'); ?></p>
-				<p><?php _e('For known bugs or things to come in future versions check the <a href="http://wordpress.org/extend/plugins/fancybox-for-wordpress/changelog/">issues list</a> at Google Code.', 'mfbfw'); ?></p><br /><br />
+				<p><?php _e('For known bugs or things to come in future versions check the <a href="http://code.google.com/p/fancybox-for-wordpress/issues/list">issues list</a> at Google Code.', 'mfbfw'); ?></p><br /><br />
