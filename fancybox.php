@@ -3,9 +3,15 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 2.7.2
-Author: Jose Pardilla
+Version: 2.7.3
+Author: Jos&eacute; Pardilla
 Author URI: http://josepardilla.com/
+
+ * FancyBox is Copyright (c) 2008 - 2010 Janis Skarnelis
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+
 */
 
 
@@ -16,7 +22,7 @@ define('FBFW_URL', WP_PLUGIN_URL . '/fancybox-for-wordpress');
 // When plugin is activated, update version, and set any new settings to default
 function mfbfw_install() {
 
-		update_option('mfbfw_active_version', '2.7.2');
+		update_option('mfbfw_active_version', '2.7.3');
 
 		add_option('mfbfw_showTitle',					'on');
 		add_option('mfbfw_border',						'');
@@ -193,21 +199,15 @@ function mfbfw_load() {
 			wp_enqueue_script('fancybox', FBFW_URL . '/js/jquery.fancybox-1.2.6.min.js', array('jquery'), '1.3.2', $loadAtFooter); // Load fancybox with jQuery
 
 		}
-
+		
 		if (get_option('mfbfw_easing')) {
 
 			wp_enqueue_script('jqueryeasing', FBFW_URL . '/js/jquery.easing.1.3.min.js', array('jquery'), '1.3.2', $loadAtFooter); // Load easing javascript file if required
 
 		}
-
-	} elseif ( is_plugin_page() ) {
-	
-		wp_enqueue_script('jquery-ui-tabs', array('jquery-ui-core')); // Load jQuery UI Tabs for Admin Page
-		
-		wp_enqueue_script('fancyboxadmin', FBFW_URL . '/js/admin.js', array('jquery'), '1.3.2'); // Load specific JS for Admin Page
 	
 	}
-	
+
 }
 
 
@@ -345,8 +345,15 @@ function mfbfw_admin_menu() {
 
 	require FBFW_PATH . '/admin.php';
 
-	add_submenu_page('options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
+	$mfbfwadmin = add_submenu_page('options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 10, 'fancybox-for-wordpress', 'mfbfw_options_page');
+	add_action( "admin_print_scripts-$mfbfwadmin", 'mfbfw_admin_head' );
 
+}
+
+// Load Admin JS 
+function mfbfw_admin_head() {
+	wp_enqueue_script('jquery-ui-tabs', array('jquery-ui-core')); // Load jQuery UI Tabs for Admin Page
+	wp_enqueue_script('fancyboxadmin', FBFW_URL . '/js/admin.js', array('jquery')); // Load specific JS for Admin Page
 }
 
 

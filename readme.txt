@@ -3,8 +3,8 @@ Contributors: moskis
 Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 2.8
-Tested up to: 2.9
-Stable tag: 2.7.2
+Tested up to: 3.0.4
+Stable tag: 2.7.3
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -15,7 +15,7 @@ Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done
 
 You can easely customize almost anything you can think about fancybox: the border, margin width and color, zoom speed, animation type, close button position, overlay color and opacity and even more advanced option like several options to group images into galleries, and more...
 
-By default, the plugin will use jQuery to apply [FancyBox](http://fancy.klade.lv/) to ANY thumbnails that link directly to an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
+By default, the plugin will use jQuery to apply [FancyBox](http://fancybox.net/) to ANY thumbnails that link directly to an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
 
 = Known Bugs =
 * Shadows not perfect on IE6/7
@@ -27,7 +27,12 @@ You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plu
 
 == Changelog ==
 
-This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancy.klade.lv/).
+This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
+
+= 2.7.3 =
+* Fixed: Settings not saving in some browsers. Thanks to [supertomate](http://wordpress.org/support/topic/plugin-fancybox-for-wordpress-save-changes-button-doesnt-submit-form?replies=7#post-1765041)
+* Fixed: JS being added to other plugins' configuration pages. Thanks to [Brandon Dove](http://wordpress.org/support/topic/plugin-fancybox-for-wordpress-theres-a-problem-with-is_plugin_page?replies=1#post-1888828)
+* Added: Support section in options page with better information
 
 = 2.7.2 =
 * Fixed: Layout problem in options page in WordPress 2.9
@@ -126,7 +131,7 @@ This changelog is for the WordPress plugin. For the Fancybox main changelog go t
 
 1. Upload the `fancybox-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. That's it, [FancyBox](http://fancy.klade.lv/) will be automatically applied to all your image links and galleries.
+3. That's it, [FancyBox](http://fancybox.net/) will be automatically applied to all your image links and galleries.
 4. If you want to customize a bit the look and feel of FancyBox, go to the Options Page under General Options in the WordPress Admin panel
 
 
@@ -140,7 +145,7 @@ This changelog is for the WordPress plugin. For the Fancybox main changelog go t
 
 = Are you the author of FancyBox? =
 
-NO. I just ported it to WordPress. For more info on the FancyBox script itself [visit its website](http://fancy.klade.lv/home).
+NO. I just ported it to WordPress. For more info on the FancyBox script itself [visit its website](http://fancybox.net/).
 
 = Help translate the plugin to your language =
 

@@ -3,15 +3,24 @@ jQuery(function(){
 
   // Tabs
   jQuery("#fbfwTabs").tabs();
+	
+	// Hide Donation and twitter stuff on tabs other than Info
+  jQuery("#fbfwTabs li a").click(function(){
+		jQuery("#mfbfwd").hide();
+  });
+	
+	jQuery("#show-mfbfwd").click(function(){
+		jQuery("#mfbfwd").show();
+  });
 
   // Advanced Settings Switcher
   jQuery("#advOpsSwitch").click(function(){
-	jQuery(".advOpts").toggle("slow");
+		jQuery(".advOpts").toggle("slow");
   });
 
   // Troubleshooting & Settings Switcher
   jQuery("#troOpsSwitch").click(function(){
-	jQuery(".troOpts").toggle("slow");
+		jQuery(".troOpts").toggle("slow");
   });
 
   // Hide Custom Expresion textarea if not needed
