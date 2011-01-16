@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 2.8
 Tested up to: 3.0.4
-Stable tag: 2.7.3
+Stable tag: 2.7.4
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -17,10 +17,6 @@ You can easely customize almost anything you can think about fancybox: the borde
 
 By default, the plugin will use jQuery to apply [FancyBox](http://fancybox.net/) to ANY thumbnails that link directly to an image. This includes posts, the sidebar, etc, so you can activate it and it will be applied automatically.
 
-= Known Bugs =
-* Shadows not perfect on IE6/7
-* Options page doesn't on WordPress MU
-
 = Demo =
 
 You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/) although there's nothing amazing to see, just a FancyBox simple implementation, that's the point ;) You can take a look at the code if you're curious, though.
@@ -28,6 +24,10 @@ You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plu
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
+
+= 2.7.4 =
+* Fixed: Little error tagging 2.7.3, a file didn't upload and broke options page.
+* Update: Language POT file
 
 = 2.7.3 =
 * Fixed: Settings not saving in some browsers. Thanks to [supertomate](http://wordpress.org/support/topic/plugin-fancybox-for-wordpress-save-changes-button-doesnt-submit-form?replies=7#post-1765041)
