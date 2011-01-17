@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 2.7.4
+Version: 2.7.5
 Author: Jos&eacute; Pardilla
 Author URI: http://josepardilla.com/
 
@@ -22,7 +22,7 @@ define('FBFW_URL', WP_PLUGIN_URL . '/fancybox-for-wordpress');
 // When plugin is activated, update version, and set any new settings to default
 function mfbfw_install() {
 
-		update_option('mfbfw_active_version', '2.7.4');
+		update_option('mfbfw_active_version', '2.7.5');
 
 		add_option('mfbfw_showTitle',					'on');
 		add_option('mfbfw_border',						'');
@@ -321,9 +321,9 @@ function mfbfw_init() {
 			'hideOnContentClick': <?php if ($settings['hideOnContentClick']) { echo "true"; } else { echo "false"; } ?>,
 			'frameWidth':  <?php echo $settings['frameWidth']; ?>,
 			'frameHeight':  <?php echo $settings['frameHeight']; ?>,
-			'callbackOnStart': <?php if ($settings['callbackOnStart']) { echo $settings['callbackOnStart']; } else { echo 'null'; } ?>,
-			'callbackOnShow': <?php if ($settings['callbackOnShow']) { echo $settings['callbackOnShow']; } else { echo 'null'; } ?>,
-			'callbackOnClose': <?php if ($settings['callbackOnClose']) { echo $settings['callbackOnClose']; } else { echo 'null'; } ?>,
+			<?php if ($settings['callbackOnStart']) { echo "'callbackOnStart': ". $settings['callbackOnStart'] .","."\n"; } ?>
+			<?php if ($settings['callbackOnShow']) { echo "'callbackOnShow': ". $settings['callbackOnShow'] .","."\n"; } ?>
+			<?php if ($settings['callbackOnClose']) { echo "'callbackOnClose': ". $settings['callbackOnClose'] .","."\n"; } ?>
 			'centerOnScroll': <?php if ($settings['centerOnScroll']) { echo "true"; } else { echo "false"; } ?><?php if ($settings['easing']) { ?>,
 			'easingIn': <?php echo '"' . $settings['easingIn'] . '"'; ?>,
 			'easingOut': <?php echo '"' . $settings['easingOut'] . '"'; ?>,

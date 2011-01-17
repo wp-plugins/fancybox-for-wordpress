@@ -4,7 +4,7 @@ Donate link: https://www.asmallorange.com/extras/donate/?id=10218
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 2.8
 Tested up to: 3.0.4
-Stable tag: 2.7.4
+Stable tag: 2.7.5
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
@@ -24,6 +24,9 @@ You can see the plugin working on [my blog](http://blog.moskis.net/downloads/plu
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
+
+= 2.7.5 =
+* Fixed: Callback arguments are no longer added as "null" when they are not set in options page.
 
 = 2.7.4 =
 * Fixed: Little error tagging 2.7.3, a file didn't upload and broke options page.
