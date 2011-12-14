@@ -6,7 +6,7 @@
 					<tbody>
 
 						<tr valign="top">
-							<th scope="row"><?php _e('Border Color', 'mfbfw'); ?></th>
+							<th scope="row"><?php _e('Border', 'mfbfw'); ?></th>
 							<td>
 								<fieldset>
 								
@@ -136,24 +136,19 @@
 									
 									<div id="titleBlock">
 
-										<input id="titlePositionOver" class="titlePosition" type="radio" value="over" name="mfbfw[titlePosition]"<?php if ($settings['titlePosition'] == 'over') echo ' checked="yes"';?> />
-										<label for="titlePositionOver">
-											<?php _e('Over', 'mfbfw'); ?>
-										</label><br />
-
 										<input id="titlePositionInside" class="titlePosition" type="radio" value="inside" name="mfbfw[titlePosition]"<?php if ($settings['titlePosition'] == 'inside') echo ' checked="yes"';?> />
 										<label for="titlePositionInside">
 											<?php _e('Inside (default)', 'mfbfw'); ?>
 										</label><br />
 										
-										<input id="titlePositionOutside" class="titlePosition" type="radio" value="outside" name="mfbfw[titlePosition]"<?php if ($settings['titlePosition'] == 'outside') echo ' checked="yes"';?> />
+										<input id="titlePositionOutside" class="titlePosition" type="radio" value="float" name="mfbfw[titlePosition]"<?php if ($settings['titlePosition'] == 'float') echo ' checked="yes"';?> />
 										<label for="titlePositionOutside">
 											<?php _e('Outside', 'mfbfw'); ?>
 										</label><br />
-									
-										<input id="titlePositionFloat" class="titlePosition" type="radio" value="outside" name="mfbfw[titlePosition]"<?php if ($settings['titlePosition'] == 'float') echo ' checked="yes"';?> />
-										<label for="titlePositionFloat">
-											<?php _e('Float', 'mfbfw'); ?>
+
+										<input id="titlePositionOver" class="titlePosition" type="radio" value="over" name="mfbfw[titlePosition]"<?php if ($settings['titlePosition'] == 'over') echo ' checked="yes"';?> />
+										<label for="titlePositionOver">
+											<?php _e('Over', 'mfbfw'); ?>
 										</label><br /><br />
 												
 										<div id="titleColorBlock">

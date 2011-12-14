@@ -1,8 +1,8 @@
-				<h2><?php _e('Other FancyBox Calss <span style="color:red">(advanced)</span>', 'mfbfw'); ?></h2>
+				<h2><?php _e('Extra FancyBox Calls <span style="color:red">(advanced)</span>', 'mfbfw'); ?></h2>
 
 				<p><?php _e('Here you can add as many additional calls to fancybox as you want, with different settings. For example, if you want to use fancybox with iframes or ajax on any specific link, you can configure those calls here without affecting the settings for images.', 'mfbfw'); ?></p>
 				
-				<p><?php _e('For information on the options you can use here see <a href="http://fancybox.net/api">FancyBox\'s API & Options page</a>.', 'mfbfw'); ?></p>
+				<p><?php _e('For information on the options available you can use here see <a href="http://fancybox.net/api">FancyBox\'s API & Options page</a>.', 'mfbfw'); ?></p>
 				
 				<table class="form-table" style="clear:none;">
 					<tbody>

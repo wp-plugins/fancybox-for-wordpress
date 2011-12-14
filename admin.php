@@ -24,9 +24,9 @@ function mfbfw_options_page() {
 				<li><a href="#fbfw-animations"><?php _e( 'Animations', 'mfbfw' ); ?></a></li>
 				<li><a href="#fbfw-behaviour"><?php _e( 'Behaviour', 'mfbfw' ); ?></a></li>
 				<li><a href="#fbfw-galleries"><?php _e( 'Galleries', 'mfbfw' ); ?></a></li>
-				<li><a href="#fbfw-other"><?php _e( 'Other', 'mfbfw' ); ?></a></li>
+				<li><a href="#fbfw-other"><?php _e( 'Miscellaneous', 'mfbfw' ); ?></a></li>
+				<li><a href="#fbfw-calls"><?php _e( 'Extra Calls', 'mfbfw' ); ?></a></li>
 				<li><a href="#fbfw-troubleshooting"><?php _e( 'Troubleshooting', 'mfbfw' ); ?></a></li>
-				<li><a href="#fbfw-calls"><?php _e( 'Other Calls', 'mfbfw' ); ?></a></li>
 				<li><a href="#fbfw-support" style="color:green;"><?php _e( 'Support', 'mfbfw' ); ?></a></li>
 				<li><a href="#fbfw-uninstall" style="color:red;"><?php _e ('Uninstall', 'mfbfw' ); ?></a></li>
 			</ul>
@@ -54,13 +54,13 @@ function mfbfw_options_page() {
 			<div id="fbfw-other">
 				<?php require_once ( FBFW_PATH . '/lib/admin-tab-other.php' ); ?>
 			</div>
-
-			<div id="fbfw-troubleshooting">
-				<?php require_once ( FBFW_PATH . '/lib/admin-tab-troubleshooting.php' ); ?>
-			</div>
 			
 			<div id="fbfw-calls">
 				<?php require_once ( FBFW_PATH . '/lib/admin-tab-calls.php' ); ?>
+			</div>
+
+			<div id="fbfw-troubleshooting">
+				<?php require_once ( FBFW_PATH . '/lib/admin-tab-troubleshooting.php' ); ?>
 			</div>
 			
 			<div id="fbfw-support">
@@ -86,9 +86,9 @@ function mfbfw_options_page() {
 		</div>
 	</form>
 	
-	<div id="mfbfwd" style="border-top:1px dashed #DDDDDD;margin:20px auto 40px;overflow:hidden;padding-top:25px;width:735px">
+	<div id="mfbfwd">
 	
-		<div style="background-color:#FFFFE0;border:1px solid #E6DB55;padding:0 .6em;margin:5px 15px 2px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;height:90px;float:left;text-align:center;width:200px">
+		<div class="mfbfw_box mfbfw_yellow">
 			<p style="line-height:1.5em;"><?php _e( 'If you use FancyBox and like it, buy the author a beer!', 'mfbfw' ); ?></p>
 			<form id="donate_form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input name="cmd" value="_donations" type="hidden">
@@ -105,7 +105,7 @@ function mfbfw_options_page() {
 			</form>
 		</div>
 
-		<div style="background-color:#FFFFE0;border:1px solid #E6DB55;padding:0 .6em;margin:5px 15px 2px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;height:90px;float:left;margin-left:10px;text-align:center;width:200px">
+		<div class="mfbfw_box mfbfw_yellow">
 			<p style="line-height:1.5em;"><?php _e( 'The author of this WordPress Plugin also likes beer :P', 'mfbfw' ); ?></p>
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick"/>
@@ -115,7 +115,7 @@ function mfbfw_options_page() {
 			</form>
 		</div>
 
-		<div style="background-color:#9DD1F2;border:1px solid #419ED9;padding:0 .6em;margin:5px 15px 2px;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;height:90px;float:left;margin-left:10px;text-align:center;width:200px">
+		<div class="mfbfw_box mfbfw_blue">
 			<p style="line-height:1.5em;"><a href="http://twitter.com/moskis/"><?php _e( 'Follow me on Twitter for more WordPress Plugins and Themes', 'mfbfw' ); ?></a></p>
 			<img height="16" width="16" border="0" alt="" src="<?php echo FBFW_URL ?>/css/img/extra_twitter.png" />
 		</div>

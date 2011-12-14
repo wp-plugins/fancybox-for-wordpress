@@ -15,13 +15,13 @@ jQuery(function(){
 	
 	
 	// Hide form fields when not needed (swithed by checkbox)
-	function switchBlock(button,block) {
-		var blockvalue = jQuery(block + "#:checked").val();
-		if (blockvalue == "on") { jQuery(button).css("display", "inline"); }
-		else { jQuery(button).css("display", "none"); }
+	function switchBlock(block,button) {
+		var buttonValue = jQuery(button + "#:checked").val();
+		if (buttonValue == "on") { jQuery(block).css("display", "inline"); }
+		else { jQuery(block).css("display", "none"); }
 		
-		jQuery(block).click(function(){
-			jQuery(button).animate({opacity: "toggle", height: "toggle"}, 500);
+		jQuery(button).click(function(){
+			jQuery(block).animate({opacity: "toggle", height: "toggle"}, 500);
 		});
 	}
 	
@@ -31,6 +31,7 @@ jQuery(function(){
 	switchBlock("#titleBlock","#titleShow");
 	switchBlock("#callbackBlock","#callbackEnable");
 	switchBlock("#extraCallsBlock","#extraCallsEnable");
+	switchBlock("#easingBlock","#easing");
 	
 	
 	// Hide Title Color if not needed
@@ -68,18 +69,6 @@ jQuery(function(){
 
 	jQuery("#galleryTypeCustom").click(function () {
 		jQuery("#customExpressionBlock").show("slow");
-	});
-	
-	
-	// Easing
-	var easingEnable = jQuery("input:checkbox[id=easing]").attr("checked");
-
-	if (easingEnable == false ) {
-			jQuery("#easingBlock").css("display", "none");
-	}
-
-	jQuery("#easing").click(function () {
-		jQuery("#easingBlock").toggle("slow");
 	});
 	
 	/*

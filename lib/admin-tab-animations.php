@@ -98,7 +98,9 @@
 									<label for="easing">
 										<input type="checkbox" name="mfbfw[easing]" id="easing"<?php if ( isset($settings['easing']) && $settings['easing'] ) echo ' checked="yes"';?> />
 										<?php _e('Activate easing (default: off)', 'mfbfw'); ?>
-									</label><br /><br />
+									</label><br />
+									
+									<small><em><?php _e('(Will load one additional javascript file, 8KB)', 'mfbfw'); ?></em></small><br /><br />
 									
 									<div id="easingBlock">
 

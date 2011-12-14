@@ -1,11 +1,17 @@
 <?php
 /*
 Plugin Name: FancyBox for WordPress
-Plugin URI: http://blog.moskis.net/downloads/plugins/fancybox-for-wordpress/
-Description: Integrates <a href="http://fancy.klade.lv/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
+Plugin URI: http://plugins.josepardilla.com/fancybox-for-wordpress/
+Description: Integrates <a href="http://fancybox.net/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
 Version: 3.0
-Author: Jose Pardilla
+Author: Jos&eacute; Pardilla
 Author URI: http://josepardilla.com/
+
+ * FancyBox is Copyright (c) 2008 - 2010 Janis Skarnelis
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+
 */
 
 
@@ -13,7 +19,7 @@ Author URI: http://josepardilla.com/
 /* Main Settings
 /*-----------------------------------------------------------------------------------*/
 
-define( 'FBFW_VERSION', '3.0' );
+define( 'FBFW_VERSION', '3.0.0' );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -49,6 +55,7 @@ define( 'FBFW_PATH', $wp_plugin_dir . '/fancybox-for-wordpress' );
 define( 'FBFW_URL', $wp_plugin_url . '/fancybox-for-wordpress' );
 
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Default settings
 /*-----------------------------------------------------------------------------------*/
@@ -68,9 +75,9 @@ function mfbfw_defaults() {
 		'overlayColor'			=> '#666666',
 		'overlayOpacity'		=> '0.3',
 		'titleShow'					=> 'on',
-		'titlePosition'			=> 'inside',// outside no tiene maquetacion css?
-		'titleColor'				=> '#333333',// !!
-		'showNavArrows'				=> 'on',//
+		'titlePosition'			=> 'inside',
+		'titleColor'				=> '#333333',
+		'showNavArrows'			=> 'on',
 		
 		// Animations
 		'zoomOpacity'				=> 'on',
@@ -84,38 +91,37 @@ function mfbfw_defaults() {
 		'easingOut'					=> 'easeInBack',
 		'easingChange'			=> 'easeInOutQuart',
 		
-		'mouseWheel'				=> '',// !!!
-		
 		// Behaviour
 		'imageScale'					=> 'on',
 		'centerOnScroll'			=> 'on',
 		'hideOnContentClick'	=> '',
 		'hideOnOverlayClick'	=> 'on',
 		'enableEscapeButton'	=> 'on',
-		'cyclic'						=> '',
+		'cyclic'							=> '',
+		'mouseWheel'					=> '',
 		
 		// Gallery Type
 		'galleryType'					=> 'all',
 		'customExpression'		=> 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();',
 		
 		// Other
-		'autoDimensions'			=> 'on',
+		'autoDimensions'			=> 'on',//
 		'frameWidth'					=> '560',
 		'frameHeight'					=> '340',
 		'loadAtFooter'				=> '',
-		'callbackEnable'			=> '', //
-		'callbackOnStart'			=> 'function() { alert("Start!"); }', //
-		'callbackOnCancel'		=> 'function() { alert("Cancel!"); }',//
-		'callbackOnComplete'	=> 'function() { alert("Complete!"); }',//
-		'callbackOnCleanup'		=> 'function() { alert("CleanUp!"); }',//
-		'callbackOnClose'			=> 'function() { alert("Close!"); }',//
+		'callbackEnable'			=> '',
+		'callbackOnStart'			=> 'function() { alert("Start!"); }',
+		'callbackOnCancel'		=> 'function() { alert("Cancel!"); }',
+		'callbackOnComplete'	=> 'function() { alert("Complete!"); }',
+		'callbackOnCleanup'		=> 'function() { alert("CleanUp!"); }',
+		'callbackOnClose'			=> 'function() { alert("Close!"); }',
 		
 		// Troubleshooting
 		'nojQuery'						=> '',
 		
 		// Extra Calls
-		'extraCallsEnable'		=> '',//
-		'extraCalls'					=> '',//
+		'extraCallsEnable'		=> '',
+		'extraCalls'					=> '',
 		
 		// Uninstall
 		'uninstall'						=> ''
@@ -125,73 +131,14 @@ function mfbfw_defaults() {
 }
 
 
+
 /*-----------------------------------------------------------------------------------*/
 /* When plugin is activated, update version, and set any new settings to default
 /*-----------------------------------------------------------------------------------*/
 
 function mfbfw_install() {
 	
-	// Store defaults in an array
-	$defaults_array = mfbfw_defaults();
-	
-	// If no options stored, write defaults to database
-	add_option( 'mfbfw', $defaults_array );
-	
-	// Update Version
-	update_option( 'mfbfw_active_version', FBFW_VERSION );
-	
-	// Settings on previous versions, no longer used
-	function mfbfw_deprecated() {
-		$deprecated_array = array(
-			'mfbfw_version',
-			'mfbfw_showTitle',
-			'mfbfw_border',
-			'mfbfw_borderColor',
-			'mfbfw_closeHorPos',
-			'mfbfw_closeVerPos',
-			'mfbfw_paddingColor',
-			'mfbfw_padding',
-			'mfbfw_overlayShow',
-			'mfbfw_overlayColor',
-			'mfbfw_overlayOpacity',
-			'mfbfw_zoomOpacity',
-			'mfbfw_zoomSpeedIn',
-			'mfbfw_zoomSpeedOut',
-			'mfbfw_zoomSpeedChange',
-			'mfbfw_easing',
-			'mfbfw_easingIn',
-			'mfbfw_easingOut',
-			'mfbfw_easingChange',
-			'mfbfw_imageScale',
-			'mfbfw_enableEscapeButton',
-			'mfbfw_showCloseButton',
-			'mfbfw_centerOnScroll',
-			'mfbfw_hideOnOverlayClick',
-			'mfbfw_hideOnContentClick',
-			'mfbfw_loadAtFooter',
-			'mfbfw_frameWidth',
-			'mfbfw_frameHeight',
-			'mfbfw_callbackOnStart',
-			'mfbfw_callbackOnShow',
-			'mfbfw_callbackOnClose',
-			'mfbfw_galleryType',
-			'mfbfw_customExpression',
-			'mfbfw_nojQuery',
-			'mfbfw_jQnoConflict',
-			'mfbfw_autoApply',
-			'mfbfw_closePosition',
-			'mfbfw_noTextLinks',
-			'mfbfw_uninstall'
-		);
-		return $deprecated_array;
-	}
-	
-	// Store deprecated settings in an array and delete them
-	$deprecated_array = mfbfw_deprecated();
-	
-	foreach( $deprecated_array as $key ) {
-		delete_option( $key );
-	}
+	require FBFW_PATH . '/settings.php';
 
 }
 register_activation_hook( __FILE__, 'mfbfw_install' );
@@ -205,6 +152,7 @@ function mfbfw_uninstall() {
 	$settings = get_option( 'mfbfw' );
 	if ( isset($settings['uninstall']) && $settings['uninstall'] )
 		delete_option( 'mfbfw' );
+		delete_option( 'mfbfw_active_version' );
 }
 register_deactivation_hook( __FILE__, 'mfbfw_uninstall' );
 
@@ -231,15 +179,11 @@ function mfbfw_register_scripts() {
 		$jquery = array('jquery');
 	}
 
-	if ( ! is_admin() ) { // Avoid the scripts from loading on WordPress Admin Panel
-	
-		wp_register_script('fancybox', FBFW_URL . '/fancybox/jquery.fancybox.js', $jquery, '1.3.4', $footer ); // Load Fancybox script
+	// Register scripts
+	wp_register_script('fancybox', FBFW_URL . '/fancybox/jquery.fancybox.js', $jquery, '1.3.4', $footer ); // Main Fancybox script
+	wp_register_script('jqueryeasing', FBFW_URL . '/js/jquery.easing.1.3.min.js', false, '1.3', $footer ); // Easing animations script
+	wp_register_script('jquerymousewheel', FBFW_URL . '/js/jquery.mousewheel.3.0.4.pack.js', false, '3.0.4', $footer ); // Mouse wheel support script
 
-		if ( isset($settings['easing']) && $settings['easing'] ) {
-			wp_register_script('jqueryeasing', FBFW_URL . '/js/jquery.easing.1.3.min.js', false, '1.3', $footer ); // Load easing script if required
-		}
-		
-	}
 
 }
 add_action( 'init', 'mfbfw_register_scripts' );
@@ -257,10 +201,14 @@ function mfbfw_scripts() {
 			wp_enqueue_script( 'jqueryeasing' ); // Load easing javascript file if required
 		}
 		
+		if ( isset($settings['mouseWheel']) && $settings['mouseWheel'] ) {
+			wp_enqueue_script( 'jquerymousewheel' ); // Load mouse wheel javascript file if required
+		}
+		
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'mfbfw_scripts' );     // Load Scripts
+add_action( 'wp_enqueue_scripts', 'mfbfw_scripts' ); // Load Scripts
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -276,14 +224,17 @@ function mfbfw_styles() {
 	?>
 
 	<style type="text/css">
-		div#fancybox-close {<?php echo $settings['closeHorPos']; ?>:-15px;<?php echo $settings['closeVerPos']; ?>:-12px}
-		div#fancybox-outer {background-color:<?php echo $settings['paddingColor']; if ( isset($settings['border']) && $settings['border'] ) { echo "; border:1px solid " . $settings['borderColor']; } ?>}
+		div#fancybox-close{<?php echo $settings['closeHorPos']; ?>:-15px;<?php echo $settings['closeVerPos']; ?>:-12px}
+		<?php if ( isset($settings['paddingColor']) && $settings['paddingColor'] ) { echo "div#fancybox-content{border-color:" . $settings['paddingColor'] . "}"; } ?>
+		<?php if ( isset($settings['paddingColor']) && $settings['paddingColor'] && $settings['titlePosition'] == "inside" ) { echo "div#fancybox-title{background-color:" . $settings['paddingColor'] . "}"; } ?>
+		div#fancybox-outer{background-color:<?php echo $settings['paddingColor']; if ( isset($settings['border']) && $settings['border'] ) { echo "; border:1px solid " . $settings['borderColor']; } ?>}
+		<?php if ( isset($settings['titleColor']) && $settings['titleColor'] && $settings['titlePosition'] == "inside" ) { echo "div#fancybox-title-inside{color:" . $settings['titleColor'] . "}"; } ?>
 	</style>
 
 	<?php
 	
 }
-add_action( 'wp_print_styles', 'mfbfw_styles' );
+add_action( 'wp_enqueue_scripts', 'mfbfw_styles' );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -309,14 +260,14 @@ jQuery.fn.getTitle = function() { // Copy the title of every IMG tag and add it 
 }
 
 // Supported file extensions
-var thumbnails = 'a:has(img)[href$=".bmp"],a:has(img)[href$=".gif"],a:has(img)[href$=".jpg"],a:has(img)[href$=".jpeg"],a:has(img)[href$=".png"],a:has(img)[href$=".BMP"],a:has(img)[href$=".GIF"],a:has(img)[href$=".JPG"],a:has(img)[href$=".JPEG"],a:has(img)[href$=".PNG"]';
+var thumbnails = jQuery("a:has(img)").filter( function() { return /(jpe?g|png|gif|bmp)$/i.test(jQuery(this).attr('href')) });
 
 <?php if ( $settings['galleryType'] == 'post' ) {
 
 		// Gallery type BY POST and we are on post or page (so only one post or page is visible)
 		if ( is_single() | is_page() ) {
 
-			echo 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();';
+			echo 'thumbnails.addClass("fancybox").attr("rel","fancybox").getTitle();';
 
 		}
 
@@ -336,14 +287,14 @@ posts.each(function() {
 	// Gallery type ALL
 	elseif ( $settings['galleryType'] == 'all' ) {
 
-		echo 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();';
+		echo 'thumbnails.addClass("fancybox").attr("rel","fancybox").getTitle();';
 
 	}
 
 	// Gallery type NONE
 	elseif ( $settings['galleryType'] == 'none' ) {
 
-		echo 'jQuery(thumbnails).addClass("fancybox").getTitle();';
+		echo 'thumbnails.addClass("fancybox").getTitle();';
 
 	}
 
@@ -435,7 +386,7 @@ function mfbfw_admin_options() {
 			wp_safe_redirect( add_query_arg('updated', 'true') );
 			die;
 
-		} else if( isset($_REQUEST['action']) && 'reset' == $_REQUEST['action'] ) {
+		} else if ( isset($_REQUEST['action']) && 'reset' == $_REQUEST['action'] ) {
 
 			$defaults_array = mfbfw_defaults(); // Store defaults in an array
 			update_option( 'mfbfw', $defaults_array ); // Write defaults to database
@@ -475,12 +426,13 @@ add_action('admin_menu', 'mfbfw_admin_menu');
 /*-----------------------------------------------------------------------------------*/
 
 function mfbfw_admin_styles() {
+	wp_enqueue_style( 'fancybox-admin', FBFW_URL . '/css/fancybox-admin.css' ); // Load custom CSS for Admin Page
 	wp_enqueue_style( 'jquery-ui', FBFW_URL . '/css/jquery-ui.css' ); // Load jQuery UI Tabs CSS for Admin Page
 }
 
 function mfbfw_admin_scripts() {
 	wp_enqueue_script( 'jquery-ui-tabs', array('jquery-ui-core') ); // Load jQuery UI Tabs JS for Admin Page
-	wp_enqueue_script( 'fancyboxadmin', FBFW_URL . '/js/admin.js', array('jquery') ); // Load specific JS for Admin Page
+	wp_enqueue_script( 'fancybox-admin', FBFW_URL . '/js/admin.js', array('jquery') ); // Load specific JS for Admin Page
 }
 
 
