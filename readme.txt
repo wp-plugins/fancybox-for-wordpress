@@ -2,8 +2,8 @@
 Contributors: moskis
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 2.8
-Tested up to: 3.3
-Stable tag: 3.0.0
+Tested up to: 3.2
+Stable tag: 2.7.5
 License: GPL/MIT
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
@@ -24,22 +24,6 @@ You can see the plugin working on [this blog](http://plugins.josepardilla.com/fa
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
-
-= 3.0.0 =
-* New: Fancybox v1.3.4 support This includes many new options, like title position.
-* New: Additional FancyBox Calls option that lets the user write their own additional code to use FancyBox on specific areas of the blog, like email subscription buttons, login, etc.
-* New: Revert settings button added to options page. When pressed, a confirmation dialog will appear.
-* New: Improvements in options page, irrelevant settings (settings that depend on a disabled setting) will hide on real time, meaning a cleaner look in the options page.
-* Updated: New cleaner code to select thumbnails on which to apply the fancbox script.
-* Updated: Many parts of plugins rewriten with many improvements in code.
-* Updated: Options are now serialized into a single row in the database.
-* Fixed: Plugin should be SSL friendly from now on.
-* Fixed: Do not call jQuery option in troubleshooting section didn't work if easing was enabled.
-* Fixed: Load at footer options should work better now.
-* Fixed: CSS external files now addded with wp_enqueue_style().
-* Fixed: has_cap error: User level value for options page removed, using role now instead. Thanks to [vonkanehoffen](http://wordpress.org/support/topic/plugin-fancybox-for-wordpress-has_cap-fix).
-* Removed: jQuery "noConflict" Mode option removed bacause jQuery bundled with WordPress always used noConflict.
-* Removed: Base64 data ("data:image/gif;base64,AAAA") in left and right fancybox link's backgrounds: It didn't seem to be working and it is usually regarded as suspicious code, so it has been removed.
 
 = 2.7.5 =
 * Fixed: Callback arguments are no longer added as "null" when they are not set in options page.
