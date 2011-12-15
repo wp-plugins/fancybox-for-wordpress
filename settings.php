@@ -6,7 +6,7 @@
 
 
 // If lower than 3.0.0 we need to get old options, convert, and delete them
-if ( get_option( 'mfbfw_padding' ) !== false ) {
+if ( get_option( 'mfbfw_zoomSpeedIn' ) ) {
 	
 	$old_settings_array = array (
 
@@ -53,24 +53,24 @@ if ( get_option( 'mfbfw_padding' ) !== false ) {
 		
 		
 		// New Settings since 3.0
-		'titlePosition'					=> 'inside',// outside no tiene maquetacion css?
-		'titleColor'						=> '#333333',// !!
-		'showNavArrows'					=> 'on',//
+		'titlePosition'					=> 'inside',
+		'titleColor'						=> '#333333',
+		'showNavArrows'					=> 'on',
 		
 		'transitionIn'					=> 'fade',
 		'transitionOut'					=> 'fade',
 		
-		'cyclic'								=> '',//
-		'mouseWheel'						=> '',// !!!
+		'cyclic'								=> '',
+		'mouseWheel'						=> '',
 		
-		'autoDimensions'				=> 'on',//
+		'autoDimensions'				=> 'on',
 		
-		'callbackEnable'				=> '', //
-		'callbackOnCancel'			=> 'function() { alert("Cancel!"); }',//
-		'callbackOnCleanup'			=> 'function() { alert("CleanUp!"); }',//
+		'callbackEnable'				=> '',
+		'callbackOnCancel'			=> 'function() { alert("Cancel!"); }',
+		'callbackOnCleanup'			=> 'function() { alert("CleanUp!"); }',
 		
-		'extraCallsEnable'			=> '',//
-		'extraCalls'						=> '',//
+		'extraCallsEnable'			=> '',
+		'extraCalls'						=> ''
 
 	);
 	
