@@ -107,7 +107,7 @@ $current_version =  intval( str_replace( ".", "", FBFW_VERSION ) );
 
 
 // If lower than current version we need to get old options, convert, and delete them
-if ( $mfbfw_db_version < $current_version ) {
+if ( $db_version < $current_version ) {
 	
 	$old_settings_array = array (
 
