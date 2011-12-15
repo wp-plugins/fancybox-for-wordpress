@@ -1,12 +1,113 @@
 <?php
 
 /*-----------------------------------------------------------------------------------*/
-/* Settings setup
+/* Default settings
 /*-----------------------------------------------------------------------------------*/
 
+function mfbfw_defaults() {
+	$defaults_array = array(
+		
+		// Appearance
+		'border'						=> '',
+		'borderColor'				=> '#BBBBBB',
+		'showCloseButton'		=> 'on',
+		'closeHorPos'				=> 'right',
+		'closeVerPos'				=> 'top',
+		'paddingColor'			=> '#FFFFFF',
+		'padding'						=> '10',
+		'overlayShow'				=> 'on',
+		'overlayColor'			=> '#666666',
+		'overlayOpacity'		=> '0.3',
+		'titleShow'					=> 'on',
+		'titlePosition'			=> 'inside',
+		'titleColor'				=> '#333333',
+		'showNavArrows'			=> 'on',
+		
+		// Animations
+		'zoomOpacity'				=> 'on',
+		'zoomSpeedIn'				=> '500',
+		'zoomSpeedOut'			=> '500',
+		'zoomSpeedChange'		=> '300',
+		'transitionIn'			=> 'fade',
+		'transitionOut'			=> 'fade',
+		'easing'						=> '',
+		'easingIn'					=> 'easeOutBack',
+		'easingOut'					=> 'easeInBack',
+		'easingChange'			=> 'easeInOutQuart',
+		
+		// Behaviour
+		'imageScale'					=> 'on',
+		'centerOnScroll'			=> 'on',
+		'hideOnContentClick'	=> '',
+		'hideOnOverlayClick'	=> 'on',
+		'enableEscapeButton'	=> 'on',
+		'cyclic'							=> '',
+		'mouseWheel'					=> '',
+		
+		// Gallery Type
+		'galleryType'					=> 'all',
+		'customExpression'		=> 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();',
+		
+		// Other
+		'autoDimensions'			=> 'on',//
+		'frameWidth'					=> '560',
+		'frameHeight'					=> '340',
+		'loadAtFooter'				=> '',
+		'callbackEnable'			=> '',
+		'callbackOnStart'			=> 'function() { alert("Start!"); }',
+		'callbackOnCancel'		=> 'function() { alert("Cancel!"); }',
+		'callbackOnComplete'	=> 'function() { alert("Complete!"); }',
+		'callbackOnCleanup'		=> 'function() { alert("CleanUp!"); }',
+		'callbackOnClose'			=> 'function() { alert("Close!"); }',
+		
+		// Troubleshooting
+		'nojQuery'						=> '',
+		
+		// Extra Calls
+		'extraCallsEnable'		=> '',
+		'extraCalls'					=> '',
+		
+		// Uninstall
+		'uninstall'						=> ''
+		
+	);
+	return $defaults_array;
+}
 
-// If lower than 3.0.0 we need to get old options, convert, and delete them
-if ( get_option( 'mfbfw_zoomSpeedIn' ) ) {
+
+
+/*-----------------------------------------------------------------------------------*/
+/* When plugin is installed, write defaul settings and update version
+/*-----------------------------------------------------------------------------------*/
+
+function mfbfw_install() {
+
+	// If settings pressent populate database with defaults
+	if ( get_option( 'mfbfw_active_version' ) == false ) {
+
+		$defaults_array = mfbfw_defaults();
+		
+		add_option( 'mfbfw', $defaults_array );
+		add_option( 'mfbfw_active_version', FBFW_VERSION );
+	
+	}
+
+}
+register_activation_hook( __FILE__, 'mfbfw_install' );
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Plugin update and settings conversion
+/*-----------------------------------------------------------------------------------*/
+
+// Get database version and convert to integrer to compare with current version
+$db_version =  intval( str_replace( ".", "", get_option('mfbfw_active_version') ) );
+$current_version =  intval( str_replace( ".", "", FBFW_VERSION ) );
+
+
+// If lower than current version we need to get old options, convert, and delete them
+if ( $db_version < $current_version ) {
 	
 	$old_settings_array = array (
 
@@ -123,19 +224,10 @@ if ( get_option( 'mfbfw_zoomSpeedIn' ) ) {
 	foreach ( $deprecated_array as $key ) {
 		delete_option( $key );
 	}
-
-// If no deprecated options present, then get default values
-} else {
-
-	// Get default settings
-	$defaults_array = mfbfw_defaults();
 	
-	// If no options stored, write defaults to database
-	add_option( 'mfbfw', $defaults_array );
+	// Update Version
+	update_option( 'mfbfw_active_version', FBFW_VERSION );
 
 }
-
-// Update Version
-update_option( 'mfbfw_active_version', FBFW_VERSION );
 
 ?>
