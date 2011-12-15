@@ -16,13 +16,6 @@ Author URI: http://josepardilla.com/
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Main Settings
-/*-----------------------------------------------------------------------------------*/
-
-define( 'FBFW_VERSION', '3.0.0' );
-
-
-/*-----------------------------------------------------------------------------------*/
 /* Define paths with SSL Support on WP3.0+
 /* (http://codex.wordpress.org/Determining_Plugin_and_Content_Directories)
 /*-----------------------------------------------------------------------------------*/
@@ -57,91 +50,13 @@ define( 'FBFW_URL', $wp_plugin_url . '/fancybox-for-wordpress' );
 
 
 /*-----------------------------------------------------------------------------------*/
-/* Default settings
+/* Main Settings
 /*-----------------------------------------------------------------------------------*/
 
-function mfbfw_defaults() {
-	$defaults_array = array(
-		
-		// Appearance
-		'border'						=> '',
-		'borderColor'				=> '#BBBBBB',
-		'showCloseButton'		=> 'on',
-		'closeHorPos'				=> 'right',
-		'closeVerPos'				=> 'top',
-		'paddingColor'			=> '#FFFFFF',
-		'padding'						=> '10',
-		'overlayShow'				=> 'on',
-		'overlayColor'			=> '#666666',
-		'overlayOpacity'		=> '0.3',
-		'titleShow'					=> 'on',
-		'titlePosition'			=> 'inside',
-		'titleColor'				=> '#333333',
-		'showNavArrows'			=> 'on',
-		
-		// Animations
-		'zoomOpacity'				=> 'on',
-		'zoomSpeedIn'				=> '500',
-		'zoomSpeedOut'			=> '500',
-		'zoomSpeedChange'		=> '300',
-		'transitionIn'			=> 'fade',
-		'transitionOut'			=> 'fade',
-		'easing'						=> '',
-		'easingIn'					=> 'easeOutBack',
-		'easingOut'					=> 'easeInBack',
-		'easingChange'			=> 'easeInOutQuart',
-		
-		// Behaviour
-		'imageScale'					=> 'on',
-		'centerOnScroll'			=> 'on',
-		'hideOnContentClick'	=> '',
-		'hideOnOverlayClick'	=> 'on',
-		'enableEscapeButton'	=> 'on',
-		'cyclic'							=> '',
-		'mouseWheel'					=> '',
-		
-		// Gallery Type
-		'galleryType'					=> 'all',
-		'customExpression'		=> 'jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();',
-		
-		// Other
-		'autoDimensions'			=> 'on',//
-		'frameWidth'					=> '560',
-		'frameHeight'					=> '340',
-		'loadAtFooter'				=> '',
-		'callbackEnable'			=> '',
-		'callbackOnStart'			=> 'function() { alert("Start!"); }',
-		'callbackOnCancel'		=> 'function() { alert("Cancel!"); }',
-		'callbackOnComplete'	=> 'function() { alert("Complete!"); }',
-		'callbackOnCleanup'		=> 'function() { alert("CleanUp!"); }',
-		'callbackOnClose'			=> 'function() { alert("Close!"); }',
-		
-		// Troubleshooting
-		'nojQuery'						=> '',
-		
-		// Extra Calls
-		'extraCallsEnable'		=> '',
-		'extraCalls'					=> '',
-		
-		// Uninstall
-		'uninstall'						=> ''
-		
-	);
-	return $defaults_array;
-}
+define( 'FBFW_VERSION', '3.0.0' );
 
+require FBFW_PATH . '/settings.php';
 
-
-/*-----------------------------------------------------------------------------------*/
-/* When plugin is activated, update version, and set any new settings to default
-/*-----------------------------------------------------------------------------------*/
-
-function mfbfw_install() {
-	
-	require FBFW_PATH . '/settings.php';
-
-}
-register_activation_hook( __FILE__, 'mfbfw_install' );
 
 
 /*-----------------------------------------------------------------------------------*/
