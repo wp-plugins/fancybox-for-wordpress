@@ -326,7 +326,7 @@ function mfbfw_admin_menu() {
 
 	require FBFW_PATH . '/admin.php';
 
-	$mfbfwadmin = add_submenu_page( 'options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 'edit_plugins', 'fancybox-for-wordpress', 'mfbfw_options_page' );
+	$mfbfwadmin = add_submenu_page( 'options-general.php', 'Fancybox for WordPress Options', 'Fancybox for WP', 'manage_options', 'fancybox-for-wordpress', 'mfbfw_options_page' );
 	
 	add_action( 'admin_print_styles-' . $mfbfwadmin, 'mfbfw_admin_styles' );
 	add_action( 'admin_print_scripts-' . $mfbfwadmin, 'mfbfw_admin_scripts' );
