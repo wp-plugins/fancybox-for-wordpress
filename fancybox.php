@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://plugins.josepardilla.com/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancybox.net/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 3.0
+Version: 3.0.1
 Author: Jos&eacute; Pardilla
 Author URI: http://josepardilla.com/
 
@@ -53,7 +53,7 @@ define( 'FBFW_URL', $wp_plugin_url . '/fancybox-for-wordpress' );
 /* Main Settings
 /*-----------------------------------------------------------------------------------*/
 
-define( 'FBFW_VERSION', '3.0.0' );
+define( 'FBFW_VERSION', '3.0.1' );
 
 require FBFW_PATH . '/settings.php';
 

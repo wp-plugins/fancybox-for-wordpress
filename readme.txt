@@ -3,7 +3,7 @@ Contributors: moskis
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 2.8
 Tested up to: 3.3
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPL/MIT
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
@@ -24,6 +24,11 @@ You can see the plugin working on [this blog](http://plugins.josepardilla.com/fa
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
+
+= 3.0.1 =
+* Updated: Localization catalog updated.
+* Updated: Spanish localization.
+* Fixed: Minor change in settings page that may fix options page being invisible in some cases.
 
 = 3.0.0 =
 * New: Fancybox v1.3.4 support This includes many new options, like title position.
