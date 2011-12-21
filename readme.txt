@@ -6,7 +6,7 @@ Tested up to: 3.3
 Stable tag: 3.0.1
 License: GPL/MIT
 
-Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. Or you can customize it from the Options Page if you like... :)
+Seamlessly integrates FancyBox into your blog. You can use default setting or customize it from the Options Page if you like... :)
 
 
 == Description ==
