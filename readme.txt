@@ -6,12 +6,10 @@ Tested up to: 3.3
 Stable tag: 3.0.1
 License: GPL/MIT
 
-Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
+Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. Or you can customize it from the Options Page if you like... :)
 
 
 == Description ==
-
-Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. No further configuration needed. However, you can customize it from the Options Page if you like... :)
 
 You can easely customize almost anything you can think about fancybox: the border, margin width and color, zoom speed, animation type, close button position, overlay color and opacity and even more advanced option like several options to group images into galleries, and more...
 
@@ -167,34 +165,4 @@ This changelog is for the WordPress plugin. For the Fancybox main changelog go t
 
 == Frequently Asked Questions ==
 
-= Are you the author of FancyBox? =
-
-NO. I just ported it to WordPress. For more info on the FancyBox script itself [visit its website](http://fancybox.net/).
-
-= Help translate the plugin to your language =
-
-If you want to make a localization you can use the sources in the laguages folder and email me the PO and MO files (or just the PO) at jose (at) moskis.net. I will add it in the next release and if you want me to, i'll send you updated pot file a couple of days before future releases.
-
-= The plugin does not work =
-
-The most common problem is another plugin or your theme conflicting with the plugin. This is usually caused by some plugin that load jQuery directly instead of using the wp_enqueue_script function. Try following all the guidelines in the options page, and if necesary try the troubleshooting settings.
-
-If the plugin is not working or you find any bug/bad behaviour/conflict deactivate it and email me at jose (at) moskis.net with a description of the problem, and i'll take a look at it.
-
-If activating the plugin somehow brakes your panel (cant imagine that happening but just in case) delete the plugin from the plugins folder and go to your blog panel.
-
-= Suggestions and feature requests? =
-
-Don't hesitate to email me at jose (at) moskis.net with any thoughts about this plugin, feature requests, issues, doubts suggestions, anything goes. :)
-
-= How does the plugin exactly work? =
-
-First the plugin checks if your blog is using jQuery, if not it will load it from the WordPress files. Then it will load the FancyBox JavaScript, which is where all the magic happens. After this all the CSS code needed to beautify the plugin is added to the page. Finally, the JavaScript waits for your blog to finish loading and then it looks for all links where FancyBox can be applied, and adds it. And that's it. :)
-
-= The plugin does not work with Mandingo theme =
-
-To fix this edit the file /themes/mandigo/header.php and remove the line 231:
-
-<code>&lt;script type="text/javascript" src="&lt;?php echo $dirs['www']['js']; ?&gt;jquery.js"&gt;&lt;/script&gt;</code>
-
-After applying this fix everything seems to work perfectly.
+You can find a FAQ section ay [plugins.josepardilla.com](http://plugins.josepardilla.com/fancybox-for-wordpress/faq/).
