@@ -25,7 +25,7 @@ You can see the plugin working on [this blog](http://plugins.josepardilla.com/fa
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
 
-= 3.0.2 =
+= 3.0.3 =
 * Fixed a security issue. (Thanks to mickaelb for reporting and Konstantin Kovshenin for providing the fix)
 
 = 3.0.2 =
