@@ -341,16 +341,7 @@ function mfbfw_admin_options() {
 
 	if ( isset($_GET['page']) && $_GET['page'] == 'fancybox-for-wordpress' ) {
 
-		if ( isset($_REQUEST['action']) && 'update' == $_REQUEST['action'] ) {
-
-			$settings = stripslashes_deep( $_POST['mfbfw'] );
-			$settings = array_map( 'convert_chars', $settings );
-
-			update_option( 'mfbfw', $settings );
-			wp_safe_redirect( add_query_arg('updated', 'true') );
-			die;
-
-		} else if ( isset($_REQUEST['action']) && 'reset' == $_REQUEST['action'] ) {
+		if ( isset($_REQUEST['action']) && 'reset' == $_REQUEST['action'] && check_admin_referer( 'mfbfw-options-options' ) ) {
 
 			$defaults_array = mfbfw_defaults(); // Store defaults in an array
 			update_option( 'mfbfw', $defaults_array ); // Write defaults to database
