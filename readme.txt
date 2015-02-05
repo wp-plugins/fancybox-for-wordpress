@@ -3,7 +3,7 @@ Contributors: moskis
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 3.4
 Tested up to: 4.1
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 License: GPL/MIT
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. Additional configuration optional.
@@ -24,6 +24,9 @@ You can see the plugin working on [this blog](http://plugins.josepardilla.com/fa
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
+
+= 3.0.4 =
+* Renamed the setting affected by the security issue mentioned in 3.0.3. This should stop the malicious code from appearing on sites where the plugin is updated without removing the malicious code.
 
 = 3.0.3 =
 * Fixed a security issue. (Thanks to mickaelb for reporting and Konstantin Kovshenin for providing the fix)
