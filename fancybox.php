@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: http://plugins.josepardilla.com/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancybox.net/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 3.0.3
+Version: 3.0.4
 Author: Jos&eacute; Pardilla
 Author URI: http://josepardilla.com/
 
@@ -20,7 +20,7 @@ Author URI: http://josepardilla.com/
  * Constants
  */
 
-define( 'FBFW_VERSION', '3.0.3' );
+define( 'FBFW_VERSION', '3.0.4' );
 define( 'FBFW_PATH', plugin_dir_path(__FILE__) );
 define( 'FBFW_URL', plugin_dir_url(__FILE__) );
 
@@ -92,7 +92,7 @@ function mfbfw_defaults() {
 
 		// Extra Calls
 		'extraCallsEnable'      => '',
-		'extraCalls'            => '',
+		'extraCallsData'        => '',
 
 		// Uninstall
 		'uninstall'             => ''
@@ -306,7 +306,7 @@ jQuery("a.fancybox").fancybox({
 
 });
 
-<?php if ( isset($settings['extraCallsEnable']) && $settings['extraCallsEnable'] ) { echo $settings['extraCalls'];  echo "\n"; } ?>
+<?php if ( isset($settings['extraCallsEnable']) && $settings['extraCallsEnable'] ) { echo $settings['extraCallsData'];  echo "\n"; } ?>
 
 })
 </script>
