@@ -217,9 +217,8 @@ add_action( 'wp_enqueue_scripts', 'mfbfw_styles' );
 function mfbfw_init() {
 
 	$settings = get_option( 'mfbfw' );
-	$version = get_option( 'mfbfw_active_version' );
 
-	echo "\n<!-- Fancybox for WordPress v" . $version . ' -->'; ?>
+	echo "\n<!-- Fancybox for WordPress -->"; ?>
 
 <script type="text/javascript">
 jQuery(function(){
@@ -341,7 +340,7 @@ function mfbfw_admin_options() {
 
 	if ( isset($_GET['page']) && $_GET['page'] == 'fancybox-for-wordpress' ) {
 
-		if ( isset($_REQUEST['action']) && 'reset' == $_REQUEST['action'] && check_admin_referer( 'mfbfw-options-options' ) ) {
+		if ( isset($_REQUEST['action']) && 'reset' == $_REQUEST['action'] && check_admin_referer( 'mfbfw-options-reset' ) ) {
 
 			$defaults_array = mfbfw_defaults(); // Store defaults in an array
 			update_option( 'mfbfw', $defaults_array ); // Write defaults to database

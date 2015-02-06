@@ -8,7 +8,7 @@ function mfbfw_options_page() {
 
 	<div class="wrap">
 
-	<div id="icon-plugins" class="icon32"></div><h2><?php printf( __('Fancybox for WordPress (version %s)', 'mfbfw'), $version ); ?></h2>
+	<div id="icon-plugins" class="icon32"></div><h2><?php printf( __('Fancybox for WordPress (version %s)', 'mfbfw'), FBFW_VERSION ); ?></h2>
 
 	<br />
 
