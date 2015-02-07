@@ -5,7 +5,7 @@ Plugin URI: https://wordpress.org/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancybox.net/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
 Version: 3.0.5
 Author: Jos&eacute; Pardilla
-Author URI: http://moskis.net/
+Author URI: http://twitter.com/moskis
 
  * FancyBox is Copyright (c) 2008 - 2010 Janis Skarnelis
  * Dual licensed under the MIT and GPL licenses:
