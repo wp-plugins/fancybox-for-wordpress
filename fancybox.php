@@ -3,7 +3,7 @@
 Plugin Name: FancyBox for WordPress
 Plugin URI: https://wordpress.org/plugins/fancybox-for-wordpress/
 Description: Integrates <a href="http://fancybox.net/">FancyBox</a> by <a href="http://klade.lv/">Janis Skarnelis</a> into WordPress.
-Version: 3.0.5
+Version: 3.0.6
 Author: Jos&eacute; Pardilla
 Author URI: http://twitter.com/moskis
 
