@@ -3,7 +3,7 @@ Contributors: moskis
 Tags: fancybox, lightbox, jquery, gallery, image, images, photo, photos, picture, pictures
 Requires at least: 3.4
 Tested up to: 4.1
-Stable tag: 3.0.5
+Stable tag: 3.0.6
 License: GPL/MIT
 
 Seamlessly integrates FancyBox into your blog: Upload, activate, and you're done. Additional configuration optional.
@@ -25,6 +25,9 @@ You can see the plugin working on [this blog](http://blog.moskis.net/2012/01/20/
 == Changelog ==
 
 This changelog is for the WordPress plugin. For the Fancybox main changelog go to its [home page](http://fancybox.net/changelog/).
+
+= 3.0.6 =
+* Fixes to JavaScript code for showing and hiding elements as they are needed in Settings page. (Thanks to jono55 for reporting)
 
 = 3.0.5 =
 * Fixed the Revert Options button.
