@@ -20,7 +20,7 @@ Author URI: http://twitter.com/moskis
  * Constants
  */
 
-define( 'FBFW_VERSION', '3.0.5' );
+define( 'FBFW_VERSION', '3.0.6' );
 define( 'FBFW_PATH', plugin_dir_path(__FILE__) );
 define( 'FBFW_URL', plugin_dir_url(__FILE__) );
 
